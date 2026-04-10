@@ -1,0 +1,56 @@
+description: >
+    Implement to provide hardware accelerator attributes. A hardware accelerator
+    used to perform some functions more efficiently than is possible in software
+    running on a general-purpose CPU. Examples of possible hardware accelerators
+    include: GPUs, FPGAs, and ASICs.
+
+properties:
+    - name: BaseSpeedInHz
+      type: uint64
+      flags:
+          - readonly
+      default: maxint
+      description: >
+          Base/nominal clock speed of the accelerator, in hertz. If the property
+          is not supported, the value will be maxint.
+    - name: MaxSpeedInHz
+      type: uint64
+      flags:
+          - readonly
+      default: maxint
+      description: >
+          Maximum clock speed the accelerator can support, in hertz. If the
+          property is not supported, the value will be maxint.
+    - name: MinSpeedInHz
+      type: uint64
+      flags:
+          - readonly
+      default: maxint
+      description: >
+          Minimum clock speed the accelerator can support, in hertz. If the
+          property is not supported, the value will be maxint.
+    - name: Type
+      type: enum[self.AcceleratorType]
+      flags:
+          - readonly
+      default: "Unknown"
+      description: >
+          The type of accelerator.
+
+enumerations:
+    - name: AcceleratorType
+      description: >
+          Possible accelerator type
+      values:
+          - name: "ASIC"
+            description: >
+                An ASIC.
+          - name: "FPGA"
+            description: >
+                An FPGA.
+          - name: "GPU"
+            description: >
+                A GPU.
+          - name: "Unknown"
+            description: >
+                An unknown type.

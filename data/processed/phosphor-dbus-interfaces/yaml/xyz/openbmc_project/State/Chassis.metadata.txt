@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Chassis.metadata.yaml' is defined as follows:
+  - name: PowerOnFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure
+  - name: PowerOffFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure

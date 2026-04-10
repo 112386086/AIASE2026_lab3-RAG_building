@@ -1,0 +1,5 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Proc\FSI.errors.yaml' is defined as follows:
+  - name: MasterDetectionFailure
+  - description: Failed while detecting the master processor
+  - name: SlaveDetectionFailure
+  - description: Failed while detecting the slave processors

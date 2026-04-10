@@ -1,0 +1,11 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\Callout.errors.yaml' is defined as follows:
+  - name: Device
+  - description: Generic device callout
+  - name: GPIO
+  - description: Callout GPIO pin
+  - name: IIC
+  - description: Callout IIC device
+  - name: Inventory
+  - description: Inventory item callout
+  - name: IPMISensor
+  - description: Callout IPMI sensor

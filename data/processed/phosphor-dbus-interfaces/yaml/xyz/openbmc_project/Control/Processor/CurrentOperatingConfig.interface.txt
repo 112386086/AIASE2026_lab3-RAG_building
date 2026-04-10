@@ -1,0 +1,21 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Processor\CurrentOperatingConfig.interface.yaml' is defined as follows:
+Description: Processor power and frequency configuration settings.
+- description: Processor power and frequency configuration settings.
+
+- properties:
+    - name: AppliedConfig
+    - type: object_path
+    - description: Path to currently selected configuration.
+    - errors:
+      - xyz.openbmc_project.Common.Error.InvalidArgument
+      - xyz.openbmc_project.Common.Error.NotAllowed
+      - xyz.openbmc_project.Common.Error.Unavailable
+      - xyz.openbmc_project.Common.Device.Error.WriteFailure
+    - name: BaseSpeedPriorityEnabled
+    - type: boolean
+    - description: Whether base speed prioritization is enabled in the currently selected configuration.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.NotAllowed
+      - xyz.openbmc_project.Common.Error.Unavailable
+      - xyz.openbmc_project.Common.Device.Error.WriteFailure

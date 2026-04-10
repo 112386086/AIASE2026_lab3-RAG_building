@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Common\Callout.errors.yaml' is defined as follows:
+  - name: Procedure
+  - description: Procedure callout

@@ -1,0 +1,12 @@
+# xyz.openbmc_project.State.Chassis.Error.PowerOnFailure
+- name: PowerOnFailure
+  description: The systemd obmc-chassis-poweron.target failed to complete
+# xyz.openbmc_project.State.Chassis.Error.PowerOffFailure
+- name: PowerOffFailure
+  description: The systemd obmc-chassis-poweroff.target failed to complete
+# xyz.openbmc_project.State.Chassis.Error.PowerCycleFailure
+- name: PowerCycleFailure
+  description: The systemd obmc-chassis-powercycle.target failed to complete
+# xyz.openbmc_project.State.Chassis.Error.BMCNotReady
+- name: BMCNotReady
+  description: The BMC is not in a Ready state, no power operations allowed

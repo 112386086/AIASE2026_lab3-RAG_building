@@ -1,0 +1,12 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Channel\ChannelAccess.interface.yaml' is defined as follows:
+Description: This interface defines channel specific privilege access information which is used for channel authorization. Application must determine channel level privilege restriction based on this property.
+- description: This interface defines channel specific privilege access information which is used for channel authorization. Application must determine channel level privilege restriction based on this property.
+
+- properties:
+    - name: MaxPrivilege
+    - type: string
+    - description: Maximum privilege associated with specific channel.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.InvalidArgument
+      - xyz.openbmc_project.Common.Error.InternalFailure

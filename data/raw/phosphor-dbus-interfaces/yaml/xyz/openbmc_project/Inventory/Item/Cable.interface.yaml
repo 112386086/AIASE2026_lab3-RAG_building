@@ -1,0 +1,27 @@
+description: >
+    xyz.openbmc_project.Inventory.Item.Cable should be implemented on objects
+    that represent a cable instance or a system cable instance.
+properties:
+    - name: Length
+      type: double
+      default: NaN
+      description: >
+          The length of the cable in meters.  The default value of NaN
+          represents a cable of unknown length.
+    - name: CableTypeDescription
+      type: string
+      default: ""
+      description: >
+          A free form, implementation defined string used to provide the type of
+          a cable, such as optical or copper.  The cable type can be shown in
+          user interfaces but this field should not be used for programmatic
+          interrogation of a cable beyond ignoring the default value of the
+          empty string.
+associations:
+    - name: connecting
+      description: >
+          Objects that implement Cable can optionally implement the 'connecting'
+          association to provide a link to any inventory items.
+      reverse_name: connected_to
+      required_endpoint_interfaces:
+          - xyz.openbmc_project.Inventory.Item

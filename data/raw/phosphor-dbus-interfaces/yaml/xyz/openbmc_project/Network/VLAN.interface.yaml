@@ -1,0 +1,13 @@
+description: >
+    This defines VLAN specific parameters.
+
+# TODO Fix it through https://github.com/openbmc/openbmc/issues/1438
+# creatable: true
+
+properties:
+    - name: Id
+      type: uint32
+      flags:
+          - const
+      description: >
+          VLAN Identifier.

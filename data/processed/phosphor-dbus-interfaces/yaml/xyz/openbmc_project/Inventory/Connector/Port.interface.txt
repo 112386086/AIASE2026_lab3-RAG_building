@@ -1,0 +1,57 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Connector\Port.interface.yaml' is defined as follows:
+Description: This defines a Port of a switch, controller, chassis, or any other device that could be connected to another entity.
+- description: This defines a Port of a switch, controller, chassis, or any other device that could be connected to another entity.
+
+- properties:
+    - name: PortProtocol
+    - type: enum[self.PortProtocol]
+    - default: Unknown
+    - description: The protocol being sent over this port.
+
+    - name: PortType
+    - type: enum[self.PortType]
+    - default: Unknown
+    - description: The type of this port.
+
+    - name: Speed
+    - type: uint64
+    - default: maxint
+    - description: The current speed of the port, in bits per second. The default value indicates the property is not supported by this port. A value of 0 indicates that the value for this property is not known at this time (because, for example, the port is inactive).
+
+    - name: Width
+    - type: size
+    - default: maxint
+    - description: The number of lanes, phys, or other physical transport links that this port contains. The default value indicates the property is not supported by this port. A value of 0 indicates that the value for this property is not known at this time (because, for example, the port is inactive).
+
+- enumerations:
+    - name: PortProtocol
+    - description: Possible port protocol type.
+
+    - values:
+        - name: PCIe
+        - description: Protocol is PCI Express.
+
+        - name: Unknown
+        - description: Protocol is unknown.
+
+    - name: PortType
+    - description: Possible port type.
+
+    - values:
+        - name: Downstream
+        - description: Type is downstream - this port connects to a target device.
+
+        - name: Upstream
+        - description: Type is upstream - this port connects to a host device.
+
+        - name: Unknown
+        - description: Type is unknown.
+
+- associations:
+    - name: connected_to
+    - description: Objects that are connected at the other end of the link.
+
+    - reverse_name: connecting
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.FabricAdapter
+      - xyz.openbmc_project.Inventory.Item.PCIeSwitch

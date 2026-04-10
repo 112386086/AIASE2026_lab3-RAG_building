@@ -1,0 +1,12 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\CoolingType.interface.yaml' is defined as follows:
+Description: Implement properties to indicate the element cooling type (air, water, etc.).
+- description: Implement properties to indicate the element cooling type (air, water, etc.).
+
+- properties:
+    - name: AirCooled
+    - type: boolean
+    - description: The element uses air/fans for cooling when set to true.
+
+    - name: WaterCooled
+    - type: boolean
+    - description: The element uses water for cooling when set to true.

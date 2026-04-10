@@ -1,0 +1,88 @@
+description: >
+    Implement to provide reports management. Contain information about report
+    limitations and allows to add report.
+
+methods:
+    - name: AddReport
+      description: >
+          Create new object that represents Report with
+          xyz.openbmc_project.Telemetry.Report interface stored in path
+          /xyz/openbmc_project/Telemetry/Reports/{properties[Id]} where
+          properties[Id] is passed into this method as a parameter.
+      parameters:
+          - name: Id
+            type: string
+            description: >
+                Unique identifier of created Report object to be exposed over
+                D-Bus. Acceptable formats are: "{Id}", "{Prefix}/{SubId}",
+                "{Prefix}/". If the last variant is used, service will generate
+                unique SubId value by itself.
+          - name: Name
+            type: string
+            description: >
+                User friendly name of created Report object.
+          - name: reportingType
+            type: enum[xyz.openbmc_project.Telemetry.Report.ReportingType]
+            description: >
+                Indicates when readings should be updated. Possible values are
+                listed in Report interface documentation.
+          - name: ReportUpdates
+            type: enum[xyz.openbmc_project.Telemetry.Report.ReportUpdates]
+            description: >
+                Indicates how readings should be updated. Possible values are
+                listed in Report interface documentation.
+          - name: AppendLimit
+            type: size
+            description: >
+                Maximum number of entries in 'Readings' property.
+          - name: ReportActions
+            type: array[enum[xyz.openbmc_project.Telemetry.Report.ReportActions]]
+            description: >
+                Possible additional actions to trigger after readings' update,
+                as specified in Report interface documentation.
+          - name: Interval
+            type: uint64
+            description: >
+                Period of time in milliseconds when Report is updated with new
+                readings. Minimal interval is defined in MinInterval property.
+          - name: ReadingParameters
+            type: array[struct[array[struct[object_path,string]],enum[xyz.openbmc_project.Telemetry.Report.OperationType],string,enum[xyz.openbmc_project.Telemetry.Report.CollectionTimescope],uint64]]
+            description: >
+                Array of metric parameters, which are stored in a way specified
+                in description of ReadingParameters property from Report
+                interface documentation.
+          - name: Enabled
+            type: boolean
+            description: >
+                Indicates if readings in report will be updated.
+      returns:
+          - name: reportPath
+            type: object_path
+            description: >
+                Path to new report ->
+                  /xyz/openbmc_project/Telemetry/Reports/{parameters[Id]}.
+
+properties:
+    - name: MaxReports
+      type: size
+      description: >
+          Contains the max number of metric reports supported by the Telemetry.
+          This property is added to be compliant with the Redfish Telemetry
+          Service schema, that contains MaxReports property.
+      flags:
+          - const
+    - name: MinInterval
+      type: uint64
+      description: >
+          Minimal allowed time between readings property updates. It limits
+          Interval property in xyz.openbmc_project.Telemetry.Report and interval
+          parameter in AddReport method.
+      flags:
+          - const
+    - name: SupportedOperationTypes
+      type: array[enum[xyz.openbmc_project.Telemetry.Report.OperationType]]
+      description: >
+          Contains subset of operation types currently supported by this
+          service.
+      flags:
+          - const

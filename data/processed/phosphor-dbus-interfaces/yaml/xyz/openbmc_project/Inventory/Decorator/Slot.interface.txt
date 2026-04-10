@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\Slot.interface.yaml' is defined as follows:
+Description: Implement to provide a slot number for an inventory item.
+- description: Implement to provide a slot number for an inventory item.
+
+- properties:
+    - name: SlotNumber
+    - type: size
+    - description: The slot number

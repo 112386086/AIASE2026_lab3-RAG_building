@@ -1,0 +1,227 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\ObjectMapper.interface.yaml' is defined as follows:
+Description: Implement to provide DBus service lookup features.
+Any OpenBMC implementation must provide exactly one implementation of xyz.openbmc_project.ObjectMapper on /xyz/openbmc_project/ObjectMapper.
+- description: Implement to provide DBus service lookup features.
+Any OpenBMC implementation must provide exactly one implementation of xyz.openbmc_project.ObjectMapper on /xyz/openbmc_project/ObjectMapper.
+
+- methods:
+    - name: GetObject
+    - description: Obtain a dictionary of service -> implemented interface(s) for the given path.
+
+    - parameters:
+        - name: path
+        - type: string
+        - description: The object path for which the result should be fetched.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: services
+        - type: dict[string,array[string]]
+        - description: A dictionary of service -> implemented interface(s).
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetAncestors
+    - description: Obtain a dictionary of ancestor -> services where ancestor is an ancestor of path and services is of the type returned by the GetObject method.
+
+    - parameters:
+        - name: path
+        - type: string
+        - description: The path for which the result should be fetched.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: ancestors
+        - type: dict[string,dict[string,array[string]]]
+        - description: A dictionary of ancestor -> services.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetSubTree
+    - description: Obtain a dictionary of path -> services where path is in sutbtree and services is of the type returned by the GetObject method.
+
+    - parameters:
+        - name: subtree
+        - type: string
+        - description: The subtree path for which the result should be fetched.
+
+        - name: depth
+        - type: int32
+        - description: The maximum subtree depth for which results should be fetched. For unconstrained fetches use a depth of zero.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: objects
+        - type: dict[string,dict[string,array[string]]]
+        - description: A dictionary of path -> services.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetSubTreePaths
+    - description: Obtain an array of paths where array elements are in subtree.
+
+    - parameters:
+        - name: subtree
+        - type: string
+        - description: The subtree path for which the result should be fetched.
+
+        - name: depth
+        - type: int32
+        - description: The maximum subtree depth for which results should be fetched. For unconstrained fetches use a depth of zero.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: paths
+        - type: array[string]
+        - description: An array of paths.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetAssociatedSubTree
+    - description: Same as GetSubTree, but only return the dbus paths that are an association endpoint on associatedPath
+
+    - parameters:
+        - name: associatedPath
+        - type: object_path
+        - description: The path where the associated endpoint is fetched from.
+
+        - name: subtree
+        - type: object_path
+        - description: The subtree path for which the result should be fetched.
+
+        - name: depth
+        - type: int32
+        - description: The maximum subtree depth for which results should be fetched. For unconstrained fetches use a depth of zero.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: objects
+        - type: dict[string,dict[string,array[string]]]
+        - description: A dictionary of path -> services.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetAssociatedSubTreePaths
+    - description: Same as GetSubTreePaths, but only return the dbus paths that are an association endpoint on associatedPath
+
+    - parameters:
+        - name: associatedPath
+        - type: string
+        - description: The path where the associated endpoint is fetched from.
+
+        - name: subtree
+        - type: string
+        - description: The subtree path for which the result should be fetched.
+
+        - name: depth
+        - type: int32
+        - description: The maximum subtree depth for which results should be fetched. For unconstrained fetches use a depth of zero.
+
+        - name: interfaces
+        - type: array[string]
+        - description: An array of result set constraining interfaces.
+
+    - returns:
+        - name: paths
+        - type: array[string]
+        - description: An array of paths.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetAssociatedSubTreeById
+    - description: Retrieves a dictionary of D-Bus paths -> services of associated endpoints with the provided identifier, filtering based on their association with specified endpoint interfaces.
+Implementation steps:
+1. Retrieve the subtree D-Bus paths that implement the
+   "subtreeInterfaces" and have the path endpoint "id".
+2. Create an association path by concatenating the subtree path with
+   "/" and "association"
+   associationPath = subtreePath + "/" + "association"
+3. Call getAssociatedSubTree to get the endpoint path -> services of
+   the associationPath that implements the "endpointInterfaces".
+
+    - parameters:
+        - name: id
+        - type: string
+        - description: The leaf name of the dbus path, uniquely identifying a specific component or entity within the system. For example, in the path `/xyz/openbmc_project/inventory/system/{ChassisId}/motherboard/{FanId}`, the identifiers would be {FanId}.
+
+        - name: objectPath
+        - type: string
+        - description: The object path for which the result should be fetched.
+
+        - name: subtreeInterfaces
+        - type: array[string]
+        - description: An array of interfaces used to retrieve dbus paths with the specified identifier.
+
+        - name: association
+        - type: string
+        - description: The endpoint association.
+
+        - name: endpointInterfaces
+        - type: array[string]
+        - description: An array of interfaces used to filter associated endpoint paths.
+
+    - returns:
+        - name: objects
+        - type: dict[string,dict[string,array[string]]]
+        - description: A dictionary of path -> services.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+    - name: GetAssociatedSubTreePathsById
+    - description: Retrieves the D-Bus paths of associated endpoints with the provided identifier, filtering based on their association with specified endpoint interfaces.
+Implementation steps:
+1. Retrieve the subtree D-Bus paths that implement the
+   "subtreeInterfaces" and have the path endpoint "id".
+2. Create an association path by concatenating the subtree path with
+   "/" and "association"
+   associationPath = subtreePath + "/" + "association"
+3. Call getAssociatedSubTreePaths to get the endpoint paths of the
+   associationPath that implements the "endpointInterfaces".
+
+    - parameters:
+        - name: id
+        - type: string
+        - description: The leaf name of the dbus path, uniquely identifying a specific component or entity within the system. For example, in the path `/xyz/openbmc_project/inventory/system/{ChassisId}/motherboard/{FanId}`, the identifiers would be {FanId}.
+
+        - name: objectPath
+        - type: string
+        - description: The object path for which the result should be fetched.
+
+        - name: subtreeInterfaces
+        - type: array[string]
+        - description: An array of interfaces used to retrieve dbus paths with the specified identifier.
+
+        - name: association
+        - type: string
+        - description: The endpoint association.
+
+        - name: endpointInterfaces
+        - type: array[string]
+        - description: An array of interfaces used to filter associated endpoint paths.
+
+    - returns:
+        - name: paths
+        - type: array[string]
+        - description: An array of paths.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.ResourceNotFound
+- service_names:
+    - default: xyz.openbmc_project.ObjectMapper
+- paths:
+    - instance: /xyz/openbmc_project/object_mapper

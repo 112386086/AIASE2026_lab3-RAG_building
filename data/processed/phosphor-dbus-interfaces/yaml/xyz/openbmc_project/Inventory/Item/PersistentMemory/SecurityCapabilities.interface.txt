@@ -1,0 +1,24 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\PersistentMemory\SecurityCapabilities.interface.yaml' is defined as follows:
+Description: Implement to provide security capability attributes.
+- description: Implement to provide security capability attributes.
+
+- properties:
+    - name: MaxPassphraseCount
+    - type: uint32
+    - description: Maximum number of passphrases supported for this Memory.
+
+    - name: PassphraseCapable
+    - type: boolean
+    - description: Memory passphrase set capability.
+
+    - name: ConfigurationLockCapable
+    - type: boolean
+    - description: An indication of whether this memory supports the locking.
+
+    - name: DataLockCapable
+    - type: boolean
+    - description: An indication of whether this memory supports data locking.
+
+    - name: PassphraseLockLimit
+    - type: uint32
+    - description: The maximum number of incorrect passphrase attempts allowed before memory is locked.

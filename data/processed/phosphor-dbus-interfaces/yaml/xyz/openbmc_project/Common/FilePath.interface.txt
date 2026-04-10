@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\FilePath.interface.yaml' is defined as follows:
+Description: An interface which encapsulates a file-system path on the BMC.
+Typically, this is added onto an existing object path to show a relationship between the object, in the dbus namespace, and a file, in the filesystem namespace.
+- description: An interface which encapsulates a file-system path on the BMC.
+Typically, this is added onto an existing object path to show a relationship between the object, in the dbus namespace, and a file, in the filesystem namespace.
+
+- properties:
+    - name: Path
+    - type: string
+    - description: The filesystem path for the dbus object.

@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\Authority.interface.yaml' is defined as follows:
+Description: Signs Certificate Signing Request.
+- description: Signs Certificate Signing Request.
+
+- methods:
+    - name: SignCSR
+    - description: This method provides signing authority functionality.
+
+    - parameters:
+        - name: CSR
+        - type: string
+        - description: Should be a valid PEM encoded Certificate signing request string.
+
+    - returns:
+        - name: path
+        - type: object_path
+        - description: The object path of an object that implements, at a minimum, xyz.openbmc_project.Certs.Entry and xyz.openbmc_project.Object.Delete
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.InvalidArgument

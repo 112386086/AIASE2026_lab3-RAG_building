@@ -1,0 +1,258 @@
+# OpenBMC Development Environment
+
+**Document Purpose:** How to set up an OpenBMC development environment
+
+**Audience:** Programmer familiar with Linux and BMCs
+
+**Prerequisites:** Current Linux, Mac, or Windows system
+
+## Overview
+
+OpenBMC uses the [Yocto](https://www.yoctoproject.org/) Project as its
+underlying building and distribution generation framework. The main OpenBMC
+[README](https://github.com/openbmc/openbmc/blob/master/README.md) provides
+information on getting up and going with Yocto and OpenBMC. This tutorial will
+walk you through utilizing bitbake to build OpenBMC firmware and boot it in
+[QEMU](https://www.qemu.org/).
+
+Bitbake is the build engine used by Yocto and OpenBMC to build its custom Linux
+distribution for a system. QEMU is a software emulator that can be used to run
+OpenBMC images.
+
+This doc walks through the recommended steps for setting up an OpenBMC
+development environment, building OpenBMC, and running that image in QEMU.
+
+For testing purposes, this guide uses the Romulus system as the default because
+this is the system tested for each CI job, which means it's the most stable.
+
+## Install Linux Environment
+
+If you are running Linux, and are ok with installing some additional packages,
+then you can skip to step 3.
+
+The recommended OpenBMC development environment is the latest Ubuntu LTS
+release. Other versions of Linux may work but you are using that at your own
+risk. If you have Windows or Mac OS then VirtualBox is the recommended
+virtualization tool to run the development environment.
+
+1. Install a Virtual Machine
+
+   Install either [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or
+   [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
+   onto your computer (Mac, Windows, Linux)
+
+   Both have free versions available for what you need. **Note:** If you want to
+   use this VM to BitBake a full OpenBMC image, you'll want to allocate as many
+   resources as possible. Ideal minimum resources are 8 threads, 16GB memory,
+   200GB hard drive.
+
+   OpenBMC continuous integration utilizes docker to build its images. This is
+   another possibility but not covered within this document. See
+   [build-setup.sh](https://github.com/openbmc/openbmc-build-scripts/blob/master/build-setup.sh)
+   for a reference on the script CI uses to build an appropriate docker
+   container and launch bitbake within it. This also works within a podman
+   environment.
+
+2. Install the latest Ubuntu LTS release
+
+   The majority of OpenBMC development community uses Ubuntu. The qemu below is
+   built on the latest Ubuntu LTS release but whatever is most recent _should_
+   work. The same goes for other Linux distributions like Fedora but again,
+   these are not tested nearly as much by the core OpenBMC team as Ubuntu.
+
+   **VirtualBox Tips** - You'll want copy/paste working between your VM and
+   Host. To do that, once you have your VM up and running:
+   - Devices -> Insert Guest Additions CD Image (install)
+   - Devices -> Shared Clipboard -> Bidirectional
+   - reboot (the VM)
+
+3. Install required packages
+
+   Refer to
+   [Prerequisite](https://github.com/openbmc/openbmc/blob/master/README.md#1-prerequisite)
+   link.
+
+   **Note** - In Ubuntu, a "sudo apt-get update" will probably be needed before
+   installing the packages.
+
+   **Note** - Ubuntu 24.04 restricts unprivileged user namespaces by default via
+   AppArmor, which causes BitBake workers to fail with a
+   `PermissionError: [Errno 1] Operation not permitted` when writing to
+   `/proc/self/uid_map`. Run the following to fix this before building:
+
+   ```bash
+   echo 'kernel.apparmor_restrict_unprivileged_userns = 0' | \
+       sudo tee /etc/sysctl.d/99-bitbake.conf
+   sudo sysctl -p /etc/sysctl.d/99-bitbake.conf
+   ```
+
+## Building OpenBMC
+
+Note this section will take you through the process of building a Romulus
+OpenBMC image. Future tutorials will build on this by having you customize the
+image. If you would like to skip the building and just try out OpenBMC and QEMU
+then you can download the latest Romulus image from the
+[OpenBMC Jenkins](https://jenkins.openbmc.org/job/latest-master/label=docker-builder,target=romulus/lastSuccessfulBuild/artifact/openbmc/build/tmp/deploy/images/romulus/obmc-phosphor-image-romulus.static.mtd)
+and skip to the
+[Download and Start QEMU Session](#download-and-start-qemu-session) section.
+
+1. Clone OpenBMC
+
+   ```bash
+   git clone https://github.com/openbmc/openbmc.git
+   ```
+
+2. Build the Romulus OpenBMC Image (note this will take 30 - 120 minutes
+   depending on your hardware)
+
+   ```bash
+   . setup romulus
+   bitbake obmc-phosphor-image
+   ```
+
+The Romulus image is now located in
+`build/tmp/deploy/images/romulus/obmc-phosphor-image-romulus.static.mtd`
+relative to your current directory.
+
+## Download and Start QEMU Session
+
+1. Download latest openbmc/qemu fork of QEMU application
+
+   ```bash
+   wget https://jenkins.openbmc.org/job/latest-qemu-x86/lastSuccessfulBuild/artifact/qemu/build/qemu-system-arm
+
+   chmod u+x qemu-system-arm
+   ```
+
+2. Copy the image generated by the build to your current directory
+
+   ```bash
+   cp ./tmp/deploy/images/romulus/obmc-phosphor-image-romulus.static.mtd ./
+   ```
+
+3. Start QEMU with the Romulus image
+
+   **Note** - For REST, SSH and IPMI to work into your QEMU session, you must
+   connect up some host ports to the REST, SSH and IPMI ports in your QEMU
+   session. In this example, it just uses 2222, 2443, 2623. You can use whatever
+   you prefer.
+
+   ```bash
+   ./qemu-system-arm -m 256 -M romulus-bmc -nographic \
+      -drive file=./obmc-phosphor-image-romulus.static.mtd,format=raw,if=mtd \
+      -net nic \
+      -net user,hostfwd=:127.0.0.1:2222-:22,hostfwd=:127.0.0.1:2443-:443,hostfwd=udp:127.0.0.1:2623-:623,hostname=qemu
+   ```
+
+   If you are running within a virtual environment where you can use the real
+   ports, then you would start QEMU with the following.
+
+   ```bash
+
+   ./qemu-system-arm -m 256 -machine romulus-bmc -nographic \
+    -drive file=./obmc-phosphor-image-romulus.static.mtd,format=raw,if=mtd \
+    -net nic \
+    -net
+   user,hostfwd=:127.0.0.1:22-:22,hostfwd=:127.0.0.1:443-:443,hostfwd=tcp:127.0.0.1:80-:80,hostfwd=tcp:127.0.0.1:2200-:2200,hostfwd=udp:127.0.0.1:623-:623,hostfwd=udp:127.0.0.1:664-:664,hostname=qemu
+
+   ```
+
+4. Wait for your QEMU-based BMC to boot
+
+   Login using default root/0penBmc login (Note the 0 is a zero).
+
+5. Check the system state
+
+   You'll see a lot of services starting in the console, you can start running
+   the obmcutil tool to check the state of the OpenBMC state services. When you
+   see the following then you have successfully booted to "Ready" state.
+
+   ```bash
+   root@openbmc:~# obmcutil state
+   CurrentBMCState     : xyz.openbmc_project.State.BMC.BMCState.Ready
+   CurrentPowerState   : xyz.openbmc_project.State.Chassis.PowerState.Off
+   CurrentHostState    : xyz.openbmc_project.State.Host.HostState.Off
+   ```
+
+   **Note** To exit (and kill) your QEMU session run: `ctrl+a x`
+
+6. Test out the ssh network interface
+
+   Run these from the system you started QEMU on
+
+   ```bash
+   ssh root@localhost -p 2222
+   ```
+
+   Login is the same as what was used above for the default QEMU login.
+
+You've now built an OpenBMC distribution and booted it in QEMU!
+
+## Alternative yocto QEMU
+
+yocto has tools for building and running qemu. These tools avoid some of the
+configuration issues that come from downloading a prebuilt image, and modifying
+binaries. Using yocto qemu also uses the
+[TAP interface](https://www.kernel.org/doc/Documentation/networking/tuntap.txt)
+which some find be more stable. This is particularly useful when debugging at
+the application level.
+
+This is a more advanced section and may be useful to come back to once the
+basics are working for you. The next tutorial will focus on devtool and how to
+utilize it to customize your OpenBMC image.
+
+- set up a bmc build environment
+
+```bash
+source setup romulus myBuild/build
+```
+
+- add the qemu x86 open embedded machine for testing
+
+```bash
+MACHINE ??= "qemux86"
+```
+
+- Make the changes to the build (ie devtool modify bmcweb, devtool add gdb)
+
+```bash
+devtool modify bmcweb myNewLocalbmcweb/
+```
+
+- build open bmc for the qemu x86 machine
+
+```bash
+MACHINE=qemux86 bitbake obmc-phosphor-image
+```
+
+- run qemu they way yocto provides
+
+```bash
+runqemu myBuild/build/tmp/deploy/images/qemux86/ nographic \
+    qemuparams="-m 2048"
+```
+
+- after that the all the a TAP network interface is added, and protocol like
+  ssh, scp, http work well.
+
+## Sharing Downloads and Build Cache
+
+BitBake caches both fetched sources (DL_DIR) and reusable build outputs
+(SSTATE_DIR). Point multiple builds at shared directories to avoid
+re-downloading and re-building, saving time and disk.
+
+1. Create shared cache directories once:
+
+   ```bash
+   mkdir -p "${XDG_CACHE_HOME}/bitbake/downloads" "${XDG_CACHE_HOME}/bitbake/sstate"
+   ```
+
+2. Add to build/conf/local.conf:
+
+   ```bash
+   DL_DIR = "${XDG_CACHE_HOME}/bitbake/downloads"
+   SSTATE_DIR = "${XDG_CACHE_HOME}/bitbake/sstate"
+   ```
+
+This makes every build reuse what was already downloaded and built, so you use
+less disk and finish faster.

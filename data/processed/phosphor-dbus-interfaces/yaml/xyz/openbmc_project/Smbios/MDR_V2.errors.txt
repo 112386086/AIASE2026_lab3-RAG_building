@@ -1,0 +1,9 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Smbios\MDR_V2.errors.yaml' is defined as follows:
+  - name: InvalidParameter
+  - description: An invalid parameter is attempted.
+
+  - name: UpdateInProgress
+  - description: Update is in progress.
+
+  - name: InvalidId
+  - description: An invalid Id is attempted.

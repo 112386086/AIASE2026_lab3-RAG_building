@@ -1,0 +1,5 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Common\Callout.metadata.yaml' is defined as follows:
+  - name: Procedure
+  - meta:
+      - str: PROCEDURE=%u
+      - type: uint32

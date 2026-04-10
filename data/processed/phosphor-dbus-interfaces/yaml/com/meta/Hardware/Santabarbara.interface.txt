@@ -1,0 +1,53 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\meta\Hardware\Santabarbara.interface.yaml' is defined as follows:
+Description: This interface is never intended to be instantiated, but is used to define devices for Santabarbara.
+- description: This interface is never intended to be instantiated, but is used to define devices for Santabarbara.
+
+- enumerations:
+    - name: CPLD
+    - description: The compatible hardware strings for the CPLD on Santabarbara.
+
+    - values:
+        - name: LCMXO3D_9400_evb
+        - name: LCMXO3D_9400_rainbow
+        - name: LCMXO3D_9400_scm
+        - name: LCMXO3D_9400_swb
+        - name: LCMXO3LF_2100C_sitv3
+        - name: LCMXO3LF_2100C_pttv
+        - name: LFMXO5_25_mb
+    - name: SPI
+    - description: The compatible hardware strings for the SPI flash on Santabarbara.
+
+    - values:
+        - name: Host
+    - name: VR
+    - description: The compatible hardware strings for the VR on Santabarbara.
+
+    - values:
+        - name: MP29612_pvddcr_soc_p0
+        - name: MP29612_pvddcr_cpu1_p0
+        - name: MP2869_pvddcr_cpu0_p0
+        - name: MP2971_p0v75_sco1_sco3
+        - name: MP2971_p0v75_sco2_sco4
+        - name: MP2971_p0v81_pex_0
+        - name: MP2971_p0v81_pex_1
+        - name: MP5998_p12v_aux
+        - name: MP9945_pvdd18_s5
+        - name: RAA229639_pvddcr_cpu0_p0
+        - name: RAA229640_pvddcr_cpu1_p0
+        - name: RAA229640_pvddcr_soc_p0
+        - name: TDA38640A_pvdd18_s5
+        - name: XDPE19284C_p0v81_pex_0
+        - name: XDPE19284C_p0v81_pex_1
+    - name: TPM
+    - description: The compatible hardware strings for the TPM on Santabarbara.
+
+    - values:
+        - name: BMC
+    - name: Boards
+    - description: The compatible hardware strings for the Boards on Santabarbara.
+
+    - values:
+        - name: E1S_Backplane
+        - name: MB
+        - name: PCIe_Switch_Board
+        - name: Power_Distribution_Board_2

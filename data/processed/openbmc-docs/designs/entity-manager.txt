@@ -1,0 +1,5 @@
+# Entity Manager
+
+Design is described in the
+README.md of
+the repo.

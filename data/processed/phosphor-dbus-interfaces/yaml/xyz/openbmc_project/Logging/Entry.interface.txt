@@ -1,0 +1,106 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Entry.interface.yaml' is defined as follows:
+Description: Implement to provide event/error entry attributes. This interface should be instantiated for the phosphor::logging namespace. This interface is a collection of objects, therefore it is required to implement org.freedesktop.DBus.ObjectManager on the logging namespace root. Optionally, implement xyz.openbmc_project.Object.Delete to allow the deletion of individual entries.
+- description: Implement to provide event/error entry attributes. This interface should be instantiated for the phosphor::logging namespace. This interface is a collection of objects, therefore it is required to implement org.freedesktop.DBus.ObjectManager on the logging namespace root. Optionally, implement xyz.openbmc_project.Object.Delete to allow the deletion of individual entries.
+
+- properties:
+    - name: Id
+    - type: uint32
+    - description: The error event entry id number.
+
+    - name: Timestamp
+    - type: uint64
+    - description: Commit timestamp of the error event entry in milliseconds since 1970.
+
+    - name: Severity
+    - type: enum[self.Level]
+    - description: The severity of the error event entry.
+
+    - name: Message
+    - type: string
+    - description: The message description of the error event entry.
+
+    - name: EventId
+    - type: string
+    - description: An implementation-dependent unique identifier for this event. This property is different from Id in the sense that Id is a unique number per event but EventId is an optional identifier that is associated with the event. The content of this property is implementation defined.
+
+    - name: AdditionalData
+    - type: dict[string, string]
+    - description: Additional information in the form of metadata field strings {VAR,val}
+
+    - name: Resolution
+    - type: string
+    - description: Suggestion for error resolution of this event.
+
+    - name: Resolved
+    - type: boolean
+    - description: Error resolution status. Indicate if the problem being reported by this error log has been resolved. This will start out 'false' by default. Setting this to 'true' will NOT result in the error log being deleted.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.Unavailable
+    - name: ServiceProviderNotify
+    - type: enum[self.Notify]
+    - default: NotSupported
+    - description: If this property value is set to 'Notify', the service provider must be notified about the Entry. If the value is set to 'Inhibit' then notification is not sent to the service provider. An event of this type requires a service action to correct the event, such as replacing the hardware part or updating code.
+
+    - name: UpdateTimestamp
+    - type: uint64
+    - description: The timestamp when any property was last modified, in milliseconds since the epoch (1 Jan 1970 00:00:00 UTC).  As only the Resolved property has a reason to change, a value that doesn't match the Timestamp property's value (which indicates when the log was created) would indicate that Resolved was changed.
+
+- enumerations:
+    - name: Level
+    - description: Possible severity levels for an error log entry.
+
+    - values:
+        - name: Emergency
+        - description: System is unusable.
+
+        - name: Alert
+        - description: Should be corrected immediately.
+
+        - name: Critical
+        - description: Critical condition.
+
+        - name: Error
+        - description: Error condition.
+
+        - name: Warning
+        - description: An error may occur if action is not taken.
+
+        - name: Notice
+        - description: Unusual condition, but not an error.
+
+        - name: Informational
+        - description: Normal operational message that does not require action.
+
+        - name: Debug
+        - description: Information useful to developers for debugging the application.
+
+    - name: Notify
+    - description: Possible ServiceProviderNotify values for an error log entry.
+
+    - values:
+        - name: NotSupported
+        - description: ServiceProviderNotify property is not supported.
+
+        - name: Notify
+        - description: The service provider should be notified about the event log.
+
+        - name: Inhibit
+        - description: The service provider should not be notified about the event log.
+
+- methods:
+    - name: GetEntry
+    - description: Returns the file descriptor to the raw Entry file, which is a binary blob. The mode of the file descriptor is to be reaad-only.
+
+    - returns:
+        - name: fd
+        - type: unixfd
+        - description: The file descriptor to the Entry file.
+
+- service_names:
+    - default: xyz.openbmc_project.Logging
+- paths:
+    - namespace: /xyz/openbmc_project/logging
+    - segments:
+        - name: Entry
+        - value: entry

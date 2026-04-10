@@ -1,0 +1,18 @@
+description: >
+    This interface defines network static gateway
+
+properties:
+    - name: Gateway
+      type: string
+      description: >
+          The value of this property shall be a next hop address assigned to the
+          ethernet interface to reach destination address.
+      errors:
+          - xyz.openbmc_project.Common.Error.NotAllowed
+
+    - name: ProtocolType
+      type: enum[xyz.openbmc_project.Network.IP.Protocol]
+      description: >
+          Protocol type can be IPv4 or IPv6 etc.
+      errors:
+          - xyz.openbmc_project.Common.Error.NotAllowed

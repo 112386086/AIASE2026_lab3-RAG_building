@@ -1,0 +1,34 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common.metadata.yaml' is defined as follows:
+  - name: Timeout
+  - meta:
+      - str: TIMEOUT_IN_MSEC=%llu
+      - type: uint64
+  - name: InvalidArgument
+  - meta:
+      - str: ARGUMENT_NAME=%s
+      - type: string
+      - str: ARGUMENT_VALUE=%s
+      - type: string
+  - name: InternalFailure
+  - level: ERR
+  - name: InsufficientPermission
+  - level: INFO
+  - name: NotAllowed
+  - level: INFO
+  - meta:
+      - str: REASON=%s
+      - type: string
+  - name: NoCACertificate
+  - level: ERR
+  - name: TooManyResources
+  - level: INFO
+  - name: ResourceNotFound
+  - level: INFO
+  - meta:
+      - str: RESOURCE=%s
+      - type: string
+  - name: UnsupportedRequest
+  - level: INFO
+  - meta:
+      - str: REASON=%s
+      - type: string

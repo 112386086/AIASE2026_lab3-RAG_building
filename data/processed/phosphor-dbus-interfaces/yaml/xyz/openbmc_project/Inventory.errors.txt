@@ -1,0 +1,5 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory.errors.yaml' is defined as follows:
+  - name: NotPresent
+  - description: The inventory is not present.
+  - name: Nonfunctional
+  - description: The inventory is nonfunctional.

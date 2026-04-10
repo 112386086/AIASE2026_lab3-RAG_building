@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Network\VLAN.interface.yaml' is defined as follows:
+Description: This defines VLAN specific parameters.
+- description: This defines VLAN specific parameters.
+
+- properties:
+    - name: Id
+    - type: uint32
+    - flags:
+      - const
+    - description: VLAN Identifier.

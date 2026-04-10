@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\FactoryReset.interface.yaml' is defined as follows:
+Description: An interface to reset the target service to its factory state.
+- description: An interface to reset the target service to its factory state.
+
+- methods:
+    - name: Reset
+    - description: Generic method to start factory reset. Implemented by each service.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.InternalFailure

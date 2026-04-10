@@ -1,0 +1,103 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item.interface.yaml' is defined as follows:
+Description: Implement to provide basic item attributes.  Required by all objects within the inventory namespace.
+Any service implementing Inventory.Item on one or more objects must implement org.freedesktop.DBus.ObjectManager on /xyz/openbmc_project/inventory.
+- description: Implement to provide basic item attributes.  Required by all objects within the inventory namespace.
+Any service implementing Inventory.Item on one or more objects must implement org.freedesktop.DBus.ObjectManager on /xyz/openbmc_project/inventory.
+
+- properties:
+    - name: PrettyName
+    - type: string
+    - description: The human readable name of the item.
+
+    - name: Present
+    - type: boolean
+    - description: Whether or not the item is present. A "Present" of false is mapped to a Redfish "Status""State" of "Absent".
+
+- associations:
+    - name: containing
+    - description: Any inventory Items (usually Boards or Chassis) can optionally implement the 'containing' association to provide one or more links to Items which it physically contains.
+
+    - reverse_name: contained_by
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item
+    - name: contained_by
+    - description: Any inventory Items can optionally implement the 'contained_by' association to provide a link to exactly one Item (usually a Board or Chassis) which physically contains it.
+
+    - reverse_name: containing
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item
+    - name: cooled_by
+    - description: Objects that implement Item can optionally implement the 'cooled_by' association to provide a link to one or more fans.
+
+    - reverse_name: cooling
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.Fan
+    - name: fault_identified_by
+    - description: Objects that implement Item can optionally implement the 'fault_identified_by' association to provide a link to one or more LED Groups.
+
+    - reverse_name: fault_identifying
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Led.Group
+    - name: identified_by
+    - description: Objects that implement Item can optionally implement the 'identified_by' association to provide a link to one or more LED Groups.
+
+    - reverse_name: identifying
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Led.Group
+    - name: measured_by
+    - description: Objects that implement Item can optionally implement the 'measured_by' association to provide a link to one or more metrics.
+
+    - reverse_name: measuring
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Metrics
+    - name: monitored_by
+    - description: Any inventory Item (usually Boards or Chassis) can optionally implement the 'monitored_by' association to provide a link to the chassis intrusion sensor that is monitoring its security state against intrusion events. Objects that implement Item can optionally implement the 'monitored_by' association to provide links to one or more detectors that monitors its state.
+
+    - reverse_name: monitoring
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Chassis.Intrusion
+      - xyz.openbmc_project.State.Leak.Detector
+    - name: powered_by
+    - description: Objects that implement Item can optionally implement the 'powered_by' association to provide a link to one or more power supplies.
+
+    - reverse_name: powering
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.PowerSupply
+    - name: throttled_by
+    - description: Objects that implement Chassis can optionally implement the 'throttled_by' association to provide a link to throttle.
+
+    - reverse_name: throttling
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Control.Power.Throttle
+    - name: sensors
+    - description: Sensors may implement an 'inventory' to 'sensors' association with the inventory item related to it.
+
+    - reverse_name: inventory
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Sensor.Value
+    - name: authenticated_by
+    - description: Objects that implement Item can optionally implement the "authenticated_by" association to provide a link to the component integrity object that authenticates this item.
+
+    - reverse_name: authenticating
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Attestation.ComponentIntegrity
+    - name: protected_by
+    - description: Objects that implement Item can optionally implement the "protected_by" association to provide a link to the target trusted component object that protects this item.
+
+    - reverse_name: protecting
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.TrustedComponent
+    - name: connected_to
+    - description: Objects that implement Item can optionally implement the 'connected_to' association to provide a link to cables.
+
+    - reverse_name: connecting
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.Cable
+    - name: controlled_by
+    - description: Object that implements Item can optionally implement the 'controlled_by' association to provide a link to one or more control interfaces.
+    - reverse_name: controlling
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Control.Valve
+      - xyz.openbmc_project.Control.Power.Cap
+- paths:
+    - namespace: /xyz/openbmc_project/inventory

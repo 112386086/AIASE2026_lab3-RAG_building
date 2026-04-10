@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Pump.events.yaml' is defined as follows:
+- version: 1.0.0
+- errors:
+    - name: PumpFailed
+    - severity: critical
+    - metadata:
+        - name: PumpName
+        - description: The name or identifier of the pump.
+        - type: object_path
+        - primary: True
+    - errno: EIO
+    - redfish-mapping: Environmental.PumpFailed
+- events:
+    - name: PumpRestored
+    - metadata:
+        - name: PumpName
+        - description: The name or identifier of the pump.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: Environmental.PumpRestored

@@ -1,0 +1,19 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Host.metadata.yaml' is defined as follows:
+  - name: SoftOffTimeout
+  - inherits:
+    - xyz.openbmc_project.Common.Timeout
+  - name: HostStartFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure
+  - name: HostMinStartFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure
+  - name: HostShutdownFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure
+  - name: HostStopFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure
+  - name: HostRebootFailure
+  - inherits:
+    - xyz.openbmc_project.State.SystemdTarget.Failure

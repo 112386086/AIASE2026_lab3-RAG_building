@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Memory\MemoryECC.errors.yaml' is defined as follows:
+  - name: isLoggingLimitReached
+  - description: ECC collection limit is reached.
+  - name: ceCount
+  - description: Correctable ECC/other correctable memory error.
+  - name: ueCount
+  - description: Uncorrectable ECC/other uncorrectable memory error.

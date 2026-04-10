@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMCRedundancy.interface.yaml' is defined as follows:
+Description: An interface to describe the primary BMC within a multi-BMC environment.
+- description: An interface to describe the primary BMC within a multi-BMC environment.
+
+- properties:
+    - name: ActivePrimaryBMC
+    - type: object_path
+    - description: indicates the active-primary BMC object path, looks like: "/xyz/openbmc_project/inventory/system/chassis0/bmc0"

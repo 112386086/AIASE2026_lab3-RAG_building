@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMC.errors.yaml' is defined as follows:
+  - name: MultiUserTargetFailure
+  - description: The systemd multi-user.target failed to complete

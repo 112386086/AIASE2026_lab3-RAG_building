@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Device.errors.yaml' is defined as follows:
+  - name: ReadFailure
+  - description: Failed to read from device.

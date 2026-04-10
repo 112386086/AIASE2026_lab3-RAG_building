@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Dump\Create.metadata.yaml' is defined as follows:
+  - name: Disabled
+  - level: ERR
+  - name: QuotaExceeded
+  - meta:
+      - str: REASON=%s
+      - type: string

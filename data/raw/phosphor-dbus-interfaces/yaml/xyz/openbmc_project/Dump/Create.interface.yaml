@@ -1,0 +1,117 @@
+description: >
+    Implement to capture various types of dumps from the host or BMC. This
+    interface is for user to request a particular type of dump.
+
+    Any OpenBMC implementation should provide one implementation of
+    xyz.openbmc_project.Dump.Create per dump type on
+    /xyz/openbmc_project/dump/<dump type>. On multi-host or on multi-BMC systems
+    the instance number can be added to the path to differentiate, for example
+    /xyz/openbmc_project/dump/<dump type><instance-id>.
+
+methods:
+    - name: CreateDump
+      description: >
+          Method to create a manual Dump.
+      parameters:
+          - name: AdditionalData
+            type: dict[string, variant[string,uint64]]
+            description: >
+                The additional data, if any, for initiating the dump. The key in
+                this case should be an implementation specific enum defined for
+                the specific type of dump either in xyz or in a domain. The
+                values can be either a string or a 64 bit number. The
+                enum-format string is required to come from a parallel class
+                with this specific Enum name. All of the Enum strings should be
+                in the format 'domain.Dump.Create.CreateParameters.ParamName'.
+                e.g.:
+                  {
+                    "key1": "value1",
+                    "key2": "value2"
+                  }
+                ends up in AdditionaData like:
+                  ["KEY1=value1", "KEY2=value2"]
+      returns:
+          - name: Path
+            type: object_path
+            description: >
+                The object path of the object that implements
+                xyz.openbmc_project.Common.Progress to track the progress of the
+                dump
+      errors:
+          - xyz.openbmc_project.Common.File.Error.Open
+          - xyz.openbmc_project.Common.File.Error.Write
+          - xyz.openbmc_project.Dump.Create.Error.Disabled
+          - xyz.openbmc_project.Dump.Create.Error.QuotaExceeded
+          - xyz.openbmc_project.Common.Error.NotAllowed
+          - xyz.openbmc_project.Common.Error.InvalidArgument
+          - xyz.openbmc_project.Common.Error.Unavailable
+
+enumerations:
+    - name: CreateParameters
+      description: >
+          Additional parameters for creating the dump.
+      values:
+          - name: "OriginatorId"
+            description: >
+                Unique Id of the originator of the respective operation. This
+                property is defined in xyz.openbmc_project.Common.OriginatedBy
+                interface.
+          - name: "OriginatorType"
+            description: >
+                Type of the originator that initiated the respective operation.
+                This property is defined in xyz.openbmc_project.
+                Common.OriginatedBy interface.
+          - name: "DumpType"
+            description: >
+                Type of the BMC dump to be collected
+          - name: "FilePath"
+            description: >
+                The path to a file to create the dump, for example a systemd
+                core-dump.
+          - name: "ErrorType"
+            description: >
+                Specifies the type of the error that triggered the BMC dump
+                collection. This is a string identifier for the error type. The
+                type of the error dictates the kind of debug data collected
+                during the dump process.
+          - name: "EventId"
+            description: >
+                The identifier for an event that triggers the BMC dump. When a
+                BMC dump is initiated as a response to a specific system event,
+                this parameter can be supplied with the unique ID associated
+                with that event. By linking the dump to an event ID, the system
+                can collate additional, relevant diagnostic data or add this
+                into the dump to aid in providing a clearer context.
+
+    - name: DumpType
+      description: >
+          Possible types of BMC Dump.
+      values:
+          - name: "ApplicationCored"
+            description: >
+                Dump triggered due to application core.
+          - name: "UserRequested"
+            description: >
+                Dump triggered by the user.
+          - name: "ErrorLog"
+            description: >
+                This type of dump is triggered in response to a specific error
+                commit. The error type needs to be specified in the "ErrorType"
+                field. If no parameters are provided, a default dump will be
+                generated.
+          - name: "Ramoops"
+            description: >
+                Dump triggered due to Ramoops type error commit.
+
+service_names:
+    - default: xyz.openbmc_project.Dump.Manager
+
+paths:
+    - namespace: /xyz/openbmc_project/dump
+      segments:
+          - name: BMC
+            value: bmc
+          - name: System
+            value: system
+          - name: NIC
+            value: nic

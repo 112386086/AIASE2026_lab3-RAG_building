@@ -1,0 +1,6 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Chassis\Common.errors.yaml' is defined as follows:
+  - name: UnsupportedCommand
+  - description: An unsupported command was attempted.
+
+  - name: IOError
+  - description: An IO error occurred.

@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Battery.interface.yaml' is defined as follows:
+Description: Battery interface should be implemented on those objects which represent a Battery. For example, this interface can be implemented by a battery inventory item that provides backup for a Real Time Clock (RTC).
+- description: Battery interface should be implemented on those objects which represent a Battery. For example, this interface can be implemented by a battery inventory item that provides backup for a Real Time Clock (RTC).

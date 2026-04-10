@@ -1,0 +1,17 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\Common.errors.yaml' is defined as follows:
+  - name: UserNameExists
+  - description: Specified user name already exists.
+  - name: UserNameDoesNotExist
+  - description: Specified user name does not exist.
+  - name: UserNameGroupFail
+  - description: Specified Group related restriction failure for user name.
+  - name: UserNamePrivFail
+  - description: Specified privilege related restriction failure for user name.
+  - name: NoResource
+  - description: No resource available.
+  - name: PrivilegeMappingExists
+  - description: Specified privilege mapping already exists.
+  - name: GroupNameExists
+  - description: Specified group name already exists.
+  - name: GroupNameDoesNotExist
+  - description: Specified group name does not exist.

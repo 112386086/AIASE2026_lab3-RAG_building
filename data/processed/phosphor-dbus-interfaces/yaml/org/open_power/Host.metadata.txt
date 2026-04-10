@@ -1,0 +1,15 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Host.metadata.yaml' is defined as follows:
+  - name: Event
+  - level: ERR
+  - meta:
+      - str: ESEL=%s
+      - type: string
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Inventory
+  - name: MaintenanceProcedure
+  - level: ERR
+  - meta:
+      - str: ESEL=%s
+      - type: string
+  - inherits:
+    - org.open_power.Common.Callout.Procedure

@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\CpuCore.interface.yaml' is defined as follows:
+Description: Implement to provide CPU core attributes.
+- description: Implement to provide CPU core attributes.
+
+- properties:
+    - name: Microcode
+    - type: uint32
+    - description: The microcode information for this processor
+
+    - default: 0

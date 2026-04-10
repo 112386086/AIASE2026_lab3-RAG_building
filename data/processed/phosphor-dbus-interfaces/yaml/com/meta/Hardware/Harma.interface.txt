@@ -1,0 +1,37 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\meta\Hardware\Harma.interface.yaml' is defined as follows:
+Description: This interface is never intended to be instantiated, but is used to define devices for Harma.
+- description: This interface is never intended to be instantiated, but is used to define devices for Harma.
+
+- enumerations:
+    - name: Retimer
+    - description: The compatible hardware strings for the retimer on Harma.
+
+    - values:
+        - name: PT5161L
+    - name: CPLD
+    - description: The compatible hardware strings for the CPLD on Harma.
+
+    - values:
+        - name: LCMXO3LF_4300C_mb
+        - name: LCMXO3LF_2100C_scm
+        - name: LCMXO3D_9400HC_aegis
+    - name: SPI
+    - description: The compatible hardware strings for the SPI flash on Harma.
+
+    - values:
+        - name: Host
+    - name: VR
+    - description: The compatible hardware strings for the VR on Harma.
+
+    - values:
+        - name: ISL69269_vcore0
+        - name: ISL69269_vcore1
+        - name: ISL69269_pvdd11
+        - name: XDPE192C3B_vcore0
+        - name: XDPE192C3B_vcore1
+        - name: XDPE19283B_pvdd11
+    - name: Boards
+    - description: The compatible hardware strings for the Boards on Harma.
+
+    - values:
+        - name: MB

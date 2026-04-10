@@ -1,0 +1,12 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\FieldMode.interface.yaml' is defined as follows:
+Description: An interface to enable field mode, which, when enabled, indicates that the system is in production.
+- description: An interface to enable field mode, which, when enabled, indicates that the system is in production.
+
+- properties:
+    - name: FieldModeEnabled
+    - type: boolean
+    - description: Keeps track of whether the BMC is in field mode. Enabling field mode is intended to be a one-way operation. Therefore the application implementing this interface could return a NotAllowed error when the user attempts to set the property value to false.
+
+    - default: False
+    - errors:
+      - xyz.openbmc_project.Common.Error.NotAllowed

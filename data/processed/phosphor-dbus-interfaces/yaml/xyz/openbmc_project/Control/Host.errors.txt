@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Host.errors.yaml' is defined as follows:
+  - name: CommandNotSupported
+  - description: Command is not supported

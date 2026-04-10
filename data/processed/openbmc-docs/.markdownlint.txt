@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'openbmc-docs\.markdownlint.yaml' is defined as follows:
+- default: True
+- MD013: False
+- MD024:
+  - siblings_only: True
+- MD033:
+  - allowed_elements:
+    - br
+    - sub
+    - sup

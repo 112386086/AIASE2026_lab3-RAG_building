@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Inventory\Decorator\Asset.interface.yaml' is defined as follows:
+Description: Implement to provide item physical asset attributes.
+- description: Implement to provide item physical asset attributes.
+
+- properties:
+    - name: CCIN
+    - type: string
+    - description: Customer card identification number.

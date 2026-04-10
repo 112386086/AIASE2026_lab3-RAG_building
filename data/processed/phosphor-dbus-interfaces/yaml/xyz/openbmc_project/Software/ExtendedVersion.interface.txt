@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\ExtendedVersion.interface.yaml' is defined as follows:
+Description: An extended version string for a xyz.openbmc_project.Software.Version.
+- description: An extended version string for a xyz.openbmc_project.Software.Version.
+
+- properties:
+    - name: ExtendedVersion
+    - type: string
+    - description: Extended version of the level.

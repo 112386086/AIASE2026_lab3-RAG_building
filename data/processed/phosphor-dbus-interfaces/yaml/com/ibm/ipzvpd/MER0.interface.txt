@@ -1,0 +1,12 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\ipzvpd\MER0.interface.yaml' is defined as follows:
+Description: Implement to represent the MER0 record (contains manufacturing repair data) in IPZ VPD
+- description: Implement to represent the MER0 record (contains manufacturing repair data) in IPZ VPD
+
+- properties:
+    - name: RT
+    - type: array[byte]
+    - description: RT keyword. Contains the record name.
+
+    - name: PD_I
+    - type: array[byte]
+    - description: The "#I" keyword. Contains the repair data.

@@ -1,0 +1,11 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Threshold.metadata.yaml' is defined as follows:
+  - name: CriticalHigh
+  - level: ERR
+  - meta:
+      - str: SENSOR_DATA=%s
+      - type: string
+  - name: CriticalLow
+  - level: ERR
+  - meta:
+      - str: SENSOR_DATA=%s
+      - type: string

@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Shutdown\Inventory.errors.yaml' is defined as follows:
+  - name: Fan
+  - description: The system shut down due to not enough functional fans.

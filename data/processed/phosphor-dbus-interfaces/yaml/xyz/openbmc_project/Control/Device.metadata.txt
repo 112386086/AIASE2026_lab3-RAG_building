@@ -1,0 +1,4 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Device.metadata.yaml' is defined as follows:
+  - name: WriteFailure
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Device

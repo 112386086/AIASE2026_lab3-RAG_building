@@ -1,0 +1,12 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\PCIeSwitch.interface.yaml' is defined as follows:
+Description: Implement to provide PCIe Switch attributes. PCIe switches enable the expansion of the system's Input/Output capabilities.
+- description: Implement to provide PCIe Switch attributes. PCIe switches enable the expansion of the system's Input/Output capabilities.
+
+- associations:
+    - name: connecting
+    - description: Objects that implement Switch interface can optionally implement the connecting association to provide links to one or more Slots or Ports.
+
+    - reverse_name: connected_to
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item.PCIeSlot
+      - xyz.openbmc_project.Inventory.Connector.Port

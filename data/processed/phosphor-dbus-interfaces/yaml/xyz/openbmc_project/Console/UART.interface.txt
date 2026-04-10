@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Console\UART.interface.yaml' is defined as follows:
+Description: Serial console configuration.
+- description: Serial console configuration.
+- properties:
+    - name: Baud
+    - type: uint64
+    - description: Data transmission rate of the serial console.

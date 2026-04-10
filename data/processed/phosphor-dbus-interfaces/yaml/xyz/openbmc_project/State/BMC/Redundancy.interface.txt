@@ -1,0 +1,174 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMC\Redundancy.interface.yaml' is defined as follows:
+Description: This interface holds redundant BMC related information.
+- description: This interface holds redundant BMC related information.
+
+- properties:
+    - name: Role
+    - type: enum[self.Role]
+    - flags:
+      - readonly
+    - default: Unknown
+    - description: The redundancy role of the BMC.
+
+    - name: RedundancyEnabled
+    - type: boolean
+    - flags:
+      - readonly
+    - default: False
+    - description: If redundancy is currently enabled.  In general, this means that the BMCs are configured as active and passive and that the passive is able to be failed over to.
+
+    - name: DisableRedundancyOverride
+    - type: boolean
+    - default: False
+    - errors:
+      - xyz.openbmc_project.Common.Error.Unavailable
+    - description: This is used to immediately and persistently disable redundancy.  The use case is there are test phases where redundancy is not wanted and this is how that is accomplished.
+If set back to true, redundancy will immediately be re-enabled, assuming nothing else is preventing it.
+This can only be changed on the active BMC and when power is off, otherwise it will throw the Unavailable error.
+
+    - name: FailoversAllowed
+    - type: boolean
+    - flags:
+      - readonly
+    - default: False
+    - description: States if failovers are currently allowed. Even when redundancy is enabled, a failover may not be allowed because there are periods when doing a failover could cause issues, such as in the middle of a boot or code update.
+
+    - name: FailoverImminent
+    - type: boolean
+    - flags:
+      - readonly
+    - default: False
+    - description: There can be a grace period between a failover being requested and the failover actually starting where this will be asserted to allow for any preparation or tracing on the other BMC.
+
+    - name: FailoverInProgress
+    - type: boolean
+    - default: False
+    - flags:
+      - readonly
+    - description: Indicates that a failover is in progress.
+
+    - name: RedundancyMinimum
+    - type: size
+    - flags:
+      - readonly
+    - default: 2
+    - description: The minimum number of BMC objects needed for redundancy to be enabled.
+
+    - name: RedundancyMaximum
+    - type: size
+    - flags:
+      - readonly
+    - default: maxint
+    - description: The maximum number of BMC objects allowed to be part of the redundancy group.
+
+    - name: FunctionalMinimum
+    - type: size
+    - flags:
+      - readonly
+    - default: 1
+    - description: The minimum number of BMC objects needed for the redundancy group to remain functional.
+
+    - name: DisabledRedundancyReasons
+    - type: array[enum[self.DisabledRedundancyReason]]
+    - flags:
+      - readonly
+    - description: If redundancy cannot be enabled and RedundancyEnabled is false, this contains the reasons why.
+
+    - name: FailoversNotAllowedReason
+    - type: enum[self.FailoversNotAllowedReason]
+    - flags:
+      - readonly
+    - default: None
+    - description: If failovers aren't allowed and FailoversAllowed is false, this contains the reason why.
+
+- enumerations:
+    - name: Role
+    - description: Defines the redundancy role of the BMC.
+
+    - values:
+        - name: Unknown
+        - description: The role is unknown.
+
+        - name: Active
+        - description: The role is for the active BMC.  This is the fully functioning BMC and the main point of contact for external users.
+
+        - name: Passive
+        - description: The role is for the passive BMC, which is the opposite of the active BMC.  It may not have all services running, and would require a failover to become active.
+
+    - name: DisabledRedundancyReason
+    - description: The possible reasons why redundancy is disabled.
+
+    - values:
+        - name: BMCNotActive
+        - description: The BMC doesn't have the Active role.
+
+        - name: ManuallyDisabled
+        - description: Redundancy has been manually disabled.
+
+        - name: SiblingMissing
+        - description: The sibling BMC is missing.
+
+        - name: SiblingNotAlive
+        - description: The sibling BMC is not alive.
+
+        - name: SiblingNotProvisioned
+        - description: The sibling BMC is not provisioned.
+
+        - name: SiblingNotPassive
+        - description: The sibling BMC does not have the Passive role.
+
+        - name: SiblingNotAtReady
+        - description: The sibling BMC is not at the Ready state.
+
+        - name: SiblingCannotBeActive
+        - description: There is something wrong with the sibling BMC such that it can never be active.
+
+        - name: CodeVersionMismatch
+        - description: The BMCs have different versions of code.
+
+        - name: SystemHWConfigIssue
+        - description: The non-BMC hardware configuration does not allow redundancy. Something is missing, broken, or deconfigured.
+
+        - name: RedundancyOffAtRuntimeStart
+        - description: Redundancy wasn't already enabled at the start of host runtime.
+
+        - name: NetworkError
+        - description: There is a network error between the BMCs.
+
+        - name: DataSyncFailed
+        - description: Data sync between the BMCs is failing.
+
+    - name: FailoversNotAllowedReason
+    - description: The possible reasons why failovers aren't allowed.
+
+    - values:
+        - name: None
+        - description: There is no reason.
+
+        - name: NoRedundancy
+        - description: Redundancy is not enabled.
+
+        - name: FailoverInProgress
+        - description: A failover is already in progress.
+
+        - name: FullSyncNotComplete
+        - description: A full data sync is not complete.
+
+        - name: WrongSystemState
+        - description: The system is not in the proper state, e.g. not off or at runtime.
+
+- signals:
+    - name: Heartbeat
+    - description: This signal is to be emitted periodically from the management daemon to let the sibling BMC interface daemon know it is alive.
+
+- paths:
+    - namespace: /xyz/openbmc_project/state
+    - segments:
+        - name: BMC
+        - description: The object representing _this_ BMC is always at bmc0.
+
+        - value: bmc0
+        - name: SiblingBMC
+        - description: The object representing _the sibling_ BMC is always at bmc1 in a 2 BMC system.
+
+        - value: bmc1

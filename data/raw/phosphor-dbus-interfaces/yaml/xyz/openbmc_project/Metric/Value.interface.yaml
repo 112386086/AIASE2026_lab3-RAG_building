@@ -1,0 +1,304 @@
+description: >
+    This interface provides the Board Manager Metric values for resource
+    utilization.
+
+properties:
+    - name: Value
+      type: double
+      description: >
+          The current metric value.
+      flags:
+          - readonly
+    - name: MaxValue
+      type: double
+      default: infinity
+      flags:
+          - readonly
+      description: >
+          The maximum supported metric value.
+    - name: MinValue
+      type: double
+      default: -infinity
+      flags:
+          - readonly
+      description: >
+          The minimum supported metric value.
+    - name: Unit
+      type: enum[self.Unit]
+      description: >
+          The unit for metric value. For example, memory in bytes, CPU in
+          percent, reboots in count.
+      flags:
+          - const
+
+enumerations:
+    - name: Unit
+      description: >
+          Metric value unit.
+      values:
+          - name: Bytes
+            description: >
+                Unit to indicate bytes.
+          - name: Count
+            description: >
+                Unit to indicate counts.
+          - name: Frequency
+            description: >
+                Unit to indicate frequency in hertz.
+          - name: Percent
+            description: >
+                Unit to indicate percentage.
+          - name: Seconds
+            description: >
+                Unit to indicate duration in seconds.
+
+associations:
+    - name: measuring
+      description: >
+          Metrics measure the inventory item's resource utilization, therefore
+          implement an association to the inventory item.
+      reverse_name: measured_by
+      required_endpoint_interfaces:
+          - xyz.openbmc_project.Inventory.Item
+
+paths:
+    - namespace: /xyz/openbmc_project/metric
+      description: >
+          The root path for all Metrics.
+      segments:
+          - name: TotalMemory
+            description: >
+                The total memory metric.
+            value: memory/total
+          - name: FreeMemory
+            description: >
+                The free memory metric.
+            value: memory/free
+          - name: AvailableMemory
+            description: >
+                The available memory metric.
+            value: memory/available
+          - name: SharedMemory
+            description: >
+                The shared memory utilization.
+            value: memory/shared
+          - name: BufferedAndCachedMemory
+            description: >
+                The buffered and cached memory memory utilization.
+            value: memory/buffered_and_cached
+          - name: KernelCPU
+            description: >
+                The kernel CPU utilization.
+            value: cpu/kernel
+          - name: UserCPU
+            description: >
+                The user CPU utilization.
+            value: cpu/user
+          - name: TotalCPU
+            description: >
+                The total CPU utilization.
+            value: cpu/total
+          - name: Storage
+            description: >
+                The different types of available storage, such as tmp, var etc.
+                Each storage type will have path relative to storage/, for
+                example storage/tmp for temporary storage.
+            value: storage
+          - name: ReadWriteStorage
+            description: >
+                The available read write storage. This storage path has been
+                explicitly added to the interface file as it gets used in BMCWeb
+                and free storage metric gets exposed via Redfish.
+            value: storage/rw
+          - name: RebootCount
+            description: >
+                Reboot statistic to track number of times device rebooted
+                without failure.
+            value: reboot/count
+          - name: RebootCountWithFailure
+            description: >
+                Reboot statistic to track number of times device rebooted
+                because of a failure.
+            value: reboot/count_with_failure
+          - name: PCIeCorrectableErrorCount
+            description: >
+                The total number of correctable errors for a PCIe device.
+            value: pcie/correctable_error_count
+          - name: PCIeNonFatalErrorCount
+            description: >
+                The total number of non-fatal errors for a PCIe device.
+            value: pcie/non_fatal_error_count
+          - name: PCIeFatalErrorCount
+            description: >
+                The total number of fatal errors for a PCIe device.
+            value: pcie/fatal_error_count
+          - name: PCIeL0ToRecoveryCount
+            description: >
+                The total number of times the PCIe link states transitioned from
+                L0 to the recovery state for a device.
+            value: pcie/l0_to_recovery_count
+          - name: PCIeReplayCount
+            description: >
+                The total number of PCIe replays issued by a device. A replay is
+                a retransmission of a TLP and occurs because the ACK timer is
+                expired, which means that the receiver did not send the ACK or
+                this device did not properly decode the ACK.
+            value: pcie/replay_count
+          - name: PCIeReplayRolloverCount
+            description: >
+                The total number of PCIe replay rollovers issued by a device. A
+                replay rollover occurs when consecutive replays failed to
+                resolve the errors on the link, which means that this device
+                forced the link into the recovery state.
+            value: pcie/replay_rollover_count
+          - name: PCIeNAKSentCount
+            description: >
+                The total number of Negative Acks issued on the PCIe link by a
+                device.
+            value: pcie/nak_sent_count
+          - name: PCIeNAKReceivedCount
+            description: >
+                The total number of Negative Acks issued on the PCIe link by a
+                receiver.
+            value: pcie/nak_received_count
+          - name: PCIeUnsupportedRequestCount
+            description: >
+                The total number of PCIe unsupported requests received by a
+                device.
+            value: pcie/unsupported_request_count
+          - name: NICTXBytes
+            description: >
+                The total number of bytes transmitted on a port since reset.
+            value: nic/tx_bytes
+          - name: NICRXBytes
+            description: >
+                The total number of bytes received on a port since reset.
+            value: nic/rx_bytes
+          - name: NICTXMulticastFrames
+            description: >
+                The total number of good multicast frames transmitted on a port
+                since reset.
+            value: nic/tx_multicast_frames
+          - name: NICRXMulticastFrames
+            description: >
+                The total number of valid multicast frames received on a port
+                since reset.
+            value: nic/rx_multicast_frames
+          - name: NICTXUnicastFrames
+            description: >
+                The total number of good unicast frames transmitted on a port
+                since reset.
+            value: nic/tx_unicast_frames
+          - name: NICRXUnicastFrames
+            description: >
+                The total number of valid unicast frames received on a port
+                since reset.
+            value: nic/rx_unicast_frames
+          - name: NICTXBroadcastFrames
+            description: >
+                The total number of good broadcast frames transmitted on a port
+                since reset.
+            value: nic/tx_broadcast_frames
+          - name: NICRXBroadcastFrames
+            description: >
+                The total number of valid broadcast frames received on a port
+                since reset.
+            value: nic/rx_broadcast_frames
+          - name: NICRXFCSErrors
+            description: >
+                The total number of frames received with frame check sequence
+                (FCS) errors on a port since reset.
+            value: nic/rx_fcs_errors
+          - name: NICRXFrameAlignmentErrors
+            description: >
+                The total number of frames received with alignment errors on a
+                port since reset.
+            value: nic/rx_frame_alignment_errors
+          - name: NICRXFalseCarrierErrors
+            description: >
+                The total number of false carrier errors received from phy on a
+                port since reset.
+            value: nic/rx_false_carrier_errors
+          - name: NICRXUndersizeFrames
+            description: >
+                The total number of frames that are smaller than the minimum
+                frame size of 64 bytes.
+            value: nic/rx_undersize_frames
+          - name: NICRXOversizeFrames
+            description: >
+                The total number of frames that exceed the maximum frame size.
+            value: nic/rx_oversize_frames
+          - name: NICTXPauseXONFrames
+            description: >
+                The total number of XON frames transmitted to the nic.
+            value: nic/tx_pause_xon_frames
+          - name: NICRXPauseXONFrames
+            description: >
+                The total number of flow control frames from the nic to resume
+                transmission.
+            value: nic/rx_pause_xon_frames
+          - name: NICTXPauseXOFFFrames
+            description: >
+                The total number of XOFF frames transmitted to the nic.
+            value: nic/tx_pause_xoff_frames
+          - name: NICRXPauseXOFFFrames
+            description: >
+                The total number of flow control frames from the nic to pause
+                transmission.
+            value: nic/rx_pause_xoff_frames
+          - name: NICTXSingleCollisions
+            description: >
+                The times that a successfully transmitted frame encountered a
+                single collision.
+            value: nic/tx_single_collisions
+          - name: NICTXMultipleCollisions
+            description: >
+                The times that a transmitted frame encountered 2-15 collisions.
+            value: nic/tx_multiple_collisions
+          - name: NICTXExcessiveCollisions
+            description: >
+                The number of times a single transmitted frame encountered more
+                than 15 collisions.
+            value: nic/tx_excessive_collisions
+          - name: NICTXLateCollisions
+            description: >
+                The total number of collisions that occurred after one slot time
+                as defined by IEEE 802.3.
+            value: nic/tx_late_collisions
+          - name: PowerLimitThrottleDuration
+            description: >
+                The total duration of throttling caused by a power limit of the
+                device since reset.
+            value: power_limit_throttle_duration
+          - name: ThermalLimitThrottleDuration
+            description: >
+                The total duration of throttling caused by a thermal limit of
+                the device since reset.
+            value: thermal_limit_throttle_duration
+          - name: OperatingFrequency
+            description: >
+                The operating frequency of a device. Examples are operating
+                frequency of a processor/memory/etc. Measured in hertz.
+            value: operating_frequency
+    - name: BMC
+      description: >
+          The BMC metrics.
+      value: /xyz/openbmc_project/metric/bmc
+    - name: Port
+      description: >
+          A Port's metrics. The inventory item associated with the port metrics
+          object is expected to implement Connector.Port. The port ID
+          (index/name/etc) is appended to the path.
+      value: /xyz/openbmc_project/metric/port_
+    - name: CPU
+      description: >
+          A CPU's metrics. The inventory item associated with the CPU metrics
+          object is expected to implement Item.Cpu. The CPU ID (index/name/etc)
+          is appended to the metrics object path value below.
+      value: /xyz/openbmc_project/metric/cpu_
+    - name: GPU
+      description: >
+          A GPU's metrics. The inventory item associated with the GPU metrics
+          object is expected to implement Item.Accelerator. The GPU ID
+          (index/name/etc) is appended to the metrics object path value below.
+      value: /xyz/openbmc_project/metric/gpu_

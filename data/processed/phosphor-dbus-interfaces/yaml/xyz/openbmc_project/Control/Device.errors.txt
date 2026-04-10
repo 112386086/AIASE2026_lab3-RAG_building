@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Device.errors.yaml' is defined as follows:
+  - name: WriteFailure
+  - description: Failed to write to device.

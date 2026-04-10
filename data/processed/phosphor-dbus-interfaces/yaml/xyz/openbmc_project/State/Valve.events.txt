@@ -1,0 +1,21 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Valve.events.yaml' is defined as follows:
+- version: 1.0.0
+- events:
+    - name: ValveOpen
+    - metadata:
+        - name: ValveName
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the valve.
+    - en:
+      - description: The valve is open for coolant flow to resume.
+      - message: The {ValveName} is open for coolant flow.
+    - name: ValveClose
+    - metadata:
+        - name: ValveName
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the valve.
+    - en:
+      - description: The valve is closed for coolant flow to stop.
+      - message: The {ValveName} is closed for coolant flow.

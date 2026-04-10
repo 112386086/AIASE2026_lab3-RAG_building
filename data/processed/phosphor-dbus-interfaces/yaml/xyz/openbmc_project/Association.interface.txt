@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Association.interface.yaml' is defined as follows:
+Description: Implement to represent arbitrary associations between objects in the DBus namespace.
+An object implementing Association describes a one way, one to many association where the parent object is associated to the objects in the Endpoints property, with the association type defined as the name of the object implementing Association.
+- description: Implement to represent arbitrary associations between objects in the DBus namespace.
+An object implementing Association describes a one way, one to many association where the parent object is associated to the objects in the Endpoints property, with the association type defined as the name of the object implementing Association.
+
+- properties:
+    - name: endpoints
+    - type: array[object_path]
+    - description: An array of association endpoints.

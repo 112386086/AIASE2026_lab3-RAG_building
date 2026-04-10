@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Dimm\MemoryLocation.interface.yaml' is defined as follows:
+Description: Implement to provide Memory connection information to sockets and memory controllers.
+- description: Implement to provide Memory connection information to sockets and memory controllers.
+
+- properties:
+    - name: Socket
+    - type: byte
+    - description: CPU socket.
+
+    - name: MemoryController
+    - type: byte
+    - description: Memory controller number of given socket.
+
+    - name: Channel
+    - type: byte
+    - description: Channel number of given memory controller.
+
+    - name: Slot
+    - type: byte
+    - description: Slot of given channel.

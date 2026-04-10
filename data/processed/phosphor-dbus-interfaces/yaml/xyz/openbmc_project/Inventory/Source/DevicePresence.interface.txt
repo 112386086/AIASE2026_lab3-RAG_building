@@ -1,0 +1,15 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Source\DevicePresence.interface.yaml' is defined as follows:
+Description: Information for a daemon to expose if hardware has been detected based on xyz.openbmc_project.Configuration.GPIODeviceDetect interface
+- description: Information for a daemon to expose if hardware has been detected based on xyz.openbmc_project.Configuration.GPIODeviceDetect interface
+
+- properties:
+    - name: Name
+    - type: string
+    - description: Used by entity-manager to identify which hw was detected. For internal use by entity-manager.
+
+    - name: Compatible
+    - type: string
+    - description: Used by entity-manager to identify which hw was detected. For internal use by entity-manager. Can be empty.
+
+- paths:
+    - namespace: /xyz/openbmc_project/inventory_source

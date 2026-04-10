@@ -1,0 +1,45 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Power\Throttle.interface.yaml' is defined as follows:
+Description: This interface provides information related to the throttle status of a component.
+- description: This interface provides information related to the throttle status of a component.
+
+- properties:
+    - name: ThrottleCauses
+    - type: array[enum[self.ThrottleReasons]]
+    - flags:
+      - readonly
+    - description: This property shall contain the cause(s) of the component being throttled when the Throttled property is true or an empty array if not being throttled.
+
+    - name: Throttled
+    - type: boolean
+    - flags:
+      - readonly
+    - default: False
+    - description: This property shall indicate whether the component is throttled.
+
+- enumerations:
+    - name: ThrottleReasons
+    - description: The possible reasons a component could be throttled
+
+    - values:
+        - name: ClockLimit
+        - description: The cause of the component being throttled is a clock limit.
+
+        - name: ManagementDetectedFault
+        - description: The cause of the component being throttled is a fault detected by management hardware or firmware
+
+        - name: PowerLimit
+        - description: The cause of the component being throttled is a power limit.
+
+        - name: ThermalLimit
+        - description: The cause of the component being throttled is a thermal limit.
+
+        - name: Unknown
+        - description: The cause of the component being throttled is not known.
+
+- associations:
+    - name: throttling
+    - description: Objects implementing Throttle can optionally implement the 'throttling' association to provide a link to an Item.
+
+    - reverse_name: throttled_by
+    - required_endpoint_interfaces:
+      - xyz.openbmc_project.Inventory.Item

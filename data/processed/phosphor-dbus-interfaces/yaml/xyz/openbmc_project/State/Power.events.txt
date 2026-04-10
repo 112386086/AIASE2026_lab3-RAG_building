@@ -1,0 +1,50 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Power.events.yaml' is defined as follows:
+- version: 1.0.1
+- errors:
+    - name: PowerRailFault
+    - severity: error
+    - metadata:
+        - name: PowerRail
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the power rail.
+        - name: FailureData
+        - type: string
+        - description: An [optional] set of additional failure data.
+    - en:
+      - description: A fault has been detected on a power rail.
+      - message: A fault has been detected on power rail '{PowerRail}'.
+    - errno: EIO
+    - name: VoltageRegulatorFault
+    - severity: error
+    - metadata:
+        - name: VoltageRegulator
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the voltage regulator.
+        - name: FailureData
+        - type: string
+        - description: An [optional] set of additional failure data.
+    - en:
+      - description: A fault has been detected from a voltage regulator.
+      - message: A fault has been detected on voltage regulator '{VoltageRegulator}'
+    - errno: EIO
+- events:
+    - name: PowerRailFaultRecovered
+    - metadata:
+        - name: PowerRail
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the power rail.
+    - en:
+      - description: A fault detected on a power rail has cleared.
+      - message: A fault has cleared on power rail '{PowerRail}'.
+    - name: VoltageRegulatorFaultRecovered
+    - metadata:
+        - name: VoltageRegulator
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the voltage regulator.
+    - en:
+      - description: A fault detected on a voltage regulator has cleared.
+      - message: A fault has cleared on voltage regulator '{VoltageRegulator}'.

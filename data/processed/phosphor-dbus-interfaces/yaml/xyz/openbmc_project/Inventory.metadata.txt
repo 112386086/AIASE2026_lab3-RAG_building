@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory.metadata.yaml' is defined as follows:
+  - name: NotPresent
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Inventory
+  - name: Nonfunctional
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Inventory

@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Vrm.interface.yaml' is defined as follows:
+Description: Implement to provide VRM FRU attributes. A VRM is a voltage regulator module.
+- description: Implement to provide VRM FRU attributes. A VRM is a voltage regulator module.

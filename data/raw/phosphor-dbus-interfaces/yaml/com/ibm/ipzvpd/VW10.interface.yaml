@@ -1,0 +1,15 @@
+description: >
+    Implement to represent the VW10 record in IPZ VPD
+properties:
+    - name: RT
+      type: array[byte]
+      description: >
+          RT keyword. Contains the record name.
+    - name: DR
+      type: array[byte]
+      description: >
+          Description of the record.
+    - name: GD
+      type: array[byte]
+      description: >
+          Guard data.

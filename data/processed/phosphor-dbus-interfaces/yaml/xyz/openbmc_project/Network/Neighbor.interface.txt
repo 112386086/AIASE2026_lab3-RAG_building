@@ -1,0 +1,33 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Network\Neighbor.interface.yaml' is defined as follows:
+Description: This defines a network Neighbor mapping.
+- description: This defines a network Neighbor mapping.
+
+- properties:
+    - name: IPAddress
+    - type: string
+    - description: The IP Address of the neighbor.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.NotAllowed
+    - name: MACAddress
+    - type: string
+    - description: The low level mac address that the IP maps to.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.NotAllowed
+    - name: State
+    - type: enum[self.State]
+    - description: State the neighbor is in.
+
+    - errors:
+      - xyz.openbmc_project.Common.Error.NotAllowed
+- enumerations:
+    - name: State
+    - description: The internal state of the neighbor entry.
+
+    - values:
+        - name: Incomplete
+        - name: Reachable
+        - name: Stale
+        - name: Invalid
+        - name: Permanent

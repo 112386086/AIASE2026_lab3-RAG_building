@@ -1,0 +1,5 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Host\Boot.errors.yaml' is defined as follows:
+  - name: Checkstop
+  - description: Host checkstop condition detected
+  - name: WatchdogTimedOut
+  - description: Host watchdog timed out

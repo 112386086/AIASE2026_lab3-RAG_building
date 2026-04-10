@@ -1,0 +1,87 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Threshold\SoftShutdown.interface.yaml' is defined as follows:
+Description: Implement to provide soft shutdown class sensor thresholds.  Objects implementing Sensor.Threshold.Shutdown must be instantiated in the correct hierarchy within the sensors namespace.  The following sensor hierarchies are recognized:
+  airflow
+  altitude
+  current
+  energy
+  fan_tach
+  frequency
+  humidity
+  liquidflow
+  power
+  pressure
+  temperature
+  utilization
+  voltage
+
+Additionally, any object implementing Sensor.Threshold.SoftShutdown must also implement Sensor.Value.
+- description: Implement to provide soft shutdown class sensor thresholds.  Objects implementing Sensor.Threshold.Shutdown must be instantiated in the correct hierarchy within the sensors namespace.  The following sensor hierarchies are recognized:
+  airflow
+  altitude
+  current
+  energy
+  fan_tach
+  frequency
+  humidity
+  liquidflow
+  power
+  pressure
+  temperature
+  utilization
+  voltage
+
+Additionally, any object implementing Sensor.Threshold.SoftShutdown must also implement Sensor.Value.
+
+- properties:
+    - name: SoftShutdownHigh
+    - type: double
+    - default: NaN
+    - description: The upper bound of the soft shutdown threshold.  A value of 'NaN' is used to indicate there is no threshold of this type.
+
+    - name: SoftShutdownLow
+    - type: double
+    - default: NaN
+    - description: The lower bound of the soft shutdown threshold.  A value of 'NaN' is used to indicate there is no threshold of this type.
+
+    - name: SoftShutdownAlarmHigh
+    - type: boolean
+    - description: True if the sensor value has exceeded the defined bound. False if the sensor value has not exceeded the defined bound.
+SoftShutdownAlarmHigh may be set to False to clear an alarm condition. The behavior of setting SoftShutdownAlarmHigh to True is undefined.
+
+    - name: SoftShutdownAlarmLow
+    - type: boolean
+    - description: True if the sensor value has exceeded the defined bound. False if the sensor value has not exceeded the defined bound.
+SoftShutdownAlarmLow may be set to False to clear an alarm condition. The behavior of setting SoftShutdownAlarmLow to True is undefined.
+
+- signals:
+    - name: SoftShutdownHighAlarmAsserted
+    - description: The high threshold alarm asserted.
+
+    - properties:
+        - name: SensorValue
+        - type: double
+        - description: The sensor value that triggered the alarm change.
+
+    - name: SoftShutdownHighAlarmDeasserted
+    - description: The high threshold alarm deasserted.
+
+    - properties:
+        - name: SensorValue
+        - type: double
+        - description: The sensor value that triggered the alarm change.
+
+    - name: SoftShutdownLowAlarmAsserted
+    - description: The low threshold alarm asserted.
+
+    - properties:
+        - name: SensorValue
+        - type: double
+        - description: The sensor value that triggered the alarm change.
+
+    - name: SoftShutdownLowAlarmDeasserted
+    - description: The low threshold alarm deasserted.
+
+    - properties:
+        - name: SensorValue
+        - type: double
+        - description: The sensor value that triggered the alarm change.

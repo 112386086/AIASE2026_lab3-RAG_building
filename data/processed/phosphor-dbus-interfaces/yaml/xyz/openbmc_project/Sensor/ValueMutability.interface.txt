@@ -1,0 +1,9 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\ValueMutability.interface.yaml' is defined as follows:
+Description: Implement to provide sensor value mutability.
+- description: Implement to provide sensor value mutability.
+
+- properties:
+    - name: Mutable
+    - type: boolean
+    - default: False
+    - description: A hint to a server that provides sensor access to external users, such as an IPMI server, as to whether or not to allow external users to modify the value, via "set sensor value" commands or similar. True to allow modification (read-write). False to disallow modification (read-only).

@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Fan.events.yaml' is defined as follows:
+- version: 1.0.0
+- errors:
+    - name: FanFailed
+    - severity: critical
+    - metadata:
+        - name: FanName
+        - description: The name or identifier of the fan.
+        - type: object_path
+        - primary: True
+    - errno: EIO
+    - redfish-mapping: Environmental.FanFailed
+- events:
+    - name: FanRestored
+    - metadata:
+        - name: FanName
+        - description: The name or identifier of the fan.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: Environmental.FanRestored

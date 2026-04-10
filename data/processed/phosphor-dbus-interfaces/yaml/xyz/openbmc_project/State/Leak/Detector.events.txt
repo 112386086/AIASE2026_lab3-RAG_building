@@ -1,0 +1,29 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Leak\Detector.events.yaml' is defined as follows:
+- version: 2.0.0
+- errors:
+    - name: LeakDetectedCritical
+    - severity: critical
+    - metadata:
+        - name: DetectorName
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the leak detector.
+    - errno: EPIPE
+    - redfish-mapping: Environmental.LeakDetectedCritical
+    - name: LeakDetectedWarning
+    - severity: warning
+    - metadata:
+        - name: DetectorName
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the leak detector.
+    - errno: EPIPE
+    - redfish-mapping: Environmental.LeakDetectedWarning
+- events:
+    - name: LeakDetectedNormal
+    - metadata:
+        - name: DetectorName
+        - type: object_path
+        - primary: True
+        - description: The name or identifier of the leak detector.
+    - redfish-mapping: Environmental.LeakDetectedNormal

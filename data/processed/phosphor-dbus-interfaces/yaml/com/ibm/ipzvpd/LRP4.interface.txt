@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\ipzvpd\LRP4.interface.yaml' is defined as follows:
+Description: Implement to represent the LRP4 record in IPZ VPD
+- description: Implement to represent the LRP4 record in IPZ VPD
+
+- properties:
+    - name: RT
+    - type: array[byte]
+    - description: RT keyword. Contains the record name.
+
+    - name: VD
+    - type: array[byte]
+    - description: VD keyword. Record Version ID.
+
+    - name: TC
+    - type: array[byte]
+    - description: TC keyword.Thermal control.
+
+    - name: D4
+    - type: array[byte]
+    - description: D4 keyword.

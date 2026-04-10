@@ -1,0 +1,7 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Shutdown\Power.errors.yaml' is defined as follows:
+  - name: Fault
+  - description: The system was shut down because a power fault was detected.
+  - name: Blackout
+  - description: The system suffered a power blackout.
+  - name: Regulator
+  - description: A voltage regulator fault was detected.

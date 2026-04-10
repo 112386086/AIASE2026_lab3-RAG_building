@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\Cacheable.interface.yaml' is defined as follows:
+Description: Implement to indicate item availability changes.
+- description: Implement to indicate item availability changes.
+
+- properties:
+    - name: Cached
+    - type: boolean
+    - description: Whether or not the item is cached.  When true, the item and its remaining attributes are undefined.

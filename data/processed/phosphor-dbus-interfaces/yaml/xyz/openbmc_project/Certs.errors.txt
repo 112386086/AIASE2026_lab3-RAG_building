@@ -1,0 +1,3 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs.errors.yaml' is defined as follows:
+  - name: InvalidCertificate
+  - description: Invalid certificate file.

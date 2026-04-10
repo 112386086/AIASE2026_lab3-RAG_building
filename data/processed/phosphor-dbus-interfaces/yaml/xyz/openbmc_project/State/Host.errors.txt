@@ -1,0 +1,15 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Host.errors.yaml' is defined as follows:
+  - name: SoftOffTimeout
+  - description: Host did not shutdown within configured time.
+  - name: HostStartFailure
+  - description: The systemd obmc-host-start.target failed to complete
+  - name: HostMinStartFailure
+  - description: The systemd obmc-host-start-min.target failed to complete
+  - name: HostShutdownFailure
+  - description: The systemd obmc-host-shutdown.target failed to complete
+  - name: HostStopFailure
+  - description: The systemd obmc-host-stop.target failed to complete
+  - name: HostRebootFailure
+  - description: The systemd obmc-host-reboot.target failed to complete
+  - name: BMCNotReady
+  - description: The BMC is not in a Ready state, no host operations allowed

@@ -1,0 +1,61 @@
+description: >
+    Implement to indicate progress of ongoing boot.
+
+properties:
+    - name: BootProgress
+      type: enum[self.ProgressStages]
+      default: Unspecified
+      description: >
+          Current boot progress
+
+    - name: BootProgressLastUpdate
+      type: uint64
+      default: 0
+      description: >
+          BootProgressLastUpdate is the last time the BootProgress property was
+          updated. The time is the Epoch time, number of microseconds since 1
+          Jan 1970 00::00::00 UTC. This can be compared with the current
+          BootProgress value to know how long the boot has been on the current
+          boot step.
+
+enumerations:
+    - name: ProgressStages
+      description: >
+          The boot progress stage
+      values:
+          - name: Unspecified
+            description: >
+                Unknown state.
+          - name: PrimaryProcInit
+            description: >
+                Primary Processor Initialization
+          - name: BusInit
+            description: >
+                Processor and Memory Bus Initialization
+          - name: MemoryInit
+            description: >
+                Memory Initialization
+          - name: SecondaryProcInit
+            description: >
+                Secondary Processor Initialization
+          - name: PCIInit
+            description: >
+                PCI resource initialization
+          - name: SystemInitComplete
+            description: >
+                System firmware completed booting
+          - name: OSStart
+            description: >
+                Starting Operating System.
+          - name: OSRunning
+            description: >
+                Operating System up and running
+          - name: SystemSetup
+            description: >
+                System firmware has entered a setup state
+          - name: MotherboardInit
+            description: >
+                Motherboard/Basebord Initialization.
+          - name: OEM
+            description: >
+                OEM-defined boot progress state.

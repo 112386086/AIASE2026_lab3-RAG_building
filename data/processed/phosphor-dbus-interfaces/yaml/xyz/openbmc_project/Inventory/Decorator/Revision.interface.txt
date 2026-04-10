@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\Revision.interface.yaml' is defined as follows:
+Description: Implement to provide item versioning attributes.
+- description: Implement to provide item versioning attributes.
+
+- properties:
+    - name: Version
+    - type: string
+    - description: The item version.

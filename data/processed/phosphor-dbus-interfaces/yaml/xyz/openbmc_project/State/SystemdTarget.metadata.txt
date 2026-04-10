@@ -1,0 +1,6 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\SystemdTarget.metadata.yaml' is defined as follows:
+  - name: Failure
+  - level: ERR
+  - meta:
+      - str: SYSTEMD_RESULT=%s
+      - type: string

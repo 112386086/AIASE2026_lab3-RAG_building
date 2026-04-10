@@ -1,0 +1,5 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Threshold.errors.yaml' is defined as follows:
+  - name: CriticalHigh
+  - description: Sensor device has exceeded its upper bound.
+  - name: CriticalLow
+  - description: Sensor device has exceeded its lower bound.

@@ -1,0 +1,20 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Filter.events.yaml' is defined as follows:
+- version: 1.0.0
+- errors:
+    - name: FilterRequiresService
+    - severity: warning
+    - metadata:
+        - name: FilterName
+        - description: The name or identifier of the filter.
+        - type: object_path
+        - primary: True
+    - errno: EBADSLT
+    - redfish-mapping: Environmental.FilterRequiresService
+- events:
+    - name: FilterRestored
+    - metadata:
+        - name: FilterName
+        - description: The name or identifier of the filter.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: Environmental.FilterRestored

@@ -1,0 +1,10 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\Dump\Entry\Hostboot.interface.yaml' is defined as follows:
+Description: Implement this to add Hostboot dump management.
+Hostboot dump collects memory and hardware states in the case of a failure during hostboot booting phase.
+- description: Implement this to add Hostboot dump management.
+Hostboot dump collects memory and hardware states in the case of a failure during hostboot booting phase.
+
+- properties:
+    - name: ErrorLogId
+    - type: uint32
+    - description: The identifier of the log entry associated with the action which triggered the dump. This is a 32-bit unsigned integer that links the dump to a specific error log.

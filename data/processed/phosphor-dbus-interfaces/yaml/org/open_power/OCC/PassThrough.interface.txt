@@ -1,0 +1,34 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\OCC\PassThrough.interface.yaml' is defined as follows:
+Description: Implement to provide pass-through mechanism to the On Chip Controller (OCC).
+- description: Implement to provide pass-through mechanism to the On Chip Controller (OCC).
+
+- methods:
+    - name: Send
+    - description: Pass through a command to the OCC.
+
+    - parameters:
+        - name: command
+        - type: array[int32]
+        - description: An array of integers representing the command and payload. This should still be bytes worth of data (as though using array[byte]), so each entry in the array should pack as many bytes as possible.
+
+    - returns:
+        - name: response
+        - type: array[int32]
+        - description: An array of integers representing the response. This should still be bytes worth of data (as though using array[byte]), so each entry in the array should pack as many bytes as possible.
+
+    - name: SetMode
+    - description: Change the power mode of the system.
+
+    - parameters:
+        - name: mode
+        - type: byte
+        - description: Desired power mode of the system.
+
+        - name: frequencyPoint
+        - type: uint16
+        - description: Frequency point required by some power modes.
+
+    - returns:
+        - name: status
+        - type: boolean
+        - description: Returns true if the mode change was accepted.

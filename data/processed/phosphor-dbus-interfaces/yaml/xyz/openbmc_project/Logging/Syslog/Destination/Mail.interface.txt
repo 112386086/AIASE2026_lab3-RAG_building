@@ -1,0 +1,8 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Syslog\Destination\Mail.interface.yaml' is defined as follows:
+Description: Interface to control sending syslog messages via e-mail.
+- description: Interface to control sending syslog messages via e-mail.
+
+- properties:
+    - name: From
+    - type: string
+    - description: Specifies e-mail address from which mails would be sent.

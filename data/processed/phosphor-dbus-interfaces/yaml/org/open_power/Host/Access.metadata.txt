@@ -1,0 +1,13 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Host\Access.metadata.yaml' is defined as follows:
+  - name: WriteCFAM
+  - meta:
+      - str: ADDRESS=0x%X
+      - type: uint32
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Device
+  - name: ReadCFAM
+  - meta:
+      - str: ADDRESS=0x%X
+      - type: uint32
+  - inherits:
+    - xyz.openbmc_project.Common.Callout.Device

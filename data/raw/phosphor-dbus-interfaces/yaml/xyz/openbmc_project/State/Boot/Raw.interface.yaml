@@ -1,0 +1,8 @@
+description: >
+    Implement to provide the Power-On Self Test codes from the host.
+
+properties:
+    - name: Value
+      type: struct[array[byte],array[byte]]
+      description: >
+          The POST code value.

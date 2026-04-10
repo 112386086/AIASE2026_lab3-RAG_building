@@ -1,0 +1,29 @@
+The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor.events.yaml' is defined as follows:
+- version: 1.0.0
+- errors:
+    - name: InvalidSensorReading
+    - severity: warning
+    - errno: EIO
+    - metadata:
+        - name: SensorName
+        - description: The name or identifier of the sensor.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: SensorEvent.InvalidSensorReading
+    - name: SensorFailure
+    - severity: critical
+    - errno: EIO
+    - metadata:
+        - name: SensorName
+        - description: The name or identifier of the sensor.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: SensorEvent.SensorFailure
+- events:
+    - name: SensorRestored
+    - metadata:
+        - name: SensorName
+        - description: The name or identifier of the sensor.
+        - type: object_path
+        - primary: True
+    - redfish-mapping: SensorEvent.SensorRestored
