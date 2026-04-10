@@ -24,7 +24,7 @@ litellm.suppress_debug_info = True
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
 VECTOR_DIM = 384
 
-# SDD 6.2.2: Whitelist of fully-qualified model names
+# 依據 SDD 6.2.2 定義標準模型名稱
 ALLOWED_MODELS = ["openai/gemma4", "gemini/gemini-2.5-flash", "openai/gpt-oss:20b"]
 
 # 設定 Logger
@@ -33,30 +33,27 @@ log = logging.getLogger(__name__)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 1. 模型路由與名稱正規化 (SDD 6.2.2)
+# 1. 模型路由與名稱正規化 (SDD 6.2.1 & 6.2.2)
 # ─────────────────────────────────────────────────────────────────────────────
 def normalize_model_name(raw_model_name: str) -> str:
     """
-    模型名稱正規化：
-    1. 前綴自動注入 (Prefix Injection)
-    2. 白名單驗證 (Whitelist Validation)
+    模型名稱正規化 (Dictionary-based Routing)：
+    支援簡寫輸入，自動補齊對應的 Provider Prefix。
     """
-    # Mapping for short names to their required provider prefix
-    PREFIX_MAP = {
-        "gemma4": "openai",
-        "gemini-2.5-flash": "gemini",
-        "gpt-oss:20b": "openai"
+    # 建立簡寫到完整路徑的映射表
+    prefix_map = {
+        "gemma4": "openai/gemma4",
+        "gemini-2.5-flash": "gemini/gemini-2.5-flash",
+        "gpt-oss:20b": "openai/gpt-oss:20b"
     }
 
-    # If user provides a name with a slash, we trust it. Otherwise, look it up.
-    if "/" in raw_model_name:
-        normalized_name = raw_model_name
-    elif raw_model_name in PREFIX_MAP:
-        prefix = PREFIX_MAP[raw_model_name]
-        normalized_name = f"{prefix}/{raw_model_name}"
+    # 移除使用者可能誤打的 prefix，提取核心名稱
+    clean_name = raw_model_name.split("/")[-1]
+
+    if clean_name in prefix_map:
+        normalized_name = prefix_map[clean_name]
     else:
-        # If it's a short name we don't recognize, it's invalid.
-        normalized_name = f"unknown/{raw_model_name}"
+        normalized_name = raw_model_name # Fallback，交給後續白名單驗證
 
     if normalized_name not in ALLOWED_MODELS:
         print(f"Error: Invalid model '{raw_model_name}'.")
@@ -66,23 +63,20 @@ def normalize_model_name(raw_model_name: str) -> str:
     return normalized_name
 
 def get_api_key(normalized_model_name: str) -> str:
-    """根據正規化後的模型名稱取得對應的 API Key"""
-    # Strip the prefix to match the key in the SDD's API_KEY_MAP
-    short_name = normalized_model_name.split('/')[-1]
-    
+    """根據正規化後的模型名稱取得對應的 API Key (SDD 6.2.2)"""
     api_key_map = {
-        "gemma4":           os.getenv("LITELLM_API_KEY_GEMMA4"),
-        "gemini-2.5-flash": os.getenv("LITELLM_API_KEY_GEMINI"),
-        "gpt-oss:20b":      os.getenv("LITELLM_API_KEY_GPT_OSS"),
+        "openai/gemma4":           os.getenv("LITELLM_API_KEY_GEMMA4"),
+        "gemini/gemini-2.5-flash": os.getenv("LITELLM_API_KEY_GEMINI"),
+        "openai/gpt-oss:20b":      os.getenv("LITELLM_API_KEY_GPT_OSS"),
     }
-    key = api_key_map.get(short_name)
+    key = api_key_map.get(normalized_model_name)
     if not key:
-        log.warning(f"API Key for {short_name} is not set in .env")
+        log.warning(f"API Key for {normalized_model_name} is not set in .env")
     return key
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 2. Embedding 層 (與 data_update.py 保持一致)
+# 2. Embedding 層
 # ─────────────────────────────────────────────────────────────────────────────
 class EmbeddingEngine:
     def __init__(self, model_name: str = EMBEDDING_MODEL):
@@ -104,12 +98,10 @@ class VectorStore:
 
     def hybrid_search(self, query_text: str, query_vector: list[float], top_k: int = 5) -> List[Dict[str, Any]]:
         """
-        執行 Hybrid Search (Dense + Sparse) 並透過 RRF (Reciprocal Rank Fusion) 進行重排。
-        將運算下推至 PostgreSQL 執行。
+        執行 Hybrid Search (Dense + Sparse) 並透過 RRF 進行重排。
         """
         vec_str = f"[{','.join(map(str, query_vector))}]"
         
-        # RRF 參數 k=60
         sql = f"""
         WITH dense_results AS (
             SELECT id, chunk_id, source, chunk_index, content,
@@ -145,7 +137,6 @@ class VectorStore:
         """
         
         with self.conn.cursor() as cur:
-            # 參數對應: dense(vec, vec), sparse(text, text, text), limit(top_k)
             cur.execute(sql, (vec_str, vec_str, query_text, query_text, query_text, top_k))
             rows = cur.fetchall()
             
@@ -177,17 +168,56 @@ class RAGAgent:
             log.error("LITELLM_BASE_URL is not set in .env")
             sys.exit(1)
 
-        # Sliding Window Memory (僅保存 User Query 與 LLM Response)
+        # Sliding Window Memory
         self.history: List[Dict[str, str]] = []
-        self.max_history_turns = 3  # 3 User + 3 Assistant = 6 messages
+        self.max_history_turns = 3
 
     def _build_system_prompt(self) -> str:
-        return (
-            "You are an expert OpenBMC firmware assistant.\n"
-            "Answer the user's question based ONLY on the provided Context Information.\n"
-            "If the context does not contain the answer, strictly say 'I don't know.'\n"
-            "You MUST cite your sources using the exact format: [Source: <source_file>, Chunk: <chunk_index>]."
-        )
+        """嚴格遵守 SDD 6.2.4 定義的 OpenBMC Firmware Engineer 規則"""
+        return """You are a senior firmware engineer specializing in the OpenBMC \
+architecture. Your primary function is to answer technical questions based \
+*exclusively* on the provided context documents.
+
+## Core Rules
+
+1. **Grounding**: Answers MUST be grounded in the provided context only.
+   Do not use external knowledge.
+2. **Citation**: For every piece of information, append:
+   `[Source: <source_file>, Chunk: <chunk_index>]`
+3. **"I Don't Know" Policy**: If context lacks the answer, state:
+   "Based on the provided documents, I cannot answer this question."
+4. **Formatting**: Use Markdown for code blocks, lists, and tables.
+
+## Code Modification Rules
+
+5. **Minimal diff**: Modify only the smallest necessary scope.
+   State the modification boundary before showing code.
+6. **API existence check**: Every function, D-Bus interface, or property name
+   used MUST have a corresponding definition in the context.
+   Mark unverified items as `[UNVERIFIED - not found in context]`.
+7. **Before/After format**: Always show changes as a diff or paired
+   before/after code blocks. Never provide only the final version.
+
+## Code Design Rules
+
+8. **Spec-constrained design**: All design proposals must respect the D-Bus
+   interface contracts defined in the context. Do not assume methods or
+   signals that are not documented.
+9. **Dependency declaration**: List every external component (service name,
+   interface, property) the design depends on, each with a `[Source: ...]`.
+10. **Alternative paths**: If multiple design approaches exist in the context,
+    list all with their trade-offs. Do not give a single answer without
+    acknowledging alternatives.
+
+## Architecture Analysis Rules
+
+11. **Hierarchical grounding**: Explain top-down, with each layer supported
+    by at least one context chunk citation before proceeding deeper.
+12. **Scope boundary statement**: Begin architecture answers with:
+    "This answer is based on: <list of source files used>."
+13. **Uncertainty quantification**: If a detail is only partially covered
+    in context, mark it as `[Partial - based on limited context]`
+    rather than inferring from general knowledge."""
 
     def _build_user_prompt(self, query: str, chunks: List[Dict[str, Any]]) -> str:
         context_blocks = []
@@ -203,16 +233,13 @@ class RAGAgent:
         )
 
     def generate(self, query: str, chunks: List[Dict[str, Any]]) -> str:
-        # 1. 準備當前輪次的 Prompt (包含 Context)
         system_prompt = self._build_system_prompt()
         user_prompt_with_context = self._build_user_prompt(query, chunks)
 
-        # 2. 組裝 Messages (System + History + Current Query with Context)
         messages = [{"role": "system", "content": system_prompt}]
         messages.extend(self.history)
         messages.append({"role": "user", "content": user_prompt_with_context})
 
-        # 3. 呼叫 LiteLLM
         try:
             response = litellm.completion(
                 model=self.model_name,
@@ -222,11 +249,10 @@ class RAGAgent:
             )
             answer = response.choices[0].message.content
 
-            # 4. 更新 Sliding Window Memory (Token 成本控制：只存乾淨的 Query)
+            # Token 成本控制：只存乾淨的 Query
             self.history.append({"role": "user", "content": query})
             self.history.append({"role": "assistant", "content": answer})
             
-            # 保持歷史紀錄在限制範圍內 (3 輪 = 6 條訊息)
             if len(self.history) > self.max_history_turns * 2:
                 self.history = self.history[-(self.max_history_turns * 2):]
 
@@ -241,7 +267,6 @@ class RAGAgent:
 # 5. 主程式與 CLI 邏輯
 # ─────────────────────────────────────────────────────────────────────────────
 def main():
-    # SDD 6.2.1: CLI 介面，預設模型為 gemma4
     parser = argparse.ArgumentParser(description="OpenBMC RAG Query Interface")
     parser.add_argument("--query", type=str, help="執行單次查詢")
     parser.add_argument("--top-k", type=int, default=5, help="設定檢索的 Chunk 數量")
