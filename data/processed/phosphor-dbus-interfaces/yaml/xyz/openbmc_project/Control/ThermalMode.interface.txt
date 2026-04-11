@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\ThermalMode.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/ThermalMode.interface.yaml' is defined as follows:
 Description: Implement to provide alternative thermal control modes of a system that can be enabled, overriding the system defaults.
 Control.ThermalMode.Supported is read only.
     Implementation of this interface populates the list of supported modes.

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Chassis\Buttons\HostSelector.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Chassis/Buttons/HostSelector.interface.yaml' is defined as follows:
 Description: Host selector interface is used to keep the position of the host selector HW switch as a property.This host selector position value decides which host or bmc is currently selected in a multihost bmc system so that the power and reset button events are routed to the currently selected host or bmc's power control events.
 - description: Host selector interface is used to keep the position of the host selector HW switch as a property.This host selector position value decides which host or bmc is currently selected in a multihost bmc system so that the power and reset button events are routed to the currently selected host or bmc's power control events.
 

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\Device.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/Device.errors.yaml' is defined as follows:
   - name: ReadFailure
   - description: Failed to read from the device.
   - name: WriteFailure

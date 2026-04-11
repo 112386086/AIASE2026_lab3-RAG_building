@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Decorator\Availability.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Decorator/Availability.interface.yaml' is defined as follows:
 Description: Implement to indicate the availability status of the object
 - description: Implement to indicate the availability status of the object
 

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Volume.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Volume.interface.yaml' is defined as follows:
 Description: D-bus interface to manage a logical storage volume. Currently, this interface only supports LUKS encrypted volumes, but it can be extended in the future to support other types of volumes, as well.
 - description: D-bus interface to manage a logical storage volume. Currently, this interface only supports LUKS encrypted volumes, but it can be extended in the future to support other types of volumes, as well.
 

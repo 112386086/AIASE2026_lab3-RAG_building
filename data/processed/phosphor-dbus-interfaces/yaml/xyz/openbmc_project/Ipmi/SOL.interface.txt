@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Ipmi\SOL.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Ipmi/SOL.interface.yaml' is defined as follows:
 Description: SOL properties use for Get/Set SOL config parameter command in host-ipmid sending config to SOL process in net-ipmid. Since some platforms need to access Get/Set SOL config parameter command through KCS, and current SOL manager is implemented in net-ipmid and cannot be accessed by host-ipmid, add a D-Bus interface for host-ipmid command to transfer properties to net-ipmid. This interface will be implemented in phosphor-settings.
 - description: SOL properties use for Get/Set SOL config parameter command in host-ipmid sending config to SOL process in net-ipmid. Since some platforms need to access Get/Set SOL config parameter command through KCS, and current SOL manager is implemented in net-ipmid and cannot be accessed by host-ipmid, add a D-Bus interface for host-ipmid command to transfer properties to net-ipmid. This interface will be implemented in phosphor-settings.
 

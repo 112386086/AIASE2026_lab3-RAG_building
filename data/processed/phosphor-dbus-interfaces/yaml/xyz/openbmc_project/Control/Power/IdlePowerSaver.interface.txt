@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Power\IdlePowerSaver.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Power/IdlePowerSaver.interface.yaml' is defined as follows:
 Description: Implement Idle Power Saver capabilities of the system.
 - description: Implement Idle Power Saver capabilities of the system.
 

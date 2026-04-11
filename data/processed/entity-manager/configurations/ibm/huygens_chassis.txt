@@ -1,0 +1,17 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/ibm/huygens_chassis.json':
+- Exposes:
+    - EnterUtilizationDwellTime: 240
+    - EnterUtilizationPercent: 8
+    - ExitUtilizationDwellTime: 10
+    - ExitUtilizationPercent: 12
+    - IdlePowerSaverEnabled: False
+    - Name: Default Power Mode Properties
+    - PowerMode: MaximumPerformance
+    - Type: PowerModeProperties
+- Name: Huygens System Chassis
+- Probe:
+  - com.ibm.ipzvpd.VSBP({'IM': [112, 0, 16, 0]})
+- Type: Chassis
+- xyz.openbmc_project.Inventory.Decorator.Compatible:
+  - Names:
+    - com.ibm.Hardware.Chassis.Model.Huygens

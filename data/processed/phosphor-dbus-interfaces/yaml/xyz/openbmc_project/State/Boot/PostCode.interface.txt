@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Boot\PostCode.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Boot/PostCode.interface.yaml' is defined as follows:
 Description: Monitor Post code coming and buffer all of them based on boot cycle into file system.
 - description: Monitor Post code coming and buffer all of them based on boot cycle into file system.
 

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\RequestedRedundancyPriority.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/RequestedRedundancyPriority.interface.yaml' is defined as follows:
 Description: The requested priority, for redundancy purposes, of the associated `xyz.openbmc_project.Software.Version` prior to its activation.
 - description: The requested priority, for redundancy purposes, of the associated `xyz.openbmc_project.Software.Version` prior to its activation.
 

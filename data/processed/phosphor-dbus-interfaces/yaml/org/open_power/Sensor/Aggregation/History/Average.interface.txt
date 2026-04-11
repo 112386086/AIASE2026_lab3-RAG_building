@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Sensor\Aggregation\History\Average.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Sensor/Aggregation/History/Average.interface.yaml' is defined as follows:
 Description: Implement to provide an object that contains a history of averages.  The object this interface is placed on should provide information about the duration the average is calculated over.
 - description: Implement to provide an object that contains a history of averages.  The object this interface is placed on should provide information about the duration the average is calculated over.
 

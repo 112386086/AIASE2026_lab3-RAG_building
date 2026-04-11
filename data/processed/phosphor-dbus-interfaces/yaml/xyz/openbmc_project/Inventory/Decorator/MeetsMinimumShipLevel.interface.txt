@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\MeetsMinimumShipLevel.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/MeetsMinimumShipLevel.interface.yaml' is defined as follows:
 Description: 'Applications may implement the MeetsMinimumShipLevel (MSL) decorator on an object in the inventory namespace to denote that the item does or does not meet an implementation defined minimum level for shipment requirement.
 There are no requirements on how implementations react to inventory items that do or do not meet the MSL.  Typical reactions might be to prevent a system from powering on or logging events.'
 - description: 'Applications may implement the MeetsMinimumShipLevel (MSL) decorator on an object in the inventory namespace to denote that the item does or does not meet an implementation defined minimum level for shipment requirement.

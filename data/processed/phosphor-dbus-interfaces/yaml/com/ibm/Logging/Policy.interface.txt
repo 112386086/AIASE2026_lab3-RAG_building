@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\Logging\Policy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/Logging/Policy.interface.yaml' is defined as follows:
 Description: Implement to provide IBM specific error log policy attributes.
 - description: Implement to provide IBM specific error log policy attributes.
 

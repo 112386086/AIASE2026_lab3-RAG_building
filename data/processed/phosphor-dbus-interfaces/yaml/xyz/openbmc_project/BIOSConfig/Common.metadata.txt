@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\BIOSConfig\Common.metadata.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/BIOSConfig/Common.metadata.yaml' is defined as follows:
   - name: AttributeNotFound
   - level: ERR
   - name: AttributeSettingFailed

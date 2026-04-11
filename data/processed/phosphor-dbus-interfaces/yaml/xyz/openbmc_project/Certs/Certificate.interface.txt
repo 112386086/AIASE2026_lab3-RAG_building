@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\Certificate.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/Certificate.interface.yaml' is defined as follows:
 Description: Implement to provide certificate management features.
 An OpenBMC implementation providing installed certificate management functions. An implementation service should additionally implement xyz.openbmc_project.Object.Delete to allow the deletion of individual certificate objects.
 - description: Implement to provide certificate management features.

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\VPD\Manager.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/VPD/Manager.interface.yaml' is defined as follows:
 Description: Implement to manage VPD data in system.
 - description: Implement to manage VPD data in system.
 

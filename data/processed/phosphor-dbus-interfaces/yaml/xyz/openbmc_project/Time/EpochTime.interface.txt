@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Time\EpochTime.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Time/EpochTime.interface.yaml' is defined as follows:
 Description: Implement to control system time.
 - description: Implement to control system time.
 

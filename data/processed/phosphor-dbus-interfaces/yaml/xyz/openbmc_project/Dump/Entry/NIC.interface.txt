@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Dump\Entry\NIC.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Dump/Entry/NIC.interface.yaml' is defined as follows:
 Description: Implement this to add NIC dump management.
 NIC dump is generated on the NIC with debug data for debugging the issues encountered on the NIC.
 - description: Implement this to add NIC dump management.

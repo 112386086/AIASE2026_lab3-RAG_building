@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\PCIeDevice.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/PCIeDevice.interface.yaml' is defined as follows:
 Description: This defines a PCIe device to be exposed for system management.  It includes the device properties and function properties for all 8 possible functions that are needed for the device identification. The PCIe function's properties are deprecated, they have been replaced with PCIeFunction interface.
 - description: This defines a PCIe device to be exposed for system management.  It includes the device properties and function properties for all 8 possible functions that are needed for the device identification. The PCIe function's properties are deprecated, they have been replaced with PCIeFunction interface.
 

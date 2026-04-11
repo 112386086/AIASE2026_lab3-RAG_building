@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Chassis\Buttons\Button.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Chassis/Buttons/Button.interface.yaml' is defined as follows:
 Description: Button interface is a generic phosphor button interface  which supports two primary actions (pressed/releasd). When the button is pressed "Pressed" signal is emitted and when button is released then "Released"
   signal is emitted.
 - description: Button interface is a generic phosphor button interface  which supports two primary actions (pressed/releasd). When the button is pressed "Pressed" signal is emitted and when button is released then "Released"

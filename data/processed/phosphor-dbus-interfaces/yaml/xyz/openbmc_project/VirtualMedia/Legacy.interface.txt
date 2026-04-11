@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\VirtualMedia\Legacy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/VirtualMedia/Legacy.interface.yaml' is defined as follows:
 Description: This interface provides methods for mounting and unmounting images
  using the legacy mode.
 - description: This interface provides methods for mounting and unmounting images

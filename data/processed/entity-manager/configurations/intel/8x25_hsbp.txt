@@ -1,0 +1,12 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/intel/8x25_hsbp.json':
+- Exposes:
+    - Address: 0xEB
+    - Name: HSBP $index Drive Mux
+    - Type: GenericSMBusMux
+    - Name: HSBP $index FRU
+    - Type: IntelHsbpFruDevice
+    - Name: HSBP $index Temperature
+    - Type: IntelHsbpTempSensor
+- Name: 1U_HSBP
+- Probe: xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME':'F1U8X25S3PHSBP'})
+- Type: Board

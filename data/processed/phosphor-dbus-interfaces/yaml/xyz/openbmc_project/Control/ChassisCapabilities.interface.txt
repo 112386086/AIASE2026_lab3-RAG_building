@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\ChassisCapabilities.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/ChassisCapabilities.interface.yaml' is defined as follows:
 Description: An interface for chassis capabilities defined in IPMI spec.
 - description: An interface for chassis capabilities defined in IPMI spec.
 

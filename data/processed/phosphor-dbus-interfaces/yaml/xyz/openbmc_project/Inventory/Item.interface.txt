@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item.interface.yaml' is defined as follows:
 Description: Implement to provide basic item attributes.  Required by all objects within the inventory namespace.
 Any service implementing Inventory.Item on one or more objects must implement org.freedesktop.DBus.ObjectManager on /xyz/openbmc_project/inventory.
 - description: Implement to provide basic item attributes.  Required by all objects within the inventory namespace.

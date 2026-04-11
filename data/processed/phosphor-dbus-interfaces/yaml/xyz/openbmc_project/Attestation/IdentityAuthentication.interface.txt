@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Attestation\IdentityAuthentication.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Attestation/IdentityAuthentication.interface.yaml' is defined as follows:
 Description: Implement to represent properties related to Identity Authentication using SPDM protocol.
 - description: Implement to represent properties related to Identity Authentication using SPDM protocol.
 

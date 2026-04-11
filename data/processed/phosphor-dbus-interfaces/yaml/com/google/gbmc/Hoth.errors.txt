@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\google\gbmc\Hoth.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/google/gbmc/Hoth.errors.yaml' is defined as follows:
   - name: CommandFailure
   - description: Failed to send the command to Hoth.
   - name: ResponseFailure

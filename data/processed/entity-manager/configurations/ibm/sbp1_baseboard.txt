@@ -1,0 +1,4768 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/ibm/sbp1_baseboard.json':
+- Exposes:
+    - Index: 0
+    - Name: P12V
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.115
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.5
+        - Direction: less than
+        - Hysteresis: 0.11
+        - Name: lower critical
+        - Severity: 1
+        - Value: 11
+    - Type: ADC
+    - Index: 1
+    - Name: P5V_AUX_ADC
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0525
+        - Name: upper critical
+        - Severity: 1
+        - Value: 5.25
+        - Direction: greater than
+        - Hysteresis: 0.051500000000000004
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 5.15
+        - Direction: less than
+        - Hysteresis: 0.048499999999999995
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 4.85
+        - Direction: less than
+        - Hysteresis: 0.0475
+        - Name: lower critical
+        - Severity: 1
+        - Value: 4.75
+    - Type: ADC
+    - Index: 2
+    - Name: P5V_BMC_AUX_ADC
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0525
+        - Name: upper critical
+        - Severity: 1
+        - Value: 5.25
+        - Direction: greater than
+        - Hysteresis: 0.051500000000000004
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 5.15
+        - Direction: less than
+        - Hysteresis: 0.048499999999999995
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 4.85
+        - Direction: less than
+        - Hysteresis: 0.0475
+        - Name: lower critical
+        - Severity: 1
+        - Value: 4.75
+    - Type: ADC
+    - Index: 3
+    - Name: P3V3_AUX_ADC
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03465
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.465
+        - Direction: greater than
+        - Hysteresis: 0.03399
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.399
+        - Direction: less than
+        - Hysteresis: 0.032010000000000004
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.201
+        - Direction: less than
+        - Hysteresis: 0.031349999999999996
+        - Name: lower critical
+        - Severity: 1
+        - Value: 3.135
+    - Type: ADC
+    - Index: 4
+    - Name: P3V3_BMC_AUX
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0374
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.74
+        - Direction: greater than
+        - Hysteresis: 0.0357
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.57
+        - Direction: less than
+        - Hysteresis: 0.0323
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.23
+        - Direction: less than
+        - Hysteresis: 0.0306
+        - Name: lower critical
+        - Severity: 1
+        - Value: 3.06
+    - Type: ADC
+    - Index: 5
+    - Name: P1V8_BMC_AUX
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.89
+        - Direction: greater than
+        - Hysteresis: 0.01854
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.854
+        - Direction: less than
+        - Hysteresis: 0.01746
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.746
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.71
+    - Type: ADC
+    - Index: 6
+    - Name: P1V2_BMC_AUX
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0126
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.26
+        - Direction: greater than
+        - Hysteresis: 0.01236
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.236
+        - Direction: less than
+        - Hysteresis: 0.01164
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.164
+        - Direction: less than
+        - Hysteresis: 0.011399999999999999
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.14
+    - Type: ADC
+    - Index: 7
+    - Name: P1V2_PHY1_LDO
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0145
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.45
+        - Direction: greater than
+        - Hysteresis: 0.0135
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.35
+        - Direction: less than
+        - Hysteresis: 0.0115
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.15
+        - Direction: less than
+        - Hysteresis: 0.011
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.1
+    - Type: ADC
+    - Index: 8
+    - Name: P1V2_PHY2_LDO
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.0145
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.45
+        - Direction: greater than
+        - Hysteresis: 0.0135
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.35
+        - Direction: less than
+        - Hysteresis: 0.0115
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.15
+        - Direction: less than
+        - Hysteresis: 0.011
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.1
+    - Type: ADC
+    - Index: 9
+    - Name: P2V5_AUX
+    - PowerState: Always
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.02625
+        - Name: upper critical
+        - Severity: 1
+        - Value: 2.625
+        - Direction: greater than
+        - Hysteresis: 0.025750000000000002
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 2.575
+        - Direction: less than
+        - Hysteresis: 0.024249999999999997
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 2.425
+        - Direction: less than
+        - Hysteresis: 0.02375
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.375
+    - Type: ADC
+    - BridgeGpio:
+        - Name: RTC_BATT_TEST
+        - Polarity: High
+        - SetupTime: 0.125
+    - Index: 10
+    - MaxValue: 3.57
+    - MinValue: 0
+    - Name: VBAT_RTC
+    - PollRate: 900
+    - ScaleFactor: 1.0
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03556
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.556
+        - Direction: greater than
+        - Hysteresis: 0.03458
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.458
+        - Direction: less than
+        - Hysteresis: 0.02212
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.212
+        - Direction: less than
+        - Hysteresis: 0.023100000000000002
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 2.31
+    - Type: ADC
+    - Address: 0x1f
+    - Bus: 41
+    - Labels:
+      - temp2
+    - Name: NIC2_0
+    - Name1: NIC2 Temperature
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.95
+        - Index: 2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 95
+        - Direction: greater than
+        - Hysteresis: 0.85
+        - Index: 2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 85
+        - Direction: less than
+        - Hysteresis: 0.2
+        - Index: 2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 20
+        - Direction: less than
+        - Hysteresis: 0.3
+        - Index: 2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 30
+    - Type: ADM1021
+    - Address: 0x1f
+    - Bus: 44
+    - Labels:
+      - temp2
+    - Name: NIC1_0
+    - Name1: NIC1 Temperature
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.95
+        - Index: 2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 95
+        - Direction: greater than
+        - Hysteresis: 0.85
+        - Index: 2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 85
+        - Direction: less than
+        - Hysteresis: 0.2
+        - Index: 2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 20
+        - Direction: less than
+        - Hysteresis: 0.3
+        - Index: 2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 30
+    - Type: ADM1021
+    - Address: 0x40
+    - Bus: 58
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P1V8_PCH_AUX
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.06
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 6.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 4.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: IR38060
+    - Address: 0x40
+    - Bus: 33
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P5V_AUX
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.16
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 16.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.055
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 5.5
+        - Direction: less than
+        - Hysteresis: 0.045
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 4.5
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 0.12
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.0
+        - Direction: less than
+        - Hysteresis: 0.0475
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 4.75
+        - Direction: greater than
+        - Hysteresis: 0.0525
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 5.25
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 34
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P3V3_AUX
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.24
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 24.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0374
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.74
+        - Direction: less than
+        - Hysteresis: 0.030600000000000002
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 3.06
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 0.19
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 19.0
+        - Direction: less than
+        - Hysteresis: 0.0323
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.23
+        - Direction: greater than
+        - Hysteresis: 0.0357
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.57
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 42
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCORE_NIC2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.2
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 20.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0094
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 0.94
+        - Direction: less than
+        - Hysteresis: 0.0072
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.72
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: less than
+        - Hysteresis: 0.0076
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.76
+        - Direction: greater than
+        - Hysteresis: 0.0089
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.89
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 43
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCORE_NIC1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.2
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 20.0
+        - Direction: greater than
+        - Hysteresis: 0.16
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 16.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0094
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 0.94
+        - Direction: less than
+        - Hysteresis: 0.0072
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.72
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: less than
+        - Hysteresis: 0.0076
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.76
+        - Direction: greater than
+        - Hysteresis: 0.0089
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.89
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 45
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P3V3_NIC
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.16
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 16.0
+        - Direction: greater than
+        - Hysteresis: 0.11
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 11.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0363
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.63
+        - Direction: less than
+        - Hysteresis: 0.029700000000000004
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.97
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.031400000000000004
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.14
+        - Direction: greater than
+        - Hysteresis: 0.0347
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.47
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 46
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P1V2_NIC
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.16
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 16.0
+        - Direction: greater than
+        - Hysteresis: 0.12
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.013200000000000002
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.32
+        - Direction: less than
+        - Hysteresis: 0.0108
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.08
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.011399999999999999
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.14
+        - Direction: greater than
+        - Hysteresis: 0.0126
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.26
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 47
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P1V8_NIC
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.32
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 32.0
+        - Direction: greater than
+        - Hysteresis: 0.26
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 26.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: IR38263
+    - Address: 0x40
+    - Bus: 57
+    - Labels:
+      - iout1
+      - vin
+      - vout1
+      - pout1
+      - temp1
+    - Name: P1V05_PCH_AUX
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.17
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 17.0
+        - Direction: greater than
+        - Hysteresis: 0.24
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 24.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0116
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.16
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.01
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.0
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.1
+    - Type: IR38263
+    - Name: Fan01 connector
+    - Pwm: 0
+    - PwmName: Fan01_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan02 connector
+    - Pwm: 0
+    - PwmName: Fan02_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan03 connector
+    - Pwm: 0
+    - PwmName: Fan03_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan04 connector
+    - Pwm: 0
+    - PwmName: Fan04_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan05 connector
+    - Pwm: 0
+    - PwmName: Fan05_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan06 connector
+    - Pwm: 0
+    - PwmName: Fan06_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan07 connector
+    - Pwm: 0
+    - PwmName: Fan07_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan08 connector
+    - Pwm: 0
+    - PwmName: Fan08_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan09 connector
+    - Pwm: 0
+    - PwmName: Fan09_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan10 connector
+    - Pwm: 0
+    - PwmName: Fan10_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan11 connector
+    - Pwm: 0
+    - PwmName: Fan11_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan12 connector
+    - Pwm: 0
+    - PwmName: Fan12_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan13 connector
+    - Pwm: 0
+    - PwmName: Fan13_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan14 connector
+    - Pwm: 0
+    - PwmName: Fan14_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan15 connector
+    - Pwm: 0
+    - PwmName: Fan15_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan16 connector
+    - Pwm: 0
+    - PwmName: Fan16_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan17 connector
+    - Pwm: 0
+    - PwmName: Fan17_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan18 connector
+    - Pwm: 0
+    - PwmName: Fan18_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan19 connector
+    - Pwm: 0
+    - PwmName: Fan19_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan20 connector
+    - Pwm: 0
+    - PwmName: Fan20_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan21 connector
+    - Pwm: 0
+    - PwmName: Fan21_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan22 connector
+    - Pwm: 0
+    - PwmName: Fan22_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan23 connector
+    - Pwm: 0
+    - PwmName: Fan23_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Name: Fan24 connector
+    - Pwm: 0
+    - PwmName: Fan24_Pwm
+    - Status: disabled
+    - Tachs:
+      - 0
+    - Type: IntelFanConnector
+    - Address: 0x8
+    - Class: METemp
+    - Name: PCH Temperature
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110
+    - Type: IpmbSensor
+    - Address: 0x3a
+    - Bus: 51
+    - Name: SSB_SSD1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.02
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 2.0
+        - Direction: greater than
+        - Hysteresis: 0.025
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 2.5
+        - Direction: less than
+        - Hysteresis: 0.031400000000000004
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.14
+        - Direction: greater than
+        - Hysteresis: 0.0347
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.47
+        - Direction: less than
+        - Hysteresis: 0.029700000000000004
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.97
+        - Direction: greater than
+        - Hysteresis: 0.0363
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.63
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 53
+    - Name: SSB_SSD2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.02
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 2.0
+        - Direction: greater than
+        - Hysteresis: 0.025
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 2.5
+        - Direction: less than
+        - Hysteresis: 0.031400000000000004
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.14
+        - Direction: greater than
+        - Hysteresis: 0.0347
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.47
+        - Direction: less than
+        - Hysteresis: 0.029700000000000004
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.97
+        - Direction: greater than
+        - Hysteresis: 0.0363
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.63
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 35
+    - Labels:
+      - in0
+      - in1
+      - curr1
+      - curr2
+    - Name: SSB_AUX
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.02
+        - Label: curr2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 2.0
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.027999999999999997
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 2.8
+        - Direction: greater than
+        - Hysteresis: 0.034
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.4
+        - Direction: less than
+        - Hysteresis: 0.0318
+        - Label: in1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.18
+        - Direction: greater than
+        - Hysteresis: 0.0351
+        - Label: in1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.51
+        - Direction: less than
+        - Hysteresis: 0.0301
+        - Label: in1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 3.01
+        - Direction: greater than
+        - Hysteresis: 0.0368
+        - Label: in1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.68
+        - Direction: less than
+        - Hysteresis: 0.0313
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 3.13
+        - Direction: greater than
+        - Hysteresis: 0.0346
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.46
+        - Direction: less than
+        - Hysteresis: 0.029700000000000004
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 2.97
+        - Direction: greater than
+        - Hysteresis: 0.0363
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 3.63
+    - Type: MAX5970
+    - curr1_Name: SSB_AUX PVDRV Output Current
+    - curr2_Name: SSB_AUX P3V3_PCH Output Current
+    - in0_Name: SSB_AUX PVDRV Output Voltage
+    - in1_Name: SSB_AUX P3V3_PCH Output Voltage
+    - Address: 0x3a
+    - Bus: 168
+    - Name: SSB_FAN1
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 169
+    - Name: SSB_FAN3
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 170
+    - Name: SSB_FAN5
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 171
+    - Name: SSB_FAN7
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 172
+    - Name: SSB_FAN9
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 173
+    - Name: SSB_FAN11
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 174
+    - Name: SSB_FAN13
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 175
+    - Name: SSB_FAN15
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 176
+    - Name: SSB_FAN17
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 177
+    - Name: SSB_FAN19
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 178
+    - Name: SSB_FAN21
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 179
+    - Name: SSB_FAN23
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 180
+    - Name: SSB_FAN2
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 181
+    - Name: SSB_FAN4
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 182
+    - Name: SSB_FAN6
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 183
+    - Name: SSB_FAN8
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 184
+    - Name: SSB_FAN10
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 185
+    - Name: SSB_FAN12
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 186
+    - Name: SSB_FAN14
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 187
+    - Name: SSB_FAN16
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 188
+    - Name: SSB_FAN18
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 189
+    - Name: SSB_FAN20
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 190
+    - Name: SSB_FAN22
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x3a
+    - Bus: 191
+    - Name: SSB_FAN24
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.03
+        - Label: curr1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 3.0
+        - Direction: greater than
+        - Hysteresis: 0.04
+        - Label: curr1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 4.0
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: in0
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: in0
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: in0
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: in0
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+    - Type: MAX5970
+    - Address: 0x2e
+    - Bus: 105
+    - Labels:
+      - temp1
+    - Name: Fan01 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 118
+    - Labels:
+      - temp1
+    - Name: Fan02 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 106
+    - Labels:
+      - temp1
+    - Name: Fan03 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 119
+    - Labels:
+      - temp1
+    - Name: Fan04 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 107
+    - Labels:
+      - temp1
+    - Name: Fan05 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 120
+    - Labels:
+      - temp1
+    - Name: Fan06 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 108
+    - Labels:
+      - temp1
+    - Name: Fan07 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 121
+    - Labels:
+      - temp1
+    - Name: Fan08 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 109
+    - Labels:
+      - temp1
+    - Name: Fan09 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 123
+    - Labels:
+      - temp1
+    - Name: Fan10 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 110
+    - Labels:
+      - temp1
+    - Name: Fan11 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 124
+    - Labels:
+      - temp1
+    - Name: Fan12 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 111
+    - Labels:
+      - temp1
+    - Name: Fan13 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 125
+    - Labels:
+      - temp1
+    - Name: Fan14 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 112
+    - Labels:
+      - temp1
+    - Name: Fan15 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 126
+    - Labels:
+      - temp1
+    - Name: Fan16 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 114
+    - Labels:
+      - temp1
+    - Name: Fan17 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 127
+    - Labels:
+      - temp1
+    - Name: Fan18 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 115
+    - Labels:
+      - temp1
+    - Name: Fan19 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 128
+    - Labels:
+      - temp1
+    - Name: Fan20 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 116
+    - Labels:
+      - temp1
+    - Name: Fan21 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 129
+    - Labels:
+      - temp1
+    - Name: Fan22 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 117
+    - Labels:
+      - temp1
+    - Name: Fan23 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x2e
+    - Bus: 130
+    - Labels:
+      - temp1
+    - Name: Fan24 Temperature
+    - PollRate: 5.0
+    - PowerState: Always
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.6
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 60.0
+        - Direction: greater than
+        - Hysteresis: 0.5
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 50.0
+    - Type: MAX6639
+    - Address: 0x58
+    - Bus: 98
+    - CPURequired: 0
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCINFAON_CPU0
+    - Name1: PVCCFA_EHV_CPU0
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 0.15
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 15.0
+        - Direction: greater than
+        - Hysteresis: 0.0625
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 6.25
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.52
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 52.0
+        - Direction: greater than
+        - Hysteresis: 0.46
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 46.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2971
+    - iin_Name: PVCCINFAON_PVCCFA_EHV_CPU0 Input Current
+    - pin_Name: PVCCINFAON_PVCCFA_EHV_CPU0 Input Power
+    - vin_Name: PVCCINFAON_PVCCFA_EHV_CPU0 Input Voltage
+    - Address: 0x58
+    - Bus: 74
+    - CPURequired: 1
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCINFAON_CPU1
+    - Name1: PVCCFA_EHV_CPU1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 0.15
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 15.0
+        - Direction: greater than
+        - Hysteresis: 0.0625
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 6.25
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.52
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 52.0
+        - Direction: greater than
+        - Hysteresis: 0.46
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 46.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2971
+    - iin_Name: PVCCINFAON_PVCCFA_EHV_CPU1 Input Current
+    - pin_Name: PVCCINFAON_PVCCFA_EHV_CPU1 Input Power
+    - vin_Name: PVCCINFAON_PVCCFA_EHV_CPU1 Input Voltage
+    - Address: 0x58
+    - Bus: 66
+    - CPURequired: 2
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCINFAON_CPU2
+    - Name1: PVCCFA_EHV_CPU2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 0.15
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 15.0
+        - Direction: greater than
+        - Hysteresis: 0.0625
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 6.25
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.52
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 52.0
+        - Direction: greater than
+        - Hysteresis: 0.46
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 46.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2971
+    - iin_Name: PVCCINFAON_PVCCFA_EHV_CPU2 Input Current
+    - pin_Name: PVCCINFAON_PVCCFA_EHV_CPU2 Input Power
+    - vin_Name: PVCCINFAON_PVCCFA_EHV_CPU2 Input Voltage
+    - Address: 0x58
+    - Bus: 90
+    - CPURequired: 3
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCINFAON_CPU3
+    - Name1: PVCCFA_EHV_CPU3
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 0.15
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 15.0
+        - Direction: greater than
+        - Hysteresis: 0.0625
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 6.25
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.52
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 52.0
+        - Direction: greater than
+        - Hysteresis: 0.46
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 46.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2971
+    - iin_Name: PVCCINFAON_PVCCFA_EHV_CPU3 Input Current
+    - pin_Name: PVCCINFAON_PVCCFA_EHV_CPU3 Input Power
+    - vin_Name: PVCCINFAON_PVCCFA_EHV_CPU3 Input Voltage
+    - Address: 0x58
+    - Bus: 99
+    - CPURequired: 0
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCIN_CPU0
+    - Name1: PVCCFA_EHV_FIVRA_CPU0
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.013999999999999999
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.4
+        - Direction: greater than
+        - Hysteresis: 6.34
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 634.0
+        - Direction: greater than
+        - Hysteresis: 5.5
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 550.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.6400000000000001
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 164.0
+        - Direction: greater than
+        - Hysteresis: 1.02
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 102.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+        - Direction: less than
+        - Hysteresis: 0.015
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.5
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2973
+    - iin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU0 Input Current
+    - pin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU0 Input Power
+    - vin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU0 Input Voltage
+    - Address: 0x58
+    - Bus: 75
+    - CPURequired: 1
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCIN_CPU1
+    - Name1: PVCCFA_EHV_FIVRA_CPU1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.013999999999999999
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.4
+        - Direction: greater than
+        - Hysteresis: 6.34
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 634.0
+        - Direction: greater than
+        - Hysteresis: 5.5
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 550.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.6400000000000001
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 164.0
+        - Direction: greater than
+        - Hysteresis: 1.02
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 102.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+        - Direction: less than
+        - Hysteresis: 0.015
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.5
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2973
+    - iin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU1 Input Current
+    - pin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU1 Input Power
+    - vin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU1 Input Voltage
+    - Address: 0x58
+    - Bus: 67
+    - CPURequired: 2
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCIN_CPU2
+    - Name1: PVCCFA_EHV_FIVRA_CPU2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.013999999999999999
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.4
+        - Direction: greater than
+        - Hysteresis: 6.34
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 634.0
+        - Direction: greater than
+        - Hysteresis: 5.5
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 550.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.6400000000000001
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 164.0
+        - Direction: greater than
+        - Hysteresis: 1.02
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 102.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+        - Direction: less than
+        - Hysteresis: 0.015
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.5
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2973
+    - iin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU2 Input Current
+    - pin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU2 Input Power
+    - vin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU2 Input Voltage
+    - Address: 0x58
+    - Bus: 91
+    - CPURequired: 3
+    - Labels:
+      - iin
+      - iout1
+      - iout2
+      - vin
+      - vout1
+      - vout2
+      - pin
+      - pout1
+      - pout2
+      - temp1
+    - Name: PVCCIN_CPU3
+    - Name1: PVCCFA_EHV_FIVRA_CPU3
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.013999999999999999
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.4
+        - Direction: greater than
+        - Hysteresis: 6.34
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 634.0
+        - Direction: greater than
+        - Hysteresis: 5.5
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 550.0
+        - Direction: greater than
+        - Hysteresis: 0.0198
+        - Label: vout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.98
+        - Direction: less than
+        - Hysteresis: 0.016200000000000003
+        - Label: vout2
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.62
+        - Direction: greater than
+        - Hysteresis: 1.6400000000000001
+        - Label: iout2
+        - Name: upper critical
+        - Severity: 1
+        - Value: 164.0
+        - Direction: greater than
+        - Hysteresis: 1.02
+        - Label: iout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 102.0
+        - Direction: less than
+        - Hysteresis: 0.0171
+        - Label: vout2
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.71
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout2
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+        - Direction: less than
+        - Hysteresis: 0.015
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.5
+        - Direction: greater than
+        - Hysteresis: 0.0189
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.89
+    - Type: MP2973
+    - iin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU3 Input Current
+    - pin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU3 Input Power
+    - vin_Name: PVCCIN_PVCCFA_EHV_FIVRA_CPU3 Input Voltage
+    - Address: 0x40
+    - Bus: 98
+    - CPURequired: 0
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVNN_MAIN_CPU0
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.08
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 8.0
+        - Direction: greater than
+        - Hysteresis: 0.005200000000000001
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.52
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.2
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 120.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+    - Type: TDA38640
+    - Address: 0x40
+    - Bus: 90
+    - CPURequired: 3
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVNN_MAIN_CPU3
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.08
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 8.0
+        - Direction: greater than
+        - Hysteresis: 0.005200000000000001
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.52
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.2
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 120.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+    - Type: TDA38640
+    - Address: 0x40
+    - Bus: 74
+    - CPURequired: 1
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVNN_MAIN_CPU1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.08
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 8.0
+        - Direction: greater than
+        - Hysteresis: 0.005200000000000001
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.52
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.2
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 120.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+    - Type: TDA38640
+    - Address: 0x40
+    - Bus: 66
+    - CPURequired: 2
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVNN_MAIN_CPU2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.08
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 8.0
+        - Direction: greater than
+        - Hysteresis: 0.005200000000000001
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 0.52
+        - Direction: greater than
+        - Hysteresis: 0.011000000000000001
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.1
+        - Direction: less than
+        - Hysteresis: 0.009000000000000001
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 0.9
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 1.2
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 120.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0095
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 0.95
+        - Direction: greater than
+        - Hysteresis: 0.0105
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.05
+    - Type: TDA38640
+    - Address: 0x40
+    - Bus: 92
+    - CPURequired: 3
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCCD_HV_CPU3
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.55
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 55.0
+        - Direction: greater than
+        - Hysteresis: 0.25
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 25.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0125
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.25
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0108
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.08
+        - Direction: greater than
+        - Hysteresis: 0.012
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.2
+        - Direction: less than
+        - Hysteresis: 0.0103
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.03
+    - Type: TDA38640
+    - iin_Name: CPU3_DIMM_12V_Current
+    - pin_Name: CPU3_DIMM_12V_Power
+    - Address: 0x40
+    - Bus: 76
+    - CPURequired: 1
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCCD_HV_CPU1
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.55
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 55.0
+        - Direction: greater than
+        - Hysteresis: 0.25
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 25.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0125
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.25
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0108
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.08
+        - Direction: greater than
+        - Hysteresis: 0.012
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.2
+        - Direction: less than
+        - Hysteresis: 0.0103
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.03
+    - Type: TDA38640
+    - iin_Name: CPU1_DIMM_12V_Current
+    - pin_Name: CPU1_DIMM_12V_Power
+    - Address: 0x40
+    - Bus: 68
+    - CPURequired: 2
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCCD_HV_CPU2
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.55
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 55.0
+        - Direction: greater than
+        - Hysteresis: 0.25
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 25.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0125
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.25
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0108
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.08
+        - Direction: greater than
+        - Hysteresis: 0.012
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.2
+        - Direction: less than
+        - Hysteresis: 0.0103
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.03
+    - Type: TDA38640
+    - iin_Name: CPU2_DIMM_12V_Current
+    - pin_Name: CPU2_DIMM_12V_Power
+    - Address: 0x40
+    - Bus: 100
+    - CPURequired: 0
+    - Labels:
+      - iout1
+      - iin
+      - vin
+      - pin
+      - vout1
+      - pout1
+      - temp1
+    - Name: PVCCD_HV_CPU0
+    - PollRate: 5.0
+    - PowerState: On
+    - Thresholds:
+        - Direction: greater than
+        - Hysteresis: 0.55
+        - Label: iout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 55.0
+        - Direction: greater than
+        - Hysteresis: 0.25
+        - Label: iout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 25.0
+        - Direction: greater than
+        - Hysteresis: 0.133
+        - Label: vin
+        - Name: upper critical
+        - Severity: 1
+        - Value: 13.3
+        - Direction: greater than
+        - Hysteresis: 0.128
+        - Label: vin
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 12.8
+        - Direction: less than
+        - Hysteresis: 0.114
+        - Label: vin
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 11.4
+        - Direction: less than
+        - Hysteresis: 0.108
+        - Label: vin
+        - Name: lower critical
+        - Severity: 1
+        - Value: 10.8
+        - Direction: greater than
+        - Hysteresis: 0.0125
+        - Label: vout1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 1.25
+        - Direction: greater than
+        - Hysteresis: 1.1
+        - Label: temp1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 110.0
+        - Direction: greater than
+        - Hysteresis: 1.25
+        - Label: temp1
+        - Name: upper critical
+        - Severity: 1
+        - Value: 125.0
+        - Direction: less than
+        - Hysteresis: 0.0108
+        - Label: vout1
+        - Name: lower non critical
+        - Severity: 0
+        - Value: 1.08
+        - Direction: greater than
+        - Hysteresis: 0.012
+        - Label: vout1
+        - Name: upper non critical
+        - Severity: 0
+        - Value: 1.2
+        - Direction: less than
+        - Hysteresis: 0.0103
+        - Label: vout1
+        - Name: lower critical
+        - Severity: 1
+        - Value: 1.03
+    - Type: TDA38640
+    - iin_Name: CPU0_DIMM_12V_Current
+    - pin_Name: CPU0_DIMM_12V_Power
+    - Address: 0x30
+    - Bus: 0
+    - CpuID: 0
+    - Name: CPU 0
+    - Type: XeonCPU
+    - Address: 0x31
+    - Bus: 0
+    - CpuID: 1
+    - Name: CPU 1
+    - Type: XeonCPU
+    - Address: 0x32
+    - Bus: 0
+    - CpuID: 2
+    - Name: CPU 2
+    - Type: XeonCPU
+    - Address: 0x33
+    - Bus: 0
+    - CpuID: 3
+    - Name: CPU 3
+    - Type: XeonCPU
+- Name: IBM SBP1 Baseboard
+- Probe: xyz.openbmc_project.FruDevice({'BOARD_PRODUCT_NAME': '.*SBP1'})
+- Type: Board
+- xyz.openbmc_project.Inventory.Decorator.Asset:
+  - Manufacturer: $BOARD_MANUFACTURER
+  - Model: $BOARD_PRODUCT_NAME
+  - PartNumber: $BOARD_PART_NUMBER
+  - SerialNumber: $BOARD_SERIAL_NUMBER
+- xyz.openbmc_project.Inventory.Decorator.AssetTag:
+  - AssetTag: $PRODUCT_ASSET_TAG
+- xyz.openbmc_project.Inventory.Item.System:

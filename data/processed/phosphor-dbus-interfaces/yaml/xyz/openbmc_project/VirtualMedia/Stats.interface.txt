@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\VirtualMedia\Stats.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/VirtualMedia/Stats.interface.yaml' is defined as follows:
 Description: Provides statistic information about object.
 - description: Provides statistic information about object.
 

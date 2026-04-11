@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\OCC\Status.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/OCC/Status.interface.yaml' is defined as follows:
 Description: Implement to indicate status of the OCC.
 - description: Implement to indicate status of the OCC.
 

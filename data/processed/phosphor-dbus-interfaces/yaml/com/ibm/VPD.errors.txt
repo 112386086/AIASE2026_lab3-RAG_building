@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\VPD.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/VPD.errors.yaml' is defined as follows:
   - name: LocationNotFound
   - description: Location is not found.
   - name: NodeNotFound

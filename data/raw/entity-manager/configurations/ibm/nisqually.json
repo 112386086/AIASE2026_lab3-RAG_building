@@ -1,0 +1,67 @@
+{
+    "Exposes": [
+        {
+            "I2CAddress": 104,
+            "I2CBus": 3,
+            "Name": "Power Supply Slot 0",
+            "NamedPresenceGpio": "presence-ps0",
+            "Type": "IBMCFFPSConnector"
+        },
+        {
+            "I2CAddress": 105,
+            "I2CBus": 3,
+            "Name": "Power Supply Slot 1",
+            "NamedPresenceGpio": "presence-ps1",
+            "Type": "IBMCFFPSConnector"
+        },
+        {
+            "I2CAddress": 106,
+            "I2CBus": 3,
+            "Name": "Power Supply Slot 2",
+            "NamedPresenceGpio": "presence-ps2",
+            "Type": "IBMCFFPSConnector"
+        },
+        {
+            "I2CAddress": 107,
+            "I2CBus": 3,
+            "Name": "Power Supply Slot 3",
+            "NamedPresenceGpio": "presence-ps3",
+            "Type": "IBMCFFPSConnector"
+        },
+        {
+            "Address": "0x48",
+            "Bus": 8,
+            "Name": "PCIE 0 Temp",
+            "PollRate": 1,
+            "Type": "TMP75"
+        },
+        {
+            "Address": "0x4A",
+            "Bus": 8,
+            "Name": "PCIE 1 Temp",
+            "PollRate": 1,
+            "Type": "TMP75"
+        },
+        {
+            "Address": "0x11",
+            "Bus": 8,
+            "Name": "UCD90320 Power Sequencer",
+            "Type": "UCD90320"
+        }
+    ],
+    "Name": "Nisqually Backplane",
+    "Probe": [
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 50, 68]})",
+        "OR",
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 50, 70]})",
+        "OR",
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 52, 48]})",
+        "OR",
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 52, 49]})",
+        "OR",
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 52, 50]})",
+        "OR",
+        "com.ibm.ipzvpd.VINI({'CC': [50, 69, 52, 51]})"
+    ],
+    "Type": "Board"
+}

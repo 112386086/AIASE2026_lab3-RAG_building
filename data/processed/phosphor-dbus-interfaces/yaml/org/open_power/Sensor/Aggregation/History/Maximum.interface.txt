@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Sensor\Aggregation\History\Maximum.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Sensor/Aggregation/History/Maximum.interface.yaml' is defined as follows:
 Description: Implement to provide an object that contains a history of maximum values. The values are the maximum values within a time period.  The object this interface is placed on should provide information about the time period.
 - description: Implement to provide an object that contains a history of maximum values. The values are the maximum values within a time period.  The object this interface is placed on should provide information about the time period.
 

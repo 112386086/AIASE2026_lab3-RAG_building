@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\PowerSupplyAttributes.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/PowerSupplyAttributes.interface.yaml' is defined as follows:
 Description: An interface to set control characteristics for an individual power supply.
 - description: An interface to set control characteristics for an individual power supply.
 

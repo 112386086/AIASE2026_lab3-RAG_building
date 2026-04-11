@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\Update.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/Update.interface.yaml' is defined as follows:
 Description: Interface for performing code update for various firmware entities.
 - description: Interface for performing code update for various firmware entities.
 

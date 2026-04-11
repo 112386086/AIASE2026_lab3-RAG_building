@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common.errors.yaml' is defined as follows:
   - name: Timeout
   - description: Operation timed out.
   - name: InternalFailure

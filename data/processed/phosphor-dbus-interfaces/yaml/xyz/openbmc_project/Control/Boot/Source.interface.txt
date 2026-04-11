@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Boot\Source.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Boot/Source.interface.yaml' is defined as follows:
 Description: Implement to designate the source of a boot image.
 - description: Implement to designate the source of a boot image.
 

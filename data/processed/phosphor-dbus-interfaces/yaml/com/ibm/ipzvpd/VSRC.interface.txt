@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\ipzvpd\VSRC.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/ipzvpd/VSRC.interface.yaml' is defined as follows:
 Description: Implement to represent the VSRC record in IPZ VPD
 - description: Implement to represent the VSRC record in IPZ VPD
 

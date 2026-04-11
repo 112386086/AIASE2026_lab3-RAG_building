@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Time\Synchronization.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Time/Synchronization.interface.yaml' is defined as follows:
 Description: Implement to set time synchronization method.
 - description: Implement to set time synchronization method.
 

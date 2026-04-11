@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Boot\Progress.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Boot/Progress.interface.yaml' is defined as follows:
 Description: Implement to indicate progress of ongoing boot.
 - description: Implement to indicate progress of ongoing boot.
 

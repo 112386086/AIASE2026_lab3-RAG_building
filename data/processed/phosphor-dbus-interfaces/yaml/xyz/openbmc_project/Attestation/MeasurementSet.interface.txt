@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Attestation\MeasurementSet.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Attestation/MeasurementSet.interface.yaml' is defined as follows:
 Description: Implement to represent properties related to SPDM Measurements set.
 - description: Implement to represent properties related to SPDM Measurements set.
 

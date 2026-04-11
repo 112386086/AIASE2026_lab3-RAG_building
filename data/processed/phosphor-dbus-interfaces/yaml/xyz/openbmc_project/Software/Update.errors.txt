@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\Update.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/Update.errors.yaml' is defined as follows:
   - name: Incompatible
   - description: The system component has a software version which is incompatible with the new image or the image is not meant for the system component.
 

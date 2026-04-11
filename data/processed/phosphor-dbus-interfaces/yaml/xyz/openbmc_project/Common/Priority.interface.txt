@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\Priority.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/Priority.interface.yaml' is defined as follows:
 Description: Implement this interface to indicate the priority level of an entity. Use it as a decorator for other objects to specify their priority. For example, it can be used for fan sensors, but it is versatile and suitable for various entities.
 - description: Implement this interface to indicate the priority level of an entity. Use it as a decorator for other objects to specify their priority. For example, it can be used for fan sensors, but it is versatile and suitable for various entities.
 

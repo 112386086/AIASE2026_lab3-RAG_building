@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\TOTPState.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/TOTPState.interface.yaml' is defined as follows:
 Description: This interface defines methods and properties required for Time-based One-time Password (TOTP) multi-factor authentication at user manager level to support multi-factor authentication. This interface implemented by each user manager object to support TOTP based authenticators like google, microsoft, etc.
 - description: This interface defines methods and properties required for Time-based One-time Password (TOTP) multi-factor authentication at user manager level to support multi-factor authentication. This interface implemented by each user manager object to support TOTP based authenticators like google, microsoft, etc.
 

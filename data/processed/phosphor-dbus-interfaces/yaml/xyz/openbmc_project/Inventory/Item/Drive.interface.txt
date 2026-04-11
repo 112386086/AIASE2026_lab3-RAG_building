@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Drive.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Drive.interface.yaml' is defined as follows:
 Description: Implement to provide drive attributes.
 - description: Implement to provide drive attributes.
 

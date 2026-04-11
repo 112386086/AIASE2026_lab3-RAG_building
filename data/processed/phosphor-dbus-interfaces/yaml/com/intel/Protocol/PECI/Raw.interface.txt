@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\intel\Protocol\PECI\Raw.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/intel/Protocol/PECI/Raw.interface.yaml' is defined as follows:
 Description: Implement to provide D-Bus raw PECI access to the CPU.
 - description: Implement to provide D-Bus raw PECI access to the CPU.
 

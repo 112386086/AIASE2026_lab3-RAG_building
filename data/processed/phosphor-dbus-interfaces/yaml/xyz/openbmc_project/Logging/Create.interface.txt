@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Create.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Logging/Create.interface.yaml' is defined as follows:
 Description: This interface contains a Create method, which can be implemented to allow creation of xyz.openbmc_project.Logging.Entry objects directly over D-Bus, without needing the errors defined in the *.Error/metadata.yaml files.
 - description: This interface contains a Create method, which can be implemented to allow creation of xyz.openbmc_project.Logging.Entry objects directly over D-Bus, without needing the errors defined in the *.Error/metadata.yaml files.
 

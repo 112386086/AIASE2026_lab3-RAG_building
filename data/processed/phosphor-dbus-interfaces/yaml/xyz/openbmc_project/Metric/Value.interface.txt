@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Metric\Value.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Metric/Value.interface.yaml' is defined as follows:
 Description: This interface provides the Board Manager Metric values for resource utilization.
 - description: This interface provides the Board Manager Metric values for resource utilization.
 

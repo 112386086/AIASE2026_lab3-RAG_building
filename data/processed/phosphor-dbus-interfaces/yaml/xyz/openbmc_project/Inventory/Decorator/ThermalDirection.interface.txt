@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\ThermalDirection.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/ThermalDirection.interface.yaml' is defined as follows:
 Description: Indicates the thermal management path through the chassis. This decorator should only be added to xyz.openbmc_project.Inventory.Item.Chassis instances.
 - description: Indicates the thermal management path through the chassis. This decorator should only be added to xyz.openbmc_project.Inventory.Item.Chassis instances.
 

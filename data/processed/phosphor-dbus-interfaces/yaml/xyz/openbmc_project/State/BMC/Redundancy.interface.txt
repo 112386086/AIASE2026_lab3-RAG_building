@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMC\Redundancy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/BMC/Redundancy.interface.yaml' is defined as follows:
 Description: This interface holds redundant BMC related information.
 - description: This interface holds redundant BMC related information.
 

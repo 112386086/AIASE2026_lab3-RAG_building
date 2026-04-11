@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Cable.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Cable.interface.yaml' is defined as follows:
 Description: xyz.openbmc_project.Inventory.Item.Cable should be implemented on objects that represent a cable instance or a system cable instance.
 - description: xyz.openbmc_project.Inventory.Item.Cable should be implemented on objects that represent a cable instance or a system cable instance.
 

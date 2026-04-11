@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Boot\Raw.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Boot/Raw.interface.yaml' is defined as follows:
 Description: Implement to provide the Power-On Self Test codes from the host.
 - description: Implement to provide the Power-On Self Test codes from the host.
 

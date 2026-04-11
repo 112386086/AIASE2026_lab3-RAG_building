@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Network\Client.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Network/Client.interface.yaml' is defined as follows:
 Description: This defines the network endpoint. Application which wants to keep the network endpoint info can use this interface. e.g: Network endpoint could be SNMP managers or LDAP servers etc.
 - description: This defines the network endpoint. Application which wants to keep the network endpoint info can use this interface. e.g: Network endpoint could be SNMP managers or LDAP servers etc.
 

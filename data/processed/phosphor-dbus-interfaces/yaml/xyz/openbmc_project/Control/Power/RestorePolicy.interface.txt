@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Power\RestorePolicy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Power/RestorePolicy.interface.yaml' is defined as follows:
 Description: Implement to specify power transition behavior on a BMC reset. The implementation may choose to only enforce the policy on a power loss or on both a power loss and BMC reboot.
 - description: Implement to specify power transition behavior on a BMC reset. The implementation may choose to only enforce the policy on a power loss or on both a power loss and BMC reboot.
 

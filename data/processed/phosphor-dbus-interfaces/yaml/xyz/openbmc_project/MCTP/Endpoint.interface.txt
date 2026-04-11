@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\MCTP\Endpoint.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/MCTP/Endpoint.interface.yaml' is defined as follows:
 Description: Describe an MCTP endpoint. It is an MCTP communication terminus. An MCTP endpoint is a terminus or origin of MCTP packets or messages. The combined functionality within a physical device that communicates using the MCTP transport protocol and handles MCTP control commands. This includes MCTP-capable management controllers and managed devices.
 - description: Describe an MCTP endpoint. It is an MCTP communication terminus. An MCTP endpoint is a terminus or origin of MCTP packets or messages. The combined functionality within a physical device that communicates using the MCTP transport protocol and handles MCTP control commands. This includes MCTP-capable management controllers and managed devices.
 

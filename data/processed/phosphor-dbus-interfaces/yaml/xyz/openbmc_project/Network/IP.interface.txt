@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Network\IP.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Network/IP.interface.yaml' is defined as follows:
 Description: This defines an IP address.
 - description: This defines an IP address.
 

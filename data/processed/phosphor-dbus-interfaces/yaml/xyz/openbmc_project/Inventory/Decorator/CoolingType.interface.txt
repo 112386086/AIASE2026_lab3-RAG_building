@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\CoolingType.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/CoolingType.interface.yaml' is defined as follows:
 Description: Implement properties to indicate the element cooling type (air, water, etc.).
 - description: Implement properties to indicate the element cooling type (air, water, etc.).
 

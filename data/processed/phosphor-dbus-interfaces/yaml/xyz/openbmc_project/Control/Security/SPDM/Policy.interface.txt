@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Security\SPDM\Policy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Security/SPDM/Policy.interface.yaml' is defined as follows:
 Description: Used to configure security policies related to the SPDM protocol and its supported versions, features, and algorithms.
 - description: Used to configure security policies related to the SPDM protocol and its supported versions, features, and algorithms.
 

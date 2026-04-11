@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Source\PLDM\Entity.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Source/PLDM/Entity.interface.yaml' is defined as follows:
 Description: Implement to represent a PLDM Entity (see chapter 9 of www.dmtf.org/sites/default/files/standards/documents/DSP0248_1.2.0.pdf).
 Any OpenBMC implementation must add this interface on a D-Bus object that represents a PLDM Entity. For example, if an app is creating D-Bus objects consisting of PLDM FRU fields (DSP0257) as D-Bus properties, to be then converted to inventory D-Bus objects (by apps like EM and PIM), then the app may implement this interface. In this example, this interface helps identify what the FRU's type is, in addition to instance and containment information.
 PLDM stands for Platform Level Data Model. More information about PLDM (and MCTP) can be found at https://www.dmtf.org/standards/pmci

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Source\Modbus\FRU.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Source/Modbus/FRU.interface.yaml' is defined as follows:
 Description: This interface displays FRU inventory information for a Modbus device, including specific hardware access details such as address and LinkTTY that were discovered through probing.
 - description: This interface displays FRU inventory information for a Modbus device, including specific hardware access details such as address and LinkTTY that were discovered through probing.
 

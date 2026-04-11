@@ -1,3 +1,3 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Panel.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Panel.interface.yaml' is defined as follows:
 Description: Implement to provide Panel FRU attributes. A panel is typically found on the chassis of a system and can be used to physically control the system and/or display system status.
 - description: Implement to provide Panel FRU attributes. A panel is typically found on the chassis of a system and can be used to physically control the system and/or display system status.

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Syslog\Destination\Mail\Entry.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Logging/Syslog/Destination/Mail/Entry.interface.yaml' is defined as follows:
 Description: Interface representing an e-mail destination for syslog messages.
 The object which implements this interface must implement xyz.openbmc_project.Object.Delete.
 - description: Interface representing an e-mail destination for syslog messages.

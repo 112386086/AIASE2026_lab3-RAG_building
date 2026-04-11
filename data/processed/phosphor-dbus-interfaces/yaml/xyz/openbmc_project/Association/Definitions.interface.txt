@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Association\Definitions.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Association/Definitions.interface.yaml' is defined as follows:
 Description: This interface is used to tell the mapper to create xyz.openbmc_project.Association interfaces on <this path>/forward and endpoint/reverse.
 - description: This interface is used to tell the mapper to create xyz.openbmc_project.Association interfaces on <this path>/forward and endpoint/reverse.
 

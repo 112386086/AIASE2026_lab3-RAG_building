@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\Common.metadata.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/Common.metadata.yaml' is defined as follows:
   - name: UserNameExists
   - level: ERR
   - name: UserNameDoesNotExist

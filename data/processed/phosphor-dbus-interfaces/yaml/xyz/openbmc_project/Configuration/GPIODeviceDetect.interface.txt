@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Configuration\GPIODeviceDetect.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Configuration/GPIODeviceDetect.interface.yaml' is defined as follows:
 Description: Information to enable a daemon to probe hardware based on gpio values
 - description: Information to enable a daemon to probe hardware based on gpio values
 

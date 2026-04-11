@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Syslog\Destination\Mail\Create.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Logging/Syslog/Destination/Mail/Create.interface.yaml' is defined as follows:
 Description: Interface to create new e-mail destinations for syslog.
 - description: Interface to create new e-mail destinations for syslog.
 

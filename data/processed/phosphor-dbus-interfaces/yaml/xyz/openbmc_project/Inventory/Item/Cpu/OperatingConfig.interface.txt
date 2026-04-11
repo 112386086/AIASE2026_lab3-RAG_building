@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\Cpu\OperatingConfig.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Cpu/OperatingConfig.interface.yaml' is defined as follows:
 Description: Implement to advertise power and frequency attributes of a single available (but not necessarily active/applied) processor configuration profile.
 - description: Implement to advertise power and frequency attributes of a single available (but not necessarily active/applied) processor configuration profile.
 

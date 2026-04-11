@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\BIOSConfig\SecureBoot.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/BIOSConfig/SecureBoot.interface.yaml' is defined as follows:
 Description: UEFI Secure Boot information and represents properties for managing the UEFI Secure Boot functionality of a system.
 - description: UEFI Secure Boot information and represents properties for managing the UEFI Secure Boot functionality of a system.
 

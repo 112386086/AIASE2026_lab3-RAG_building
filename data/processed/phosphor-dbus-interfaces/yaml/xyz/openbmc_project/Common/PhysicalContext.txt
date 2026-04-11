@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\PhysicalContext.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/PhysicalContext.yaml' is defined as follows:
 Description: Implement to indicate what chassis area or device the object implementing this interface applies to. For instance, this could indicate what a sensor reading applies to (examples are "GPU", "Back of the Chassis", etc.) by having this implemented on the object that implements Sensor.Value.
 - description: Implement to indicate what chassis area or device the object implementing this interface applies to. For instance, this could indicate what a sensor reading applies to (examples are "GPU", "Back of the Chassis", etc.) by having this implemented on the object that implements Sensor.Value.
 

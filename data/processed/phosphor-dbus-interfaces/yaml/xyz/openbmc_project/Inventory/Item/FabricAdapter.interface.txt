@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\FabricAdapter.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/FabricAdapter.interface.yaml' is defined as follows:
 Description: Implement to provide fabric adapter attributes. A physical fabric adapter capable of connecting to an interconnect fabric. Examples include but are not limited to Ethernet, NVMe over Fabrics, etc.
 - description: Implement to provide fabric adapter attributes. A physical fabric adapter capable of connecting to an interconnect fabric. Examples include but are not limited to Ethernet, NVMe over Fabrics, etc.
 

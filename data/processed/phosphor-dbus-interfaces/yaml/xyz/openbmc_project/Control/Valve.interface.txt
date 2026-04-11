@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Valve.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Valve.interface.yaml' is defined as follows:
 Description: Implement to provide a valve control interface to open/close a valve.
 Any service implementing this interface must also implement the  xyz.openbmc_project.Sensors.Value interface to show valve's open status in percentage units.
 - description: Implement to provide a valve control interface to open/close a valve.

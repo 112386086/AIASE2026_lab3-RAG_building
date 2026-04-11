@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Threshold\HardShutdown.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Sensor/Threshold/HardShutdown.interface.yaml' is defined as follows:
 Description: Implement to provide hard shutdown class sensor thresholds.  Objects implementing Sensor.Threshold.HardShutdown must be instantiated in the correct hierarchy within the sensors namespace.  The following sensor hierarchies are recognized:
   airflow
   altitude

@@ -1,0 +1,38 @@
+The D-Bus interface specification for 'linux-devicetree/Documentation/devicetree/bindings/gpio/nxp,lpc3220-gpio.yaml' is defined as follows:
+- $id: http://devicetree.org/schemas/gpio/nxp,lpc3220-gpio.yaml#
+- $schema: http://devicetree.org/meta-schemas/core.yaml#
+- title: NXP LPC3220 SoC GPIO controller
+- maintainers:
+  - Animesh Agarwal <animeshagarwal28@gmail.com>
+- properties:
+  - compatible:
+    - const: nxp,lpc3220-gpio
+  - reg:
+    - maxItems: 1
+  - gpio-controller: True
+  - #gpio-cells:
+    - const: 3
+    - description: 1) bank:
+  0: GPIO P0
+  1: GPIO P1
+  2: GPIO P2
+  3: GPIO P3
+  4: GPI P3
+  5: GPO P3
+2) pin number
+3) flags:
+  - bit 0 specifies polarity (0 for normal, 1 for inverted)
+
+- required:
+  - compatible
+  - reg
+  - gpio-controller
+  - #gpio-cells
+- additionalProperties: False
+- examples:
+  - gpio@40028000 {
+    compatible = "nxp,lpc3220-gpio";
+    reg = <0x40028000 0x1000>;
+    gpio-controller;
+    #gpio-cells = <3>; /* bank, pin, flags */
+};

@@ -1,0 +1,11 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/nvidia/bmc_p3809.json':
+- Exposes:
+    - Address: $address
+    - Bus: $bus
+    - Name: HMC_FRU
+    - Type: EEPROM_24C02
+- Name: BMC
+- Probe: xyz.openbmc_project.FruDevice({'PRODUCT_MANUFACTURER': 'NVIDIA', 'PRODUCT_PRODUCT_NAME': 'P3809-BMC'})
+- Type: Board
+- xyz.openbmc_project.Inventory.Item.NetworkInterface:
+  - MACAddress: $MAC_BOARD_INFO_AM2

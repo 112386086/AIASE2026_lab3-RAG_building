@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Leak\DetectorGroup.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Leak/DetectorGroup.interface.yaml' is defined as follows:
 Description: Implement to provide attributes for leak detector group. This group represents a collection of leak detectors that reports a unified status.
 - description: Implement to provide attributes for leak detector group. This group represents a collection of leak detectors that reports a unified status.
 

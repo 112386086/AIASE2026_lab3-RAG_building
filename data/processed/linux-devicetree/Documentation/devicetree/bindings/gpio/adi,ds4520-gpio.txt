@@ -1,0 +1,38 @@
+The D-Bus interface specification for 'linux-devicetree/Documentation/devicetree/bindings/gpio/adi,ds4520-gpio.yaml' is defined as follows:
+- $id: http://devicetree.org/schemas/gpio/adi,ds4520-gpio.yaml#
+- $schema: http://devicetree.org/meta-schemas/core.yaml#
+- title: DS4520 I2C GPIO expander
+- maintainers:
+  - Okan Sahin <okan.sahin@analog.com>
+- properties:
+  - compatible:
+    - enum:
+      - adi,ds4520-gpio
+  - reg:
+    - maxItems: 1
+  - gpio-controller: True
+  - #gpio-cells:
+    - const: 2
+  - ngpios:
+    - minimum: 1
+    - maximum: 9
+- required:
+  - compatible
+  - reg
+  - gpio-controller
+  - #gpio-cells
+  - ngpios
+- additionalProperties: False
+- examples:
+  - i2c {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    gpio@50 {
+        compatible = "adi,ds4520-gpio";
+        reg = <0x50>;
+        ngpios = <9>;
+        gpio-controller;
+        #gpio-cells = <2>;
+    };
+};

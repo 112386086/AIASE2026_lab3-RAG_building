@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\PowerOnHours.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/PowerOnHours.interface.yaml' is defined as follows:
 Description: Implement to provide the POH(Power-On-Hours) counter.
 - description: Implement to provide the POH(Power-On-Hours) counter.
 

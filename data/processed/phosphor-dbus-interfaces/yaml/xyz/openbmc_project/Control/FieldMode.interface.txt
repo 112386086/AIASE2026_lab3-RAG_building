@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\FieldMode.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/FieldMode.interface.yaml' is defined as follows:
 Description: An interface to enable field mode, which, when enabled, indicates that the system is in production.
 - description: An interface to enable field mode, which, when enabled, indicates that the system is in production.
 

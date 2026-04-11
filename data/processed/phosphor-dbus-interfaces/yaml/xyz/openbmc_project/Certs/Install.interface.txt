@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\Install.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/Install.interface.yaml' is defined as follows:
 Description: Certificate management interface to install server and client certificates.
 - description: Certificate management interface to install server and client certificates.
 

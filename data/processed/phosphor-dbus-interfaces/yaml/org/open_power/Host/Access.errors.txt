@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Host\Access.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Host/Access.errors.yaml' is defined as follows:
   - name: WriteCFAM
   - description: Failed to do a CFAM register write
   - name: ReadCFAM

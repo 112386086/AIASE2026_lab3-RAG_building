@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\meta\Hardware\Yosemite5.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/meta/Hardware/Yosemite5.interface.yaml' is defined as follows:
 Description: This interface is not meant to be instantiated directly. It defines the supported hardware devices specific to the Yosemite5.
 - description: This interface is not meant to be instantiated directly. It defines the supported hardware devices specific to the Yosemite5.
 

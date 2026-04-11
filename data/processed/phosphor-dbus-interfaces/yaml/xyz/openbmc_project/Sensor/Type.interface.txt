@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Type.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Sensor/Type.interface.yaml' is defined as follows:
 Description: Implement to provide detail on type of the sensor. Each property in the interface maps to a distinct group of sensor subtypes.
 Objects implementing Sensor.Type shall also implement Sensor.Value.
 - description: Implement to provide detail on type of the sensor. Each property in the interface maps to a distinct group of sensor subtypes.

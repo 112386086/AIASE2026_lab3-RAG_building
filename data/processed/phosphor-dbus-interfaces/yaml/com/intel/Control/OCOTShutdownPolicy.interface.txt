@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\intel\Control\OCOTShutdownPolicy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/intel/Control/OCOTShutdownPolicy.interface.yaml' is defined as follows:
 Description: An interface for node shutdown policy on multi-node products. It is used by Intel OEM IPMI command.
 - description: An interface for node shutdown policy on multi-node products. It is used by Intel OEM IPMI command.
 

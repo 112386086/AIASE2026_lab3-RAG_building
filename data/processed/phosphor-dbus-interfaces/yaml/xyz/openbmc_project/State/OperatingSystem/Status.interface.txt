@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\OperatingSystem\Status.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/OperatingSystem/Status.interface.yaml' is defined as follows:
 Description: Implement to set the operating system status.
 - description: Implement to set the operating system status.
 

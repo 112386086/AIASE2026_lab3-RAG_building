@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Telemetry\TriggerManager.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Telemetry/TriggerManager.interface.yaml' is defined as follows:
 Description: Implement to provide triggers management.
 - description: Implement to provide triggers management.
 

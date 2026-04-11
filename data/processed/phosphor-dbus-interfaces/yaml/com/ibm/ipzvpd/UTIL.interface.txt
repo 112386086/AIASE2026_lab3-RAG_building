@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\ipzvpd\UTIL.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/ipzvpd/UTIL.interface.yaml' is defined as follows:
 Description: Implement to represent the UTIL record in IPZ VPD. The properties within contain various legacy utility data.
 - description: Implement to represent the UTIL record in IPZ VPD. The properties within contain various legacy utility data.
 

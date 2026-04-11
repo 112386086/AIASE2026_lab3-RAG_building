@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\OCC\PassThrough.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/OCC/PassThrough.interface.yaml' is defined as follows:
 Description: Implement to provide pass-through mechanism to the On Chip Controller (OCC).
 - description: Implement to provide pass-through mechanism to the On Chip Controller (OCC).
 

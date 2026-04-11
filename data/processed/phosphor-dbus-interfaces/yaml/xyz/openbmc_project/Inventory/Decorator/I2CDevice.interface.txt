@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\I2CDevice.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/I2CDevice.interface.yaml' is defined as follows:
 Description: Implement this interface to expose an I2C device as an inventory item. Properties include the I2C bus number and the device address.
 - description: Implement this interface to expose an I2C device as an inventory item. Properties include the I2C bus number and the device address.
 

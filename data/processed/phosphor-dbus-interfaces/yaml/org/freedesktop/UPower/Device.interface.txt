@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\freedesktop\UPower\Device.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/freedesktop/UPower/Device.interface.yaml' is defined as follows:
 Description: "org.freedesktop.UPower.Device -- Device interface
  Defined at https://upower.freedesktop.org/docs/Device.html
  Objects implementing org.freedesktop.UPower.Device also implement the

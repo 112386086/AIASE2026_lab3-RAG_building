@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Item\PersistentMemory\PowerManagementPolicy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/PersistentMemory/PowerManagementPolicy.interface.yaml' is defined as follows:
 Description: Implement to provide the power management policy for the current resource.
 - description: Implement to provide the power management policy for the current resource.
 

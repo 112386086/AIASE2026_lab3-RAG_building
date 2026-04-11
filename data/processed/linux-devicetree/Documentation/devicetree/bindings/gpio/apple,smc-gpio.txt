@@ -1,0 +1,19 @@
+The D-Bus interface specification for 'linux-devicetree/Documentation/devicetree/bindings/gpio/apple,smc-gpio.yaml' is defined as follows:
+Description: Apple Mac System Management Controller GPIO block.
+- $id: http://devicetree.org/schemas/gpio/apple,smc-gpio.yaml#
+- $schema: http://devicetree.org/meta-schemas/core.yaml#
+- title: Apple Mac System Management Controller GPIO
+- maintainers:
+  - Sven Peter <sven@kernel.org>
+- description: Apple Mac System Management Controller GPIO block.
+- properties:
+  - compatible:
+    - const: apple,smc-gpio
+  - gpio-controller: True
+  - #gpio-cells:
+    - const: 2
+- required:
+  - compatible
+  - gpio-controller
+  - #gpio-cells
+- additionalProperties: False

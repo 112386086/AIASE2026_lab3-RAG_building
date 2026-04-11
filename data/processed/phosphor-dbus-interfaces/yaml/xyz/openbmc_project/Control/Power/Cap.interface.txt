@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Power\Cap.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Power/Cap.interface.yaml' is defined as follows:
 Description: Implement to specify the power consumption cap and bounds
 - description: Implement to specify the power consumption cap and bounds
 

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Decorator\PowerSystemInputs.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Decorator/PowerSystemInputs.interface.yaml' is defined as follows:
 Description: Implement to describe the status of the power supplied to the chassis by the power supply unit(s). It is expected that the relationship to the chassis is shown by implementing this interface under a multi-object path, such as chassisN/unit[N] where unit can be an individual or group.
 - description: Implement to describe the status of the power supplied to the chassis by the power supply unit(s). It is expected that the relationship to the chassis is shown by implementing this interface under a multi-object path, such as chassisN/unit[N] where unit can be an individual or group.
 

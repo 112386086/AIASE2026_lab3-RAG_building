@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Configuration\GPIOValve.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Configuration/GPIOValve.interface.yaml' is defined as follows:
 Description: Implement to provide entity manager configuration for the gpio based valve.
 - description: Implement to provide entity manager configuration for the gpio based valve.
 

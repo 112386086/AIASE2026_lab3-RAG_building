@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Power\Throttle.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Power/Throttle.interface.yaml' is defined as follows:
 Description: This interface provides information related to the throttle status of a component.
 - description: This interface provides information related to the throttle status of a component.
 

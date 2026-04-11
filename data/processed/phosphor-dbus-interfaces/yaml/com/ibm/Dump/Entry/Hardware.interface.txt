@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\Dump\Entry\Hardware.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/Dump/Entry/Hardware.interface.yaml' is defined as follows:
 Description: Implement this to add Hardware dump management.
 Hardware dump is a collection hardware state information, including various registers, and it is used for debugging system checkstop. checkstop is the descriptive term for entire system termination by the hardware due to a detected error.
 - description: Implement this to add Hardware dump management.

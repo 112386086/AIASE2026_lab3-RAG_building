@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Proc\FSI.metadata.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Proc/FSI.metadata.yaml' is defined as follows:
   - name: MasterDetectionFailure
   - inherits:
     - xyz.openbmc_project.Common.Callout.Device

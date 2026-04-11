@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\Image.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/Image.errors.yaml' is defined as follows:
   - name: UnTarFailure
   - description: An error occurred during untar.
   - name: ManifestFileFailure

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\OCC\Device.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/OCC/Device.errors.yaml' is defined as follows:
   - name: OpenFailure
   - description: Opening OCC device failed.
   - name: ReadFailure

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Condition\HostFirmware.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Condition/HostFirmware.interface.yaml' is defined as follows:
 Description: Implement to provide information on the condition of the host firmware. The expectation is the implementer of this interface utilize their host protocol (IPMI, PLDM, ...) to check the state of the host firmware running on the system.
 - description: Implement to provide information on the condition of the host firmware. The expectation is the implementer of this interface utilize their host protocol (IPMI, PLDM, ...) to check the state of the host firmware running on the system.
 

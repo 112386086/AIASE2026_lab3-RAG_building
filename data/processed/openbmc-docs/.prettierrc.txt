@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'openbmc-docs\.prettierrc.yaml' is defined as follows:
+The D-Bus interface specification for 'openbmc-docs/.prettierrc.yaml' is defined as follows:
 - tabWidth: 4
 - printWidth: 80
 - proseWrap: always

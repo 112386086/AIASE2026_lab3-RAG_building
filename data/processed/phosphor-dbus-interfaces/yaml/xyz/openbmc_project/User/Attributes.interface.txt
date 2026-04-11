@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\Attributes.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/Attributes.interface.yaml' is defined as follows:
 Description: Provides user objects, their properties. As communication to this service is done through authenticated & authorized session, there won't be any validation for the both.
 - description: Provides user objects, their properties. As communication to this service is done through authenticated & authorized session, there won't be any validation for the both.
 

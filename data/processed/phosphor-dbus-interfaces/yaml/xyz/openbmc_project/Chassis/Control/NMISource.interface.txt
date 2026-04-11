@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Chassis\Control\NMISource.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Chassis/Control/NMISource.interface.yaml' is defined as follows:
 Description: An interface for NMI signal source.
 - description: An interface for NMI signal source.
 

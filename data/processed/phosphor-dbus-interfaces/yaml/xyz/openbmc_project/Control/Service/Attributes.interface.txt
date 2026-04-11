@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Service\Attributes.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Service/Attributes.interface.yaml' is defined as follows:
 Description: Implement to expose the properties of service objects like bmcweb, phosphor-ipmi-net etc. This interface can be used to get and set the properties of the service.
 - description: Implement to expose the properties of service objects like bmcweb, phosphor-ipmi-net etc. This interface can be used to get and set the properties of the service.
 

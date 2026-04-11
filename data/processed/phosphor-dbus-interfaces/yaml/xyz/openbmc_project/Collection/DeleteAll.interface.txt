@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Collection\DeleteAll.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Collection/DeleteAll.interface.yaml' is defined as follows:
 Description: Implement to provide operations on a collection of objects.
 - description: Implement to provide operations on a collection of objects.
 

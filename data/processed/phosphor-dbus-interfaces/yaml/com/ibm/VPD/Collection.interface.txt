@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\VPD\Collection.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/VPD/Collection.interface.yaml' is defined as follows:
 Description: Implement to provide VPD collection state management.
 - description: Implement to provide VPD collection state management.
 

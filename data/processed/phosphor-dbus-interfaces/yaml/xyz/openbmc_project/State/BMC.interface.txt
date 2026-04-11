@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMC.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/BMC.interface.yaml' is defined as follows:
 Description: Implementation of BMC state management.  When rebooting we are in transition.  When Ready all services required are running successfully.  When we are Not Ready this implies not all services have started that are required to be.
 - description: Implementation of BMC state management.  When rebooting we are in transition.  When Ready all services required are running successfully.  When we are Not Ready this implies not all services have started that are required to be.
 

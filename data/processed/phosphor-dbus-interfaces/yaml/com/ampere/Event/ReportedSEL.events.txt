@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ampere\Event\ReportedSEL.events.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ampere/Event/ReportedSEL.events.yaml' is defined as follows:
 - version: 1.0.0
 - errors:
     - name: ReportedSELCritical

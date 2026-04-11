@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\AccountPolicy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/AccountPolicy.interface.yaml' is defined as follows:
 Description: Provides global user account policy related management.
 - description: Provides global user account policy related management.
 

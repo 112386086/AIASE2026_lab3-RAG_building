@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\CSR.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/CSR.interface.yaml' is defined as follows:
 Description: Implement to retrieve the Certificate Signing Request(CSR).
 - description: Implement to retrieve the Certificate Signing Request(CSR).
 

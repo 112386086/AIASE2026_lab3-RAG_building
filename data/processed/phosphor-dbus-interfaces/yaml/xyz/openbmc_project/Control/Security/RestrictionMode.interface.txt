@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\Security\RestrictionMode.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/Security/RestrictionMode.interface.yaml' is defined as follows:
 Description: Implement to specify a restricted mode of operation.
 - description: Implement to specify a restricted mode of operation.
 

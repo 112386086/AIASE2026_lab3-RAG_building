@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\AssetTag.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/AssetTag.interface.yaml' is defined as follows:
 Description: Implement to provide Asset Tag. The asset tag is used to uniquely identify the object.
 - description: Implement to provide Asset Tag. The asset tag is used to uniquely identify the object.
 

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\Authority.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/Authority.interface.yaml' is defined as follows:
 Description: Signs Certificate Signing Request.
 - description: Signs Certificate Signing Request.
 

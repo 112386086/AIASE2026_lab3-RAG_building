@@ -1,13 +1,25 @@
-# data_update.py
+"""
+data_update.py — OpenBMC RAG 系統：資料收集、清理、Chunking、Embedding、向量寫入
+版本：v3.0 (對齊 SDD_RAG.md v3.0)
+
+實作重點：
+1. 支援多格式解析：Markdown, YAML, JSON (Entity Manager), DTS (Device Tree).
+2. 嚴格鏡像目錄 (Strict Mirror)：輸出至 processed/ 時保留原始目錄結構。
+3. 冪等性保證：File-level Upsert + 孤兒清理 (Orphan Cleanup)。
+4. Context Enrichment：動態計算 Token 預算，強制注入來源路徑。
+5. Hybrid Search 準備：建立包含 fts_vector 的 pgvector Schema。
+"""
+
 from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import logging
 import os
 import re
-import sys
 import shutil
+import sys
 from pathlib import Path
 from typing import Generator, Any
 
@@ -34,7 +46,8 @@ MIN_CHUNK_CHARS = 30
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
 VECTOR_DIM = 384
 
-SUPPORTED_SUFFIXES = {".md", ".txt", ".yaml", ".yml"}
+# 新增 .json, .dts, .dtsi 支援
+SUPPORTED_SUFFIXES = {".md", ".txt", ".yaml", ".yml", ".json", ".dts", ".dtsi"}
 
 # 設定 Logger
 logging.basicConfig(
@@ -61,21 +74,21 @@ class DocumentCleaner:
         return text.strip()
 
     @staticmethod
-    def _flatten_yaml_node(data: Any, level: int = 0) -> list[str]:
-        """遞迴解析 YAML AST 並轉為自然語言條列"""
+    def _flatten_ast_node(data: Any, level: int = 0) -> list[str]:
+        """遞迴解析 AST (YAML/JSON) 並轉為自然語言條列"""
         lines = []
         indent = "  " * level
         if isinstance(data, dict):
             for k, v in data.items():
                 if isinstance(v, (dict, list)):
                     lines.append(f"{indent}- {k}:")
-                    lines.extend(DocumentCleaner._flatten_yaml_node(v, level + 1))
+                    lines.extend(DocumentCleaner._flatten_ast_node(v, level + 1))
                 else:
                     lines.append(f"{indent}- {k}: {v}")
         elif isinstance(data, list):
             for item in data:
                 if isinstance(item, (dict, list)):
-                    lines.extend(DocumentCleaner._flatten_yaml_node(item, level + 1))
+                    lines.extend(DocumentCleaner._flatten_ast_node(item, level + 1))
                 else:
                     lines.append(f"{indent}- {item}")
         else:
@@ -84,30 +97,48 @@ class DocumentCleaner:
 
     @staticmethod
     def clean_yaml(text: str, source_path: str) -> str:
-        """將 D-Bus YAML 轉換為 LLM 易讀的自然語言描述 (SDD 4.2)"""
+        """將 D-Bus YAML 轉換為 LLM 易讀的自然語言描述"""
         try:
             data = yaml.safe_load(text)
             if not data:
                 return ""
-            
-            # 樣板化描述
             lines = [f"The D-Bus interface specification for '{source_path}' is defined as follows:"]
-            
-            # 針對 OpenBMC phosphor-dbus-interfaces 的常見結構優化
             if isinstance(data, dict) and "description" in data:
                 lines.append(f"Description: {data['description'].strip()}")
-            
-            lines.extend(DocumentCleaner._flatten_yaml_node(data))
+            lines.extend(DocumentCleaner._flatten_ast_node(data))
             return "\n".join(lines)
         except yaml.YAMLError as e:
             log.warning(f"YAML parsing error in {source_path}, falling back to raw text: {e}")
             return text.strip()
+
+    @staticmethod
+    def clean_json(text: str, source_path: str) -> str:
+        """將 Entity Manager JSON 轉換為 LLM 易讀的自然語言描述"""
+        try:
+            data = json.loads(text)
+            if not data:
+                return ""
+            lines = [f"Hardware Configuration (Entity Manager) for '{source_path}':"]
+            lines.extend(DocumentCleaner._flatten_ast_node(data))
+            return "\n".join(lines)
+        except json.JSONDecodeError as e:
+            log.warning(f"JSON parsing error in {source_path}, falling back to raw text: {e}")
+            return text.strip()
+
+    @staticmethod
+    def clean_dts(text: str, source_path: str) -> str:
+        """處理 Device Tree 檔案，保留結構但加上明確標頭"""
+        return f"Device Tree Source ({source_path}):\n\n{text.strip()}"
 
     def clean(self, raw_text: str, suffix: str, source_path: str) -> str:
         if suffix in {".md"}:
             return self.clean_markdown(raw_text)
         elif suffix in {".yaml", ".yml"}:
             return self.clean_yaml(raw_text, source_path)
+        elif suffix in {".json"}:
+            return self.clean_json(raw_text, source_path)
+        elif suffix in {".dts", ".dtsi"}:
+            return self.clean_dts(raw_text, source_path)
         return raw_text.strip()
 
 
@@ -206,7 +237,12 @@ class VectorStore:
     TABLE_NAME = "chunks"
 
     def __init__(self, connection_string: str):
-        self.conn = psycopg2.connect(connection_string)
+        try:
+            self.conn = psycopg2.connect(connection_string)
+        except psycopg2.OperationalError as e:
+            log.error(f"Database connection failed. Is docker-compose up? Error: {e}")
+            sys.exit(1)
+            
         self._ensure_extension()
         self._ensure_table()
 
@@ -218,7 +254,6 @@ class VectorStore:
     def _ensure_table(self) -> None:
         """Auto-Migration: 依據 SDD 6.1.1 建立 Schema，包含 fts_vector 供 Hybrid Search 使用"""
         with self.conn.cursor() as cur:
-            # 1. 建立基本 Table (若完全不存在)
             cur.execute(f"""
                 CREATE TABLE IF NOT EXISTS {self.TABLE_NAME} (
                     id          SERIAL PRIMARY KEY,
@@ -232,21 +267,18 @@ class VectorStore:
                 );
             """)
             
-            # 2. 執行 Schema Migration: 確保 fts_vector 欄位存在 (相容舊版 DB)
             cur.execute(f"""
                 ALTER TABLE {self.TABLE_NAME} 
                 ADD COLUMN IF NOT EXISTS fts_vector tsvector 
                 GENERATED ALWAYS AS (to_tsvector('english', content)) STORED;
             """)
 
-            # 3. 建立 IVFFLAT 向量索引 (SDD 建議 lists=20)
             cur.execute(f"""
                 CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_embedding_idx
                 ON {self.TABLE_NAME} USING ivfflat (embedding vector_cosine_ops)
                 WITH (lists = 20);
             """)
             
-            # 4. 建立 GIN 索引供全文檢索
             cur.execute(f"""
                 CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_fts_idx
                 ON {self.TABLE_NAME} USING gin (fts_vector);
@@ -322,7 +354,6 @@ class DataUpdatePipeline:
         """Strict Mirror: 嚴格保持與 raw 目錄相同的相對路徑 (SDD 4.1)"""
         relative = raw_path.relative_to(self.source_dir)
         processed_path = PROCESSED_DIR / relative.with_suffix(".txt")
-        # 確保父目錄存在
         processed_path.parent.mkdir(parents=True, exist_ok=True)
         return processed_path
 
@@ -351,7 +382,8 @@ class DataUpdatePipeline:
         current_sources = set()
 
         for raw_path in raw_files:
-            source_label = str(raw_path.relative_to(self.source_dir))
+            # 統一使用正斜線作為 source_label，確保跨平台 (Windows/Linux) 寫入 DB 的路徑一致
+            source_label = raw_path.relative_to(self.source_dir).as_posix()
             current_sources.add(source_label)
             current_hash = self._compute_hash(raw_path)
 
@@ -415,6 +447,9 @@ def main() -> None:
     parser.add_argument("--source-dir", type=str, default="data/raw", help="原始資料目錄 (預設: data/raw)")
     parser.add_argument("--verbose", action="store_true", help="印出每個檔案的處理狀態")
     args = parser.parse_args()
+
+    if args.verbose:
+        log.setLevel(logging.DEBUG)
 
     pipeline = DataUpdatePipeline(source_dir=args.source_dir, verbose=args.verbose)
     pipeline.run(rebuild=args.rebuild)

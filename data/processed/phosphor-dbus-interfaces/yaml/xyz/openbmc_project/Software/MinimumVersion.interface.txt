@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\MinimumVersion.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/MinimumVersion.interface.yaml' is defined as follows:
 Description: The minimum version string for a xyz.openbmc_project.Software.Version.
 - description: The minimum version string for a xyz.openbmc_project.Software.Version.
 

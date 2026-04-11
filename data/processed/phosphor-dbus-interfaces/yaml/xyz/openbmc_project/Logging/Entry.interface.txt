@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Entry.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Logging/Entry.interface.yaml' is defined as follows:
 Description: Implement to provide event/error entry attributes. This interface should be instantiated for the phosphor::logging namespace. This interface is a collection of objects, therefore it is required to implement org.freedesktop.DBus.ObjectManager on the logging namespace root. Optionally, implement xyz.openbmc_project.Object.Delete to allow the deletion of individual entries.
 - description: Implement to provide event/error entry attributes. This interface should be instantiated for the phosphor::logging namespace. This interface is a collection of objects, therefore it is required to implement org.freedesktop.DBus.ObjectManager on the logging namespace root. Optionally, implement xyz.openbmc_project.Object.Delete to allow the deletion of individual entries.
 

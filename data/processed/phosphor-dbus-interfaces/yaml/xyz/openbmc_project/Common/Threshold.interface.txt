@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\Threshold.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/Threshold.interface.yaml' is defined as follows:
 Description: Provides threshold functionality for Metrics and Sensors. Any object implementing Threshold interface must implement a Value interface at corresponding path.
 - description: Provides threshold functionality for Metrics and Sensors. Any object implementing Threshold interface must implement a Value interface at corresponding path.
 

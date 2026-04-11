@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\PLDM\PDR.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/PLDM/PDR.interface.yaml' is defined as follows:
 Description: Implement to fetch the PDRs. PDRs are Platform Descriptor Records which are the collection of information that includes semantic and association information.
 This API would be used by PLDM Requester apps on the BMC.
 An implementation of this interface should maintain the primary PDR repository on the BMC.

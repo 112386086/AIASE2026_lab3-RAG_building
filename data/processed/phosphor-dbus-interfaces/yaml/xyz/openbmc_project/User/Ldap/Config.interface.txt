@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\User\Ldap\Config.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/Ldap/Config.interface.yaml' is defined as follows:
 Description: Implement to update LDAP mandatory properties. Any service implementing User.Ldap.Config interface on one or more objects must implement Object.Enable interface on the object.
 - description: Implement to update LDAP mandatory properties. Any service implementing User.Ldap.Config interface on one or more objects must implement Object.Enable interface on the object.
 

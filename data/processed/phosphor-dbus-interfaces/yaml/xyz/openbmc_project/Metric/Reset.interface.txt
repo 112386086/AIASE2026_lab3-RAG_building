@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Metric\Reset.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Metric/Reset.interface.yaml' is defined as follows:
 Description: This interface allows to reset persistent metric counters.
 - description: This interface allows to reset persistent metric counters.
 

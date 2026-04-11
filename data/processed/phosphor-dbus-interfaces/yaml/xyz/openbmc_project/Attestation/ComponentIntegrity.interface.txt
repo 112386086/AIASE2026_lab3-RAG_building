@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Attestation\ComponentIntegrity.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Attestation/ComponentIntegrity.interface.yaml' is defined as follows:
 Description: Implement to represent component integrity information acquired from a secure authentication or measurement of the protected components. A trusted component (e.g., iRoT or TPM) is typically involved to provide the info using a security protocol (e.g., SPDM).
 - description: Implement to represent component integrity information acquired from a secure authentication or measurement of the protected components. A trusted component (e.g., iRoT or TPM) is typically involved to provide the info using a security protocol (e.g., SPDM).
 

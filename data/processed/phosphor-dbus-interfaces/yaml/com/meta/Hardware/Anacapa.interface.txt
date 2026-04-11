@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\meta\Hardware\Anacapa.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/meta/Hardware/Anacapa.interface.yaml' is defined as follows:
 Description: This interface is never intended to be instantiated, but is used to define devices for Anacapa.
 - description: This interface is never intended to be instantiated, but is used to define devices for Anacapa.
 

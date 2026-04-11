@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\ApplyTime.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/ApplyTime.interface.yaml' is defined as follows:
 Description: To implement the apply time of a newly updated software image. The apply time property is global to all firmware update packages and the default value of the property is OnReset.
 - description: To implement the apply time of a newly updated software image. The apply time property is global to all firmware update packages and the default value of the property is OnReset.
 

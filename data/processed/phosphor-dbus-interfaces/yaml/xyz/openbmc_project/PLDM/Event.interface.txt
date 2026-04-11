@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\PLDM\Event.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/PLDM/Event.interface.yaml' is defined as follows:
 Description: Implement to emit D-Bus signal for PLDM Event Messages. PLDM Event Messages are PLDM monitoring and control messages that are used by a PLDM terminus to synchronously or asynchronously report PLDM events to a central party called the PLDM Event Receiver.
 When the PLDM daemon receives a sensorEvent of type stateSensorState, it emits the StateSensorEvent signal.
 This signal would be used by PLDM Requester apps on the BMC, which will rely on this signal to determine state changes on a connected PLDM entity.

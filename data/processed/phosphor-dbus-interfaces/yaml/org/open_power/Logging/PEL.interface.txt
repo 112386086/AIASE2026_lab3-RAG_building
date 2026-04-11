@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Logging\PEL.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Logging/PEL.interface.yaml' is defined as follows:
 Description: Provides D-Bus access to OpenPower Platform Event Logs
 - description: Provides D-Bus access to OpenPower Platform Event Logs
 

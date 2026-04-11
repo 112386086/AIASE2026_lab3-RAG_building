@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\HardwareIsolation\Create.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/HardwareIsolation/Create.interface.yaml' is defined as follows:
 Description: This interface contains create method, which can be implemented to create an xyz.openbmc_project.HardwareIsolation.Entry object which will use to provide the information of isolated hardware.
 - description: This interface contains create method, which can be implemented to create an xyz.openbmc_project.HardwareIsolation.Entry object which will use to provide the information of isolated hardware.
 

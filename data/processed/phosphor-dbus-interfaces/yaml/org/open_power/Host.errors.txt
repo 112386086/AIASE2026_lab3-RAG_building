@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Host.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Host.errors.yaml' is defined as follows:
   - name: Event
   - description: A host system event was received
   - name: MaintenanceProcedure

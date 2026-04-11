@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\com\ibm\ipzvpd\VSYS.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/com/ibm/ipzvpd/VSYS.interface.yaml' is defined as follows:
 Description: Implement to represent the VINI record in IPZ VPD
 - description: Implement to represent the VINI record in IPZ VPD
 

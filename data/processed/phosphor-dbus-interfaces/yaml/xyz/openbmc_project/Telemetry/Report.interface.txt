@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Telemetry\Report.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Telemetry/Report.interface.yaml' is defined as follows:
 Description: Implement this interface to provide report inspection features. An implementation service should additionally implement xyz.openbmc_project.Object.Delete for deletion of individual report objects.
 - description: Implement this interface to provide report inspection features. An implementation service should additionally implement xyz.openbmc_project.Object.Delete for deletion of individual report objects.
 

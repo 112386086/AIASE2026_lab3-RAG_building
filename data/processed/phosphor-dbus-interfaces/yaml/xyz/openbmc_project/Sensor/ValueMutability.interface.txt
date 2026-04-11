@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\ValueMutability.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Sensor/ValueMutability.interface.yaml' is defined as follows:
 Description: Implement to provide sensor value mutability.
 - description: Implement to provide sensor value mutability.
 

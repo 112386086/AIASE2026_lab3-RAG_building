@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Host.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Host.errors.yaml' is defined as follows:
   - name: SoftOffTimeout
   - description: Host did not shutdown within configured time.
   - name: HostStartFailure

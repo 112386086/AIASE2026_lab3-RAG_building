@@ -1,0 +1,9 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/intel/sas_module.json':
+- Exposes:
+    - Address: 0x4C
+    - Bus: $bus
+    - Name: SAS Module Temperature
+    - Type: TMP75
+- Name: SAS Module
+- Probe: FALSE
+- Type: Board

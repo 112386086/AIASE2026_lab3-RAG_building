@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Console\UART.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Console/UART.interface.yaml' is defined as follows:
 Description: Serial console configuration.
 - description: Serial console configuration.
 - properties:

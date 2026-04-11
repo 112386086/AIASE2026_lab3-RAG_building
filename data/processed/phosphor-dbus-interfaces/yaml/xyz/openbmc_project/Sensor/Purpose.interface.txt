@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Sensor\Purpose.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Sensor/Purpose.interface.yaml' is defined as follows:
 Description: Implement to provide detail on any special purpose of the sensor. Useful for defining sensors which provide summary information, see enum for defined types.
 Objects implementing Sensor.Purpose must also implement Sensor.Value.
 - description: Implement to provide detail on any special purpose of the sensor. Useful for defining sensors which provide summary information, see enum for defined types.

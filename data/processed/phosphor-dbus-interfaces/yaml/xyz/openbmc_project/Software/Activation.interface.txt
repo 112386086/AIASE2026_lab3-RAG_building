@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Software\Activation.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/Activation.interface.yaml' is defined as follows:
 Description: Activation state for an associated xyz.openbmc_project.Software.Version.
 - description: Activation state for an associated xyz.openbmc_project.Software.Version.
 

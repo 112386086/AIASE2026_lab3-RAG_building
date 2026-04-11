@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\CLEI.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/CLEI.interface.yaml' is defined as follows:
 Description: Implement to indicate an item with a defined Common Language Equipment Identifier (CLEI) number.
 - description: Implement to indicate an item with a defined Common Language Equipment Identifier (CLEI) number.
 

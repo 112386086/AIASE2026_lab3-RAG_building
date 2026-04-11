@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Control\Host.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Control/Host.interface.yaml' is defined as follows:
 Description: Implement to provide host interface support. This will define the interfaces using which, a OpenPower machine can communicate with host on agreed commands.
 This is for Internal use by the Firmware only. The D-Bus object is visible for the REST but it must not be used.
 - description: Implement to provide host interface support. This will define the interfaces using which, a OpenPower machine can communicate with host on agreed commands.

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\PFR\Attributes.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/PFR/Attributes.interface.yaml' is defined as follows:
 Description: Provides the object attributes needed for resiliency of platform firmware, recommended by NIST SP 800-193.
 - description: Provides the object attributes needed for resiliency of platform firmware, recommended by NIST SP 800-193.
 

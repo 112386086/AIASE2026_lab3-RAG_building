@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\VendorInformation.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/VendorInformation.interface.yaml' is defined as follows:
 Description: Implement to provide custom properties added to an item by the item vendor.
 - description: Implement to provide custom properties added to an item by the item vendor.
 

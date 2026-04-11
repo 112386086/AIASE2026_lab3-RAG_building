@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\MinimumShipLevel.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/MinimumShipLevel.interface.yaml' is defined as follows:
 Description: 'An implementation may provide a single instance of MinimumShipLevelRequired on /xyz/openbmc_project/control/minimum_ship_level_required.
 The definition of enforcement of this setting is implementation defined.'
 - description: 'An implementation may provide a single instance of MinimumShipLevelRequired on /xyz/openbmc_project/control/minimum_ship_level_required.

@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\ReplaceAll.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/ReplaceAll.interface.yaml' is defined as follows:
 Description: Authority Manager's interface to replace existing authorities list.
 - description: Authority Manager's interface to replace existing authorities list.
 

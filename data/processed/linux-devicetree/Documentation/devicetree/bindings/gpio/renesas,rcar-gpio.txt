@@ -1,0 +1,126 @@
+The D-Bus interface specification for 'linux-devicetree/Documentation/devicetree/bindings/gpio/renesas,rcar-gpio.yaml' is defined as follows:
+- $id: http://devicetree.org/schemas/gpio/renesas,rcar-gpio.yaml#
+- $schema: http://devicetree.org/meta-schemas/core.yaml#
+- title: Renesas R-Car General-Purpose Input/Output Ports (GPIO)
+- maintainers:
+  - Geert Uytterhoeven <geert+renesas@glider.be>
+- properties:
+  - compatible:
+    - oneOf:
+        - items:
+            - enum:
+              - renesas,gpio-r8a7778
+              - renesas,gpio-r8a7779
+            - const: renesas,rcar-gen1-gpio
+        - items:
+            - enum:
+              - renesas,gpio-r8a7742
+              - renesas,gpio-r8a7743
+              - renesas,gpio-r8a7744
+              - renesas,gpio-r8a7745
+              - renesas,gpio-r8a77470
+              - renesas,gpio-r8a7790
+              - renesas,gpio-r8a7791
+              - renesas,gpio-r8a7792
+              - renesas,gpio-r8a7793
+              - renesas,gpio-r8a7794
+            - const: renesas,rcar-gen2-gpio
+        - items:
+            - enum:
+              - renesas,gpio-r8a774a1
+              - renesas,gpio-r8a774b1
+              - renesas,gpio-r8a774c0
+              - renesas,gpio-r8a774e1
+              - renesas,gpio-r8a7795
+              - renesas,gpio-r8a7796
+              - renesas,gpio-r8a77961
+              - renesas,gpio-r8a77965
+              - renesas,gpio-r8a77970
+              - renesas,gpio-r8a77980
+              - renesas,gpio-r8a77990
+              - renesas,gpio-r8a77995
+            - const: renesas,rcar-gen3-gpio
+        - items:
+            - enum:
+              - renesas,gpio-r8a779a0
+              - renesas,gpio-r8a779f0
+              - renesas,gpio-r8a779g0
+              - renesas,gpio-r8a779h0
+            - const: renesas,rcar-gen4-gpio
+  - reg:
+    - maxItems: 1
+  - interrupts:
+    - maxItems: 1
+  - clocks:
+    - maxItems: 1
+  - power-domains:
+    - maxItems: 1
+  - resets:
+    - maxItems: 1
+  - gpio-controller: True
+  - #gpio-cells:
+    - const: 2
+  - interrupt-controller: True
+  - #interrupt-cells:
+    - const: 2
+  - gpio-ranges:
+    - maxItems: 1
+  - gpio-reserved-ranges:
+    - minItems: 1
+    - maxItems: 8
+- patternProperties:
+  - ^.*$:
+    - if:
+      - type: object
+    - then:
+      - properties:
+        - gpio-hog: True
+        - gpios: True
+        - input: True
+        - output-high: True
+        - output-low: True
+        - line-name: True
+      - required:
+        - gpio-hog
+        - gpios
+      - additionalProperties: False
+- required:
+  - compatible
+  - reg
+  - interrupts
+  - gpio-controller
+  - #gpio-cells
+  - gpio-ranges
+  - interrupt-controller
+  - #interrupt-cells
+- if:
+  - not:
+    - properties:
+      - compatible:
+        - contains:
+          - enum:
+            - renesas,rcar-gen1-gpio
+- then:
+  - required:
+    - clocks
+    - power-domains
+    - resets
+- additionalProperties: False
+- examples:
+  - #include <dt-bindings/clock/r8a77470-cpg-mssr.h>
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/power/r8a77470-sysc.h>
+gpio3: gpio@e6053000 {
+    compatible = "renesas,gpio-r8a77470", "renesas,rcar-gen2-gpio";
+    reg = <0xe6053000 0x50>;
+    interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+    clocks = <&cpg CPG_MOD 909>;
+    power-domains = <&sysc R8A77470_PD_ALWAYS_ON>;
+    resets = <&cpg 909>;
+    gpio-controller;
+    #gpio-cells = <2>;
+    gpio-ranges = <&pfc 0 96 30>;
+    gpio-reserved-ranges = <17 10>;
+    interrupt-controller;
+    #interrupt-cells = <2>;
+ };

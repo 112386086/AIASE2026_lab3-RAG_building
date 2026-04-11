@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Debug\Pid\Zone.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Debug/Pid/Zone.interface.yaml' is defined as follows:
 Description: Implement to show the states of the zone.
 - description: Implement to show the states of the zone.
 

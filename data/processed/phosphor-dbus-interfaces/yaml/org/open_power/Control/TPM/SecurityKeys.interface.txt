@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Control\TPM\SecurityKeys.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Control/TPM/SecurityKeys.interface.yaml' is defined as follows:
 Description: Settings to clear or reset the security keys.
 - description: Settings to clear or reset the security keys.
 

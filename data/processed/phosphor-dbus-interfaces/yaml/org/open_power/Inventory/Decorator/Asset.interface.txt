@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\org\open_power\Inventory\Decorator\Asset.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/org/open_power/Inventory/Decorator/Asset.interface.yaml' is defined as follows:
 Description: Implement to provide item physical asset attributes.
 - description: Implement to provide item physical asset attributes.
 

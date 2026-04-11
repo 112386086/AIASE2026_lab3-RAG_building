@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\Progress.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/Progress.interface.yaml' is defined as follows:
 Description: Implement to provide the progress on user requested activity. Objects which implements this interface should implement xyz.openbmc_project.Object.Delete to delete individual entries. The service hosting this interface should clear the entries after some time or reaching some number of entries in stable states like completed, failed or aborted.
 - description: Implement to provide the progress on user requested activity. Objects which implements this interface should implement xyz.openbmc_project.Object.Delete to delete individual entries. The service hosting this interface should clear the entries after some time or reaching some number of entries in stable states like completed, failed or aborted.
 

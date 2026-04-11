@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\BMCRedundancy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/BMCRedundancy.interface.yaml' is defined as follows:
 Description: An interface to describe the primary BMC within a multi-BMC environment.
 - description: An interface to describe the primary BMC within a multi-BMC environment.
 

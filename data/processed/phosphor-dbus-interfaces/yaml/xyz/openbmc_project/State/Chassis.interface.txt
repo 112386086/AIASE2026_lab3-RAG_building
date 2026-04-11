@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\Chassis.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/Chassis.interface.yaml' is defined as follows:
 Description: Implement to provide the chassis power management
 - description: Implement to provide the chassis power management
 - properties:

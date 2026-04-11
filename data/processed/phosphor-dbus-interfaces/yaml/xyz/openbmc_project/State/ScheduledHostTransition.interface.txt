@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\State\ScheduledHostTransition.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/State/ScheduledHostTransition.interface.yaml' is defined as follows:
 Description: Implement to schedule Epoch time to power on/off the Host.
 - description: Implement to schedule Epoch time to power on/off the Host.
 

@@ -1,0 +1,23 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/ibm/rainier_1s4u_chassis.json':
+- Exposes:
+    - Name: Compatible System
+    - Names:
+      - ibm,rainier-1s4u
+      - ibm,rainier
+    - Type: IBMCompatibleSystem
+    - EnterUtilizationDwellTime: 240
+    - EnterUtilizationPercent: 8
+    - ExitUtilizationDwellTime: 10
+    - ExitUtilizationPercent: 12
+    - IdlePowerSaverEnabled: True
+    - Name: Default Power Mode Properties
+    - PowerMode: MaximumPerformance
+    - Type: PowerModeProperties
+- Name: Rainier 1S4U Chassis
+- Probe:
+  - com.ibm.ipzvpd.VSBP({'IM': [80, 0, 16, 2]})
+- Type: Chassis
+- xyz.openbmc_project.Inventory.Decorator.Compatible:
+  - Names:
+    - com.ibm.Hardware.Chassis.Model.Rainier1S4U
+    - com.ibm.Hardware.Chassis.Model.Rainier

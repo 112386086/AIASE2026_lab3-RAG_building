@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Common\OriginatedBy.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Common/OriginatedBy.interface.yaml' is defined as follows:
 Description: Implement to provide unique identifier of originator of the activity
 - description: Implement to provide unique identifier of originator of the activity
 

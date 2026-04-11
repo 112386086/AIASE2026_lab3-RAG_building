@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Inventory\Decorator\UniqueIdentifier.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Decorator/UniqueIdentifier.interface.yaml' is defined as follows:
 Description: Implement to provide a unique identifier for an inventory item.
 - description: Implement to provide a unique identifier for an inventory item.
 

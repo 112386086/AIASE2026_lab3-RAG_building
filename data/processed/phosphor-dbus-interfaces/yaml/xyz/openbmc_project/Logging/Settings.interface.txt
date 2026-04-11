@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Logging\Settings.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Logging/Settings.interface.yaml' is defined as follows:
 Description: Implement to control different behaviors on the Logging service. See properties below for more information.
 - description: Implement to control different behaviors on the Logging service. See properties below for more information.
 

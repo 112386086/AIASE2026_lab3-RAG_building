@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Certs\Replace.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Certs/Replace.interface.yaml' is defined as follows:
 Description: Certificate interface to replace existing certificate.
 - description: Certificate interface to replace existing certificate.
 

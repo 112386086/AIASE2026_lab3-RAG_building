@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Dump\Create.errors.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Dump/Create.errors.yaml' is defined as follows:
   - name: Disabled
   - description: Dump is disabled on this system.
   - name: QuotaExceeded

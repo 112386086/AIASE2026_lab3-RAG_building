@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Ipmi\SessionInfo.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Ipmi/SessionInfo.interface.yaml' is defined as follows:
 Description: Provides properties for IPMI RMCP+ session objects. Provides RMCP+ session information as session objects with sessionID_sessionHandle(unique identifier)as path suffix.
 - description: Provides properties for IPMI RMCP+ session objects. Provides RMCP+ session information as session objects with sessionID_sessionHandle(unique identifier)as path suffix.
 

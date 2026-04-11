@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\ObjectMapper.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/ObjectMapper.interface.yaml' is defined as follows:
 Description: Implement to provide DBus service lookup features.
 Any OpenBMC implementation must provide exactly one implementation of xyz.openbmc_project.ObjectMapper on /xyz/openbmc_project/ObjectMapper.
 - description: Implement to provide DBus service lookup features.

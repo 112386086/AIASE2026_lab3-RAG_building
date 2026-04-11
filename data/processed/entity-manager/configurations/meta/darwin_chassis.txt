@@ -1,0 +1,11 @@
+Hardware Configuration (Entity Manager) for 'entity-manager/configurations/meta/darwin_chassis.json':
+- Exposes:
+- Name: Darwin Chassis
+- Probe: xyz.openbmc_project.FruDevice({'PRODUCT_PRODUCT_NAME': 'Darwin', 'PRODUCT_MANUFACTURER': 'Meta'})
+- Type: Chassis
+- xyz.openbmc_project.Inventory.Decorator.Asset:
+  - Manufacturer: NOT_SUPPORTED
+  - Model: NOT_SUPPORTED
+  - PartNumber: NOT_SUPPORTED
+  - SerialNumber: $SerialNumber
+  - SparePartNumber: 20-002749

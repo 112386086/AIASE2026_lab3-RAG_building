@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Led\Group.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Led/Group.interface.yaml' is defined as follows:
 Description: Interface to control LED groups.
 - description: Interface to control LED groups.
 

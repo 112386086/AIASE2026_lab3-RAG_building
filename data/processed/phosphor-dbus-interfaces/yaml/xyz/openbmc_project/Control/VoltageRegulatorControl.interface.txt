@@ -1,4 +1,4 @@
-The D-Bus interface specification for 'phosphor-dbus-interfaces\yaml\xyz\openbmc_project\Control\VoltageRegulatorControl.interface.yaml' is defined as follows:
+The D-Bus interface specification for 'phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/VoltageRegulatorControl.interface.yaml' is defined as follows:
 Description: Implement to provide control of a voltage regulator.  Objects implementing Control.VoltageRegulatorControl allow for fine grained control of a given voltage regulator channel, and allows external entities to control Voltage Regulator devices.
 Any service implementing Control.VoltageRegulatorControl on one or more objects must implement org.freedesktop.DBus.ObjectManager on /xyz/openbmc_project/vr. DBus objects must fall under this path so that they can be found through the GetManagedObjects DBus method.
 - description: Implement to provide control of a voltage regulator.  Objects implementing Control.VoltageRegulatorControl allow for fine grained control of a given voltage regulator channel, and allows external entities to control Voltage Regulator devices.
