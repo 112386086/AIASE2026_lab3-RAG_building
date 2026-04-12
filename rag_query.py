@@ -40,20 +40,18 @@ def normalize_model_name(raw_model_name: str) -> str:
     模型名稱正規化 (Dictionary-based Routing)：
     支援簡寫輸入，自動補齊對應的 Provider Prefix。
     """
-    # 建立簡寫到完整路徑的映射表
     prefix_map = {
         "gemma4": "openai/gemma4",
         "gemini-2.5-flash": "gemini/gemini-2.5-flash",
         "gpt-oss:20b": "openai/gpt-oss:20b"
     }
 
-    # 移除使用者可能誤打的 prefix，提取核心名稱
     clean_name = raw_model_name.split("/")[-1]
 
     if clean_name in prefix_map:
         normalized_name = prefix_map[clean_name]
     else:
-        normalized_name = raw_model_name # Fallback，交給後續白名單驗證
+        normalized_name = raw_model_name 
 
     if normalized_name not in ALLOWED_MODELS:
         print(f"Error: Invalid model '{raw_model_name}'.")
@@ -63,7 +61,7 @@ def normalize_model_name(raw_model_name: str) -> str:
     return normalized_name
 
 def get_api_key(normalized_model_name: str) -> str:
-    """根據正規化後的模型名稱取得對應的 API Key (SDD 6.2.2)"""
+    """根據正規化後的模型名稱取得對應的 API Key"""
     api_key_map = {
         "openai/gemma4":           os.getenv("LITELLM_API_KEY_GEMMA4"),
         "gemini/gemini-2.5-flash": os.getenv("LITELLM_API_KEY_GEMINI"),
@@ -88,13 +86,20 @@ class EmbeddingEngine:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3. Vector DB 層 (Hybrid Search 實作 - SDD 6.2.3)
+# 3. Vector DB 層 (Hybrid Search & HNSW - SDD 6.2.3)
 # ─────────────────────────────────────────────────────────────────────────────
 class VectorStore:
     TABLE_NAME = "chunks"
 
     def __init__(self, connection_string: str):
         self.conn = psycopg2.connect(connection_string)
+        self._configure_session()
+
+    def _configure_session(self):
+        """設定 Session-level 的 HNSW 查詢參數 (SDD 6.2.3.1)"""
+        with self.conn.cursor() as cur:
+            cur.execute("SET hnsw.ef_search = 40;")
+        self.conn.commit()
 
     def hybrid_search(self, query_text: str, query_vector: list[float], top_k: int = 5) -> List[Dict[str, Any]]:
         """

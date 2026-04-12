@@ -1,13 +1,13 @@
 """
-data_update.py — OpenBMC RAG 系統：資料收集、清理、Chunking、Embedding、向量寫入
-版本：v3.0 (對齊 SDD_RAG.md v3.0)
+data_update.py — OpenBMC RAG 系統:資料收集、清理、Chunking、Embedding、向量寫入
+版本:v3.1 (對齊 SDD_RAG.md v3.0 - HNSW Index Upgrade)
 
-實作重點：
-1. 支援多格式解析：Markdown, YAML, JSON (Entity Manager), DTS (Device Tree).
-2. 嚴格鏡像目錄 (Strict Mirror)：輸出至 processed/ 時保留原始目錄結構。
-3. 冪等性保證：File-level Upsert + 孤兒清理 (Orphan Cleanup)。
-4. Context Enrichment：動態計算 Token 預算，強制注入來源路徑。
-5. Hybrid Search 準備：建立包含 fts_vector 的 pgvector Schema。
+實作重點:
+1. 支援多格式解析:Markdown, YAML, JSON (Entity Manager), DTS (Device Tree).
+2. 嚴格鏡像目錄 (Strict Mirror):輸出至 processed/ 時保留原始目錄結構。
+3. 冪等性保證:File-level Upsert + 孤兒清理 (Orphan Cleanup)。
+4. Context Enrichment:動態計算 Token 預算，強制注入來源路徑。
+5. Hybrid Search 準備:建立包含 fts_vector 與 HNSW 索引的 pgvector Schema。
 """
 
 from __future__ import annotations
@@ -252,7 +252,7 @@ class VectorStore:
         self.conn.commit()
 
     def _ensure_table(self) -> None:
-        """Auto-Migration: 依據 SDD 6.1.1 建立 Schema，包含 fts_vector 供 Hybrid Search 使用"""
+        """Auto-Migration: 依據 SDD 6.1.1 建立 Schema，包含 fts_vector 與 HNSW 索引"""
         with self.conn.cursor() as cur:
             cur.execute(f"""
                 CREATE TABLE IF NOT EXISTS {self.TABLE_NAME} (
@@ -260,8 +260,8 @@ class VectorStore:
                     chunk_id    TEXT UNIQUE NOT NULL,
                     source      TEXT NOT NULL,
                     file_hash   TEXT NOT NULL,
-                    chunk_index INT,
-                    content     TEXT,
+                    chunk_index INT NOT NULL,
+                    content     TEXT NOT NULL,
                     embedding   vector({VECTOR_DIM}),
                     created_at  TIMESTAMP DEFAULT NOW()
                 );
@@ -273,23 +273,26 @@ class VectorStore:
                 GENERATED ALWAYS AS (to_tsvector('english', content)) STORED;
             """)
 
+            # 升級為 HNSW 索引 (SDD 5.3 & 6.1.1)
             cur.execute(f"""
-                CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_embedding_idx
-                ON {self.TABLE_NAME} USING ivfflat (embedding vector_cosine_ops)
-                WITH (lists = 20);
+                CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_embedding_hnsw_idx
+                ON {self.TABLE_NAME} USING hnsw (embedding vector_cosine_ops)
+                WITH (m = 16, ef_construction = 64);
             """)
             
             cur.execute(f"""
-                CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_fts_idx
+                CREATE INDEX IF NOT EXISTS {self.TABLE_NAME}_fts_gin_idx
                 ON {self.TABLE_NAME} USING gin (fts_vector);
             """)
         self.conn.commit()
 
     def clear_all(self) -> None:
+        """破壞性重建 (Destructive Rebuild):確保舊的 Schema 與 Index 被徹底清除"""
         with self.conn.cursor() as cur:
-            cur.execute(f"TRUNCATE TABLE {self.TABLE_NAME} RESTART IDENTITY;")
+            cur.execute(f"DROP TABLE IF EXISTS {self.TABLE_NAME} CASCADE;")
         self.conn.commit()
-        log.info("Vector DB cleared.")
+        self._ensure_table()
+        log.info("Vector DB dropped and recreated (Clean Slate).")
 
     def delete_by_source(self, source: str) -> None:
         with self.conn.cursor() as cur:
