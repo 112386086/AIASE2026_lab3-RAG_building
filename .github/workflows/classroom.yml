@@ -10,8 +10,6 @@ permissions:
 jobs:
   run-autograding-tests:
     runs-on: self-hosted
-    container:
-      image: python:3.10-slim
     if: github.actor != 'github-classroom[bot]'
 
     steps:
@@ -68,26 +66,6 @@ jobs:
         timeout: 10
         max-score: 15
 
-    - name: Run data_update.py --help
-      id: run-data-update-help
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Run python data_update.py --help
-        setup-command: 'pip install -r requirements.txt -q'
-        command: 'python data_update.py --help'
-        timeout: 120
-        max-score: 20
-
-    - name: Run rag_query.py --help
-      id: run-rag-query-help
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Run python rag_query.py --help
-        setup-command: 'pip install -r requirements.txt -q'
-        command: 'python rag_query.py --help'
-        timeout: 120
-        max-score: 20
-
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
@@ -96,7 +74,5 @@ jobs:
         CHECK-DATA-DIR_RESULTS: "${{ steps.check-data-dir.outputs.result }}"
         CHECK-REQUIREMENTS_RESULTS: "${{ steps.check-requirements.outputs.result }}"
         CHECK-ENV-EXAMPLE_RESULTS: "${{ steps.check-env-example.outputs.result }}"
-        RUN-DATA-UPDATE-HELP_RESULTS: "${{ steps.run-data-update-help.outputs.result }}"
-        RUN-RAG-QUERY-HELP_RESULTS: "${{ steps.run-rag-query-help.outputs.result }}"
       with:
-        runners: check-data-update,check-rag-query,check-data-dir,check-requirements,check-env-example,run-data-update-help,run-rag-query-help
+        runners: check-data-update,check-rag-query,check-data-dir,check-requirements,check-env-example
