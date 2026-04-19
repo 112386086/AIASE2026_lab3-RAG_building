@@ -20,6 +20,7 @@ import os
 import re
 import shutil
 import sys
+import json5
 from pathlib import Path
 from typing import Generator, Any
 
@@ -115,13 +116,15 @@ class DocumentCleaner:
     def clean_json(text: str, source_path: str) -> str:
         """將 Entity Manager JSON 轉換為 LLM 易讀的自然語言描述"""
         try:
-            data = json.loads(text)
+            text = re.sub(r',\s*([\]}])', r'\1', text)
+            
+            data = json5.loads(text)
             if not data:
                 return ""
             lines = [f"Hardware Configuration (Entity Manager) for '{source_path}':"]
             lines.extend(DocumentCleaner._flatten_ast_node(data))
             return "\n".join(lines)
-        except json.JSONDecodeError as e:
+        except json5.JSONDecodeError as e:
             log.warning(f"JSON parsing error in {source_path}, falling back to raw text: {e}")
             return text.strip()
 

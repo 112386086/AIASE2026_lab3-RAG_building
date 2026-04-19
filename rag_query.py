@@ -98,7 +98,7 @@ class VectorStore:
     def _configure_session(self):
         """設定 Session-level 的 HNSW 查詢參數 (SDD 6.2.3.1)"""
         with self.conn.cursor() as cur:
-            cur.execute("SET hnsw.ef_search = 40;")
+            cur.execute("SET hnsw.ef_search = 100;")
         self.conn.commit()
 
     def hybrid_search(self, query_text: str, query_vector: list[float], top_k: int = 5) -> List[Dict[str, Any]]:
@@ -113,15 +113,15 @@ class VectorStore:
                    ROW_NUMBER() OVER (ORDER BY embedding <=> %s::vector) as dense_rank
             FROM {self.TABLE_NAME}
             ORDER BY embedding <=> %s::vector
-            LIMIT 20
+            LIMIT 60
         ),
         sparse_results AS (
             SELECT id, chunk_id, source, chunk_index, content,
-                   ROW_NUMBER() OVER (ORDER BY ts_rank(fts_vector, plainto_tsquery('english', %s)) DESC) as sparse_rank
+                   ROW_NUMBER() OVER (ORDER BY ts_rank(fts_vector, websearch_to_tsquery('english', %s)) DESC) as sparse_rank
             FROM {self.TABLE_NAME}
-            WHERE fts_vector @@ plainto_tsquery('english', %s)
-            ORDER BY ts_rank(fts_vector, plainto_tsquery('english', %s)) DESC
-            LIMIT 20
+            WHERE fts_vector @@ websearch_to_tsquery('english', %s)
+            ORDER BY ts_rank(fts_vector, websearch_to_tsquery('english', %s)) DESC
+            LIMIT 60
         ),
         combined AS (
             SELECT
