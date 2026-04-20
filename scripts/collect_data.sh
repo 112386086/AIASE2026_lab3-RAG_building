@@ -112,7 +112,11 @@ clone_export_sparse "https://github.com/openbmc/linux.git" "$DATA_RAW/linux-devi
 # 6) openbmc/phosphor-gpio-monitor
 clone_export_sparse "https://github.com/openbmc/phosphor-gpio-monitor.git" "$DATA_RAW/phosphor-gpio-monitor" README.md
 
-# 7) IBM Power10 OpenBMC 文件
+# 7) 社群優質資源 (CodingCoffee-01/openbmc_research)
+echo "[*] Fetching community research repository..."
+clone_export_full_repo "https://github.com/CodingCoffee-01/openbmc_research.git" "$DATA_RAW/supplementary/openbmc_research"
+
+# 8) IBM Power10 OpenBMC 文件
 echo "[*] Fetching IBM Power10 OpenBMC documentation..."
 mkdir -p "$DATA_RAW/supplementary"
 IBM_URL="https://www.ibm.com/docs/zh-tw/power10/7063-CR2?topic=tool-basic-commands-functionality-openbmc"
