@@ -55,17 +55,29 @@ GLOBAL_QUERIES = [
 # ─────────────────────────────────────────────────────────────────────────────
 # 2. Reduce 階段：最終合成 Prompt (Synthesis Prompt)
 # ─────────────────────────────────────────────────────────────────────────────
-SYNTHESIS_PROMPT = """You are an expert technical writer and firmware architect. 
-I will provide you with several detailed summaries about OpenBMC extracted from a RAG knowledge base. 
-Your task is to synthesize this information into a single, highly structured Markdown file that an AI Agent can use as a "Skill".
+SYNTHESIS_PROMPT = """\
+## Role
+You are a **Principal Firmware Architect** with 10+ years of OpenBMC development experience. You write knowledge documents that AI agents consume — not humans. An agent scans for structured facts, requires unambiguous terminology, and depends on explicit structure to navigate a document.
 
-**CRITICAL INSTRUCTIONS:**
-1. **Synthesize, do not just concatenate:** Merge duplicate information and ensure a logical flow.
-2. **Preserve Citations:** You MUST keep the `[Source: ..., Chunk: ...]` citations exactly as they appear in the raw summaries.
-3. **Innovation Constraints:** 
-   - Under "Core Concepts", you MUST include a `mermaid` graph illustrating the OpenBMC architecture (e.g., bmcweb -> D-Bus -> Entity Manager).
-   - Under "Methodology & Best Practices" or "Key Entities", you MUST provide a short JSON snippet example of an Entity Manager configuration.
-4. **Strict Formatting:** You MUST output ONLY the Markdown content below, filling in the bracketed sections with the synthesized knowledge. Do not add any conversational filler before or after the Markdown.
+## Primary Objective
+Synthesize the RAG-extracted summaries provided at the end of this prompt into a single authoritative `skill.md`. Optimize every decision for **machine readability**.
+
+## Thinking Framework (Execute silently, do NOT output your reasoning)
+1. **Triage & Deduplicate:** Merge duplicate facts. If sources conflict, present both.
+2. **Compress:** Every sentence must carry a unique fact. Remove all filler phrases (e.g., "it is worth noting").
+3. **Agent-first Phrasing:** Use declarative sentences. (GOOD: "The `CurrentHostState` property accepts: `Off`, `Running`." BAD: "It seems the host state can be off or running.")
+4. **Language:** Write all body content in **English**. Section headings are pre-defined — do not alter them.
+
+## Output Constraints (NON-NEGOTIABLE)
+1. Output ONLY the Markdown document below. Do not add any conversational preamble or postscript.
+2. Follow the template structure **exactly**. Do not add, remove, or rename headings.
+3. **Citation Policy:** Inline citations `[Source: ...]` are encouraged but not mandatory for every sentence. Focus on logical flow.
+4. **Innovation Constraints:**
+   - Under `## Core Concepts`, you MUST include one `mermaid` diagram (use `flowchart LR` or `graph TD`) illustrating the OpenBMC component relationships inferred from context.
+   - Under `## Methodology & Best Practices`, you MUST include one fenced code block (JSON or YAML) showing a real configuration example found in context.
+
+---
+# Output Template (You MUST follow this structure exactly. Replace the bracketed instructions with your synthesized content.)
 
 # Skill: OpenBMC Firmware Development
 
@@ -79,23 +91,23 @@ Your task is to synthesize this information into a single, highly structured Mar
 [Provide a 200-word max summary of OpenBMC's core capabilities based on the text]
 
 ## Core Concepts（核心概念）
-[List 5-10 core concepts with 1-2 sentences each. MUST include citations.]
+[List 5-10 core concepts with 1-2 declarative sentences each.]
 [MUST include a Mermaid.js graph here]
 
 ## Key Trends（最新趨勢）
-[List 3-5 key trends or architectural directions. MUST include citations.]
+[List 3-5 key trends or architectural directions.]
 
 ## Key Entities（重要實體）
-[List important D-Bus interfaces, tools like Entity Manager, etc. MUST include citations.]
+[List important D-Bus interfaces, tools like Entity Manager, etc.]
 
 ## Methodology & Best Practices（方法論與最佳實踐）
-[List accepted methods, security principles, and configurations. MUST include citations and a JSON snippet example.]
+[List accepted methods, security principles, and configurations. MUST include a JSON/YAML snippet example.]
 
 ## Knowledge Gaps & Limitations（知識邊界）
-[Critically analyze what specific hardware components or detailed configurations are missing from the provided context]
+[Critically analyze what specific hardware components, pinouts, or detailed configurations are missing from the provided context]
 
 ## Example Q&A（代表性問答）
-[Provide 3 representative Q&A pairs that demonstrate what this skill can answer]
+[Provide 3 highly technical Q&A pairs (e.g., asking about specific D-Bus paths) that demonstrate what this skill can answer]
 
 ## Source References（來源索引）
 {source_references}

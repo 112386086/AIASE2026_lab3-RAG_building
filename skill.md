@@ -3,129 +3,124 @@
 ## Metadata
 - **知識領域**：OpenBMC Firmware Architecture, D-Bus IPC, Hardware Abstraction
 - **資料來源數量**：1117 份文件
-- **最後更新時間**：2026-04-20
+- **最後更新時間**：2026-04-21
 - **適用 Agent 類型**：Firmware Engineer Assistant / Architecture Consultant
 
 ## Overview（一段話摘要）
-OpenBMC is an open-source, Linux-based firmware stack designed for Baseboard Management Controllers (BMCs), emphasizing modularity, customizability, and hardware abstraction. It leverages D-Bus as its central inter-process communication (IPC) mechanism, enabling various "phosphor" services to manage core system functionalities. External management is primarily exposed through a comprehensive Redfish API via `bmcweb`, which translates Redfish requests into D-Bus calls to backend services. Key architectural features include dynamic hardware inventory management through the Entity Manager's JSON configurations, flexible GPIO interaction via the Linux Device Tree and `libgpiod`, and robust firmware update mechanisms. The project adheres to strong security practices, focusing on attack surface reduction, access control, and vulnerability management to ensure a secure and portable BMC solution for diverse hardware platforms.
+OpenBMC is a modular, Linux-based firmware distribution for Baseboard Management Controllers (BMCs). Its software architecture centers on D-Bus for inter-process communication (IPC) between specialized "phosphor" services. `bmcweb` serves as the primary gateway, translating external Redfish API and WebUI requests into internal D-Bus operations. Hardware configuration is handled dynamically by the Entity Manager, which uses declarative JSON files to model components and map them to D-Bus inventory objects. GPIO interactions leverage the Linux kernel's GPIO subsystem and Device Tree for abstract hardware description, with `phosphor-gpio-monitor` managing event responses. Firmware updates support various protocols (BLOB, Redfish, CLI), incorporating crucial security measures like verification and access control for image integrity.
 
 ## Core Concepts（核心概念）
-1.  **Linux Kernel Base:** OpenBMC runs on a Linux kernel, providing a robust, customizable operating system foundation for all BMC functionalities. [Source: openbmc-docs/README.md, Chunk: Overall Software Architecture of OpenBMC:]
-2.  **D-Bus Inter-Process Communication (IPC):** D-Bus is the fundamental IPC mechanism, enabling modular services ("phosphor" applications) to communicate, manage hardware, and expose functionalities through standardized interfaces. It forms the central nervous system for the entire system. [Source: openbmc-docs/architecture/interface-overview.md, Chunk: Overall Software Architecture of OpenBMC:]
-3.  **Redfish API:** The primary, standardized external interface for modern BMC management, implemented and exposed by `bmcweb` to clients over HTTP/HTTPS. [Source: bmcweb/docs/Redfish.md, Chunk: Role of bmcweb and Redfish API Exposure:]
-4.  **Phosphor Services:** A collection of specialized applications (e.g., `phosphor-state-manager`, `phosphor-inventory-manager`) that run as D-Bus clients and servers, implementing specific D-Bus interfaces to manage BMC and hardware functions. [Source: openbmc-docs/architecture/interface-overview.md, Chunk: Overall Software Architecture of OpenBMC:]
-5.  **Entity Manager:** A core component responsible for dynamic hardware inventory management, using declarative JSON configuration files to map physical components to D-Bus objects at runtime without hardcoding. [Source: openbmc-docs/features.md, Chunk: Purpose of Entity Manager]
-6.  **Linux Device Tree (DT):** Provides a declarative way to describe hardware, particularly GPIOs, to the Linux kernel, enabling platform-independent hardware interaction by defining controllers and logical `gpio-line-names`. [Source: linux-devicetree/Documentation/devicetree/bindings/gpio/gpio.txt, Chunk: 1. Hardware Abstraction via Linux Device Tree (.dts)]
-7.  **`libgpiod`:** A user-space library that offers a modern, descriptor-based interface for interacting with GPIOs by their logical `gpio-line-names` defined in the Device Tree, replacing deprecated `sysfs` methods for improved portability. [Source: openbmc-docs/designs/device-tree-gpio-naming.md, Chunk: 2. OS Level Interaction (Linux Kernel & libgpiod)]
+- **D-Bus IPC:** The primary communication mechanism for OpenBMC's modular services, enabling inter-process communication, hardware abstraction, and event notification across the BMC ecosystem.
+- **`bmcweb`:** OpenBMC's HTTP/Web server, implementing the Redfish API, hosting the Vue.js-based WebUI, and translating external Redfish requests into internal D-Bus operations and vice-versa.
+- **Entity Manager:** A core component responsible for building a comprehensive hardware inventory by modeling system components (e.g., boards, drives, sensors) and creating D-Bus objects based on declarative JSON configuration files.
+- **Linux Device Tree (DTS):** Fundamental for describing a platform's hardware, including GPIO controllers and specific `gpio-line-names`, enabling the kernel and userspace applications to configure and interact with hardware abstractly.
+- **GPIO Subsystem:** The Linux kernel's framework for managing General Purpose Input/Output hardware, exposing a descriptor-based character device interface to userspace applications via `libgpiod`.
+- **`phosphor-gpio-monitor`:** An OpenBMC service that monitors GPIO lines for specific events (e.g., rising or falling edges) as defined by Device Tree `LineName`s and triggers associated systemd services or logs events.
+- **Firmware Update Service:** Manages BMC and host firmware updates through various methods (BLOB protocol, Redfish API, command-line), incorporating verification steps and access control to ensure image integrity and authenticity.
+- **Redfish API:** A standardized RESTful interface for server management, implemented by `bmcweb` to provide external access to BMC functionalities, system inventory, sensor data, and control actions.
 
 ```mermaid
 graph TD
-    A[External Clients] -->|Redfish API (HTTPS)| B(bmcweb)
-    B -->|D-Bus Calls/Signals| C(D-Bus System Bus)
-    C -->|Interface: xyz.openbmc_project.State| D(phosphor-state-manager)
-    C -->|Interface: xyz.openbmc_project.Inventory| E(Entity Manager)
-    C -->|Interface: xyz.openbmc_project.Sensor| F(Sensor Services)
-    C -->|Interface: xyz.openbmc_project.User| G(phosphor-user-manager)
-    C -->|Interface: xyz.openbmc_project.GPIO| H(phosphor-gpio-monitor)
-    E -->|JSON Configs| I(Hardware Description)
-    H -->|libgpiod| J(Linux Kernel)
-    F -->|Device Drivers| J
-    D -->|Device Drivers| J
-    J --> K(Hardware: CPU, Memory, GPIOs, Sensors, ASPEED SoC)
+    Hardware[Hardware (ASPEED SoC, GPIOs)] --> Kernel[Linux Kernel (GPIO Subsystem, Drivers)]
+    Kernel --> DeviceTree[Device Tree (.dts, gpio-line-names)]
+    DeviceTree --> libgpiod[libgpiod Library]
+    libgpiod --> phosphor_gpio_monitor[phosphor-gpio-monitor Service]
+    Hardware --> EntityManager[Entity Manager (JSON Config)]
+    EntityManager --> Dbus[D-Bus IPC]
+    phosphor_gpio_monitor --> Dbus
+    Kernel --> Dbus
+    Dbus --> PhosphorServices[Modular Phosphor Services (e.g., State Manager, Sensor Services)]
+    PhosphorServices --> Dbus
+    Dbus --> bmcweb[bmcweb (Redfish API Implementation)]
+    bmcweb --> ExternalClients[External Clients (Redfish, WebUI)]
 ```
 
 ## Key Trends（最新趨勢）
-1.  **Redfish as Primary API:** There's a strong emphasis on `bmcweb` providing a comprehensive Redfish API implementation, signifying a clear architectural shift from legacy OpenBMC REST APIs towards Redfish as the standardized management interface. [Source: bmcweb/docs/Redfish.md, Chunk: Role of bmcweb and Redfish API Exposure:]
-2.  **Declarative Hardware Configuration:** The adoption of the Entity Manager with JSON configuration files for dynamic hardware inventory mapping to D-Bus objects is a key trend, eliminating the need for hardcoding and enabling flexible support for diverse hardware. [Source: openbmc-docs/features.md, Chunk: Purpose of Entity Manager]
-3.  **Modern GPIO Management:** OpenBMC is moving towards using `libgpiod` with `gpio-line-names` defined in the Linux Device Tree, deprecating older `sysfs` interfaces for more robust, portable, and maintainable GPIO interaction across different platforms. [Source: openbmc-docs/designs/device-tree-gpio-naming.md, Chunk: 2. OS Level Interaction (Linux Kernel & libgpiod)]
-4.  **Modular & Minimalist Firmware:** The architecture emphasizes modularity and optionality, allowing for compile-time configuration to build out unwanted features. This trend aims to reduce firmware image size, improve performance, and significantly decrease the attack surface. [Source: openbmc-docs/architecture/optionality.md, Chunk: 1. Integrity & Authenticity:]
-5.  **Robust Security Practices:** Continuous focus on comprehensive vulnerability management, network hardening, and strict access controls are central to OpenBMC's evolving security posture, encompassing firmware updates and general BMC operation. [Source: openbmc-docs/SECURITY.md, Chunk: 2. Access Control & Network Security:]
+- **Modular, D-Bus Centric Architecture:** OpenBMC continuously emphasizes a highly modular design with specialized services communicating via D-Bus, fostering extensibility and maintainability.
+- **Dynamic Hardware Configuration:** A strong trend towards utilizing declarative JSON with Entity Manager and the Linux Device Tree enables flexible adaptation to diverse hardware platforms without requiring hardcoded specifics.
+- **Redfish API Standardization:** Ongoing development within `bmcweb` focuses on comprehensive Redfish implementation, striving for full compliance with the Redfish Service Validator to offer a robust and standardized external interface.
+- **Robust Security Posture:** There is a significant focus on security hardening through compile-time optionality for features, comprehensive network security (e.g., TLS), and a structured Coordinated Vulnerability Disclosure (CVD) process.
+- **`systemd` Integration:** Deep integration with `systemd` is a key trend for managing the lifecycle, dependencies, and control of all OpenBMC services and their exposed interfaces.
 
 ## Key Entities（重要實體）
-*   **`bmcweb`**: OpenBMC's HTTP/Web server and the primary front-end for the Redfish API, responsible for translating Redfish requests to D-Bus calls and serving the WebUI. [Source: bmcweb/docs/Redfish.md, Chunk: Role of bmcweb and Redfish API Exposure:]
-*   **D-Bus**: The central inter-process communication (IPC) mechanism in OpenBMC, enabling all internal service interactions and forming the basis for programmatic interfaces. [Source: phosphor-dbus-interfaces/README.md, Chunk: D-Bus (Inter-Process Communication) is of critical significance...]
-*   **Entity Manager**: A core component that dynamically manages hardware inventory by using JSON configurations to map physical components to D-Bus objects. [Source: openbmc-docs/features.md, Chunk: Purpose of Entity Manager]
-*   **`phosphor-dbus-interfaces`**: A project defining standardized D-Bus interfaces in YAML format, ensuring consistency and interoperability across OpenBMC components. [Source: phosphor-dbus-interfaces/README.md, Chunk: Standardization:]
-    *   **`xyz.openbmc_project.Sensor.Purpose`**: Provides additional detail on a sensor's special purpose (e.g., `TotalPower`). [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Sensor/Purpose.interface.yaml, Chunk: 1. xyz.openbmc_project.Sensor.Purpose]
-    *   **`xyz.openbmc_project.Control.PowerSupplyRedundancy`**: Manages and configures the redundancy of power supplies, including rotation algorithms. [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Control/PowerSupplyRedundancy.interface.yaml, Chunk: 2. xyz.openbmc_project.Control.PowerSupplyRedundancy]
-    *   **`xyz.openbmc_project.User.MultiFactorAuthConfiguration`**: Defines and enforces multi-factor authentication configurations for BMC users. [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/User/MultiFactorAuthConfiguration.interface.yaml, Chunk: 3. xyz.openbmc_project.User.MultiFactorAuthConfiguration]
-    *   **`xyz.openbmc_project.Inventory.Item.Connector`**: Provides a general description for physical connectors, external ports, or slots in the system inventory. [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Inventory/Item/Connector.interface.yaml, Chunk: 4. xyz.openbmc_project.Inventory.Item.Connector]
-    *   **`xyz.openbmc_project.Console.Access`**: Offers methods to retrieve console data, typically returning a Unix socket file descriptor for direct interaction. [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Console/Access.interface.yaml, Chunk: 5. xyz.openbmc_project.Console.Access]
-*   **Linux Device Tree (`.dts`)**: Files that declaratively describe hardware components, including GPIO controllers and their symbolic `gpio-line-names`, to the Linux kernel. [Source: linux-devicetree/Documentation/devicetree/bindings/gpio/gpio.txt, Chunk: 1. Hardware Abstraction via Linux Device Tree (.dts)]
-*   **`libgpiod`**: A user-space library for interacting with GPIOs using the modern descriptor-based kernel interface, allowing applications to access GPIOs by their Device Tree-defined `gpio-line-names`. [Source: openbmc-docs/designs/device-tree-gpio-naming.md, Chunk: 2. OS Level Interaction (Linux Kernel & libgpiod)]
-*   **`phosphor-gpio-monitor`**: An OpenBMC service that utilizes `libgpiod` and Device Tree `gpio-line-names` to monitor GPIO lines for events and trigger systemd services based on configuration. [Source: phosphor-gpio-monitor/README.md, Chunk: 3. OpenBMC User-Space Services (phosphor-gpio-monitor)]
+- **D-Bus:** The central inter-process communication bus facilitating interaction between all OpenBMC services.
+- **`bmcweb`:** The HTTP/Web server responsible for implementing Redfish and serving the WebUI.
+- **Entity Manager:** The component that builds and manages the system's hardware inventory as D-Bus objects.
+- **`systemd`:** The Linux init system used for managing the lifecycle of OpenBMC services.
+- **`libgpiod`:** A userspace library providing a standard interface for interacting with the Linux kernel's GPIO character device.
+- **`phosphor-gpio-monitor`:** An OpenBMC service dedicated to monitoring GPIO states and triggering defined actions.
+- **`xyz.openbmc_project.Sensor.Purpose`:** A D-Bus interface providing additional context and classification for sensor data.
+- **`xyz.openbmc_project.Control.Power.Throttle`:** A D-Bus interface reporting if a component is throttled and the reasons for it.
+- **`xyz.openbmc_project.Control.PowerSupplyRedundancy`:** A D-Bus interface for managing power supply redundancy features.
+- **`xyz.openbmc_project.User.MultiFactorAuthConfiguration`:** A D-Bus interface for configuring multi-factor authentication settings.
+- **`xyz.openbmc_project.Console.Access`:** A D-Bus interface providing methods for out-of-band host console access.
+- **`xyz.openbmc_project.State.Host`:** A D-Bus interface for controlling and tracking the host power state.
+- **`xyz.openbmc_project.Inventory.Item.Drive`:** A D-Bus interface exposing properties of a storage drive.
+- **`/redfish/v1/UpdateService`:** The Redfish endpoint for managing firmware updates.
+- **`openbmctool`:** A command-line utility used for interacting with and managing OpenBMC systems, including firmware updates.
 
 ## Methodology & Best Practices（方法論與最佳實踐）
-### Firmware Code Update Methods
-*   **BLOB Protocol:** OpenBMC uses a generic BLOB protocol with handlers for various firmware image types (e.g., `/flash/image`, `/flash/bios`). `phosphor-ipmi-flash` is routed through this protocol for updates. [Source: openbmc-docs/designs/code-update.md, Chunk: 1. BLOB Protocol:]
-*   **Redfish API (`/redfish/v1/UpdateService`):** BMC and BIOS firmware updates are supported via the Redfish API, allowing for immediate or scheduled activation (`ApplyTime`) and reporting `FirmwareInventory`. [Source: openbmc-docs/architecture/code-update/firmware-update-over-redfish.md, Chunk: 2. Redfish API:]
-*   **D-Bus Interfaces:** D-Bus interfaces like `xyz.openbmc_project.Software.Settings` are integral to managing software versions, activating new images, and controlling write protection for firmware. [Source: phosphor-dbus-interfaces/yaml/xyz/openbmc_project/Software/README.md, Chunk: 3. D-Bus Interfaces:]
-*   **TFTP-based SimpleUpdate:** A simple TFTP-based update method is supported and can be enabled/disabled via a compile-time option in `bmcweb`. [Source: openbmc-docs/rest-api.md, Chunk: 4. TFTP-based SimpleUpdate:]
-
-### Security Mechanisms & Best Practices
-*   **Integrity & Authenticity:** Firmware updates include a mandatory verification step before activation, ensuring that staged firmware images are not accessible from the host until verified. The `WriteProtected` D-Bus property and BLOB protocol sequencing control prevent unauthorized modifications. [Source: openbmc-docs/architecture/code-update/code-update.md, Chunk: 1. Integrity & Authenticity:]
-*   **Access Control & Network Security:** All access to OpenBMC tools and services requires authentication (username/password). Critical communication channels (HTTPS, SSH, IPMI RAKP) are secured using TLS protocols configured at compile time. [Source: openbmc-docs/security/network-security-considerations.md, Chunk: 2. Access Control & Network Security:]
-*   **System Hardening:** Reducing the attack surface is a key practice, achieved by enabling optionality to build out unwanted features/services at compile-time and disabling unnecessary services at runtime (`systemctl disable`). A default-deny approach to network ports, session limits, and authentication failure delays further hardens the system. [Source: openbmc-docs/architecture/optionality.md, Chunk: 3. System Hardening:]
-*   **Vulnerability Management:** OpenBMC follows a clear process for privately reporting security vulnerabilities to `openbmc-security`, involving a Security Response Team (SRT) for coordinated disclosure, CVE assignment, and CVSS severity assessment, leveraging GitHub Security Advisories. [Source: openbmc-docs/security/how-to-report-a-security-vulnerability.md, Chunk: 2. Vulnerability Management:]
-*   **Clear Trust Domains:** It is critical to consider whether BMC and host firmware must operate in disjoint trust domains, avoiding features that compromise this separation if required for overall system security. [Source: openbmc-docs/SECURITY.md, Chunk: 4. Clear Trust Domains:]
-*   **GPIO Interaction:** Leverage `libgpiod` with `gpio-line-names` defined in the Linux Device Tree (`.dts` files) for robust, portable, and maintainable GPIO control, explicitly moving away from deprecated `sysfs` methods. [Source: openbmc-docs/designs/device-tree-gpio-naming.md, Chunk: 2. OS Level Interaction (Linux Kernel & libgpiod)]
-
-### Entity Manager JSON Configuration Example
-The Entity Manager uses JSON configuration files to declaratively define hardware components and how they should be represented as D-Bus objects. This example illustrates a simplified configuration for a storage drive, showing how it exposes D-Bus interfaces and populates properties dynamically, potentially from FRU data (`$SERIAL_NUMBER`).
+- **Firmware Update Workflow:**
+    - Utilize the BLOB protocol with specific handlers for different firmware types (e.g., static layout, UBI, host BIOS), enforcing a handshake or equivalent protocol for secure data transfer and ensuring only one blob is open at a time for coordination [Source: Firmware Updates].
+    - Initiate updates via the Redfish `/redfish/v1/UpdateService` endpoint or the `openbmctool` command-line utility [Source: Firmware Updates].
+    - Implement a mandatory verification step for all uploaded firmware images to confirm integrity and authenticity prior to activation [Source: Firmware Updates].
+    - Protect staged firmware images by preventing access from the host until after successful verification to mitigate security risks [Source: Firmware Updates].
+- **Hardware Configuration:**
+    - Define hardware components and their D-Bus representations using declarative JSON files for the Entity Manager, allowing flexible hardware modeling and dynamic D-Bus object creation [Source: Dynamic Hardware Config].
+    - Employ the Linux Device Tree (`.dts`) to define GPIO controllers and assign consistent, human-readable `gpio-line-names` to individual GPIOs, adhering to OpenBMC's naming conventions [Source: GPIO Interaction].
+    - Configure `phosphor-gpio-monitor` using JSON files that reference these Device Tree `LineName`s, ensuring portable and robust GPIO event monitoring across platforms [Source: GPIO Interaction].
+- **Security Principles:**
+    - Minimize the attack surface by compiling out unused features (e.g., TFTP updates, entire subsystems like WebUI or IPMI) from the firmware image [Source: Firmware Updates, General Security].
+    - Enforce robust authentication and authorization leveraging `phosphor-user-manager` which integrates with IPMI, Linux PAM, and LDAP [Source: General Security].
+    - Mandate Transport Layer Security (TLS) for all network services (HTTPS for Web/REST, SSH, RAKP for IPMI), configured at compile time [Source: General Security].
+    - Implement defenses against brute-force attacks (e.g., authentication delays) and enforce session management policies (e.g., maximum concurrent sessions, inactivity timeouts) [Source: General Security].
+    - Adhere strictly to Coordinated Vulnerability Disclosure (CVD) guidelines, utilizing a private reporting process (`openbmc-security@lists.ozlabs.org`), a dedicated Security Response Team (SRT), and GitHub security advisories for responsible vulnerability management [Source: General Security].
 
 ```json
 {
-  "Name": "NVMe Drive 0",
-  "Type": "Drive",
+  "Board": "BMC Storage Module",
   "Probe": {
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "SERIAL_NUMBER": "NVMEDRIVE001"
+    "FruDevice": {
+      "BOARD_PRODUCT_NAME": "BMC Storage Module",
+      "BOARD_MANUFACTURER": ["Wiwynn", "Quanta", "Ingrasys"]
     }
   },
-  "Interfaces": [
-    "xyz.openbmc_project.Inventory.Item.Drive",
-    "xyz.openbmc_project.Inventory.Decorator.Asset"
+  "Implements": [
+    "xyz.openbmc_project.Inventory.Decorator.Asset",
+    "xyz.openbmc_project.Inventory.Item.Storage"
   ],
   "Properties": {
-    "xyz.openbmc_project.Inventory.Decorator.Asset": {
-      "Model": "SuperFastNVMe",
-      "Manufacturer": "Acme Corp",
-      "SerialNumber": "$SERIAL_NUMBER"
-    }
+    "BuildDate": "$BOARD_MANUFACTURE_DATE",
+    "Manufacturer": "$BOARD_MANUFACTURER",
+    "Model": "$BOARD_PRODUCT_NAME",
+    "PartNumber": "$BOARD_PART_NUMBER",
+    "SerialNumber": "$BOARD_SERIAL_NUMBER"
   },
   "Exposes": [
     {
-      "Name": "NVMe Drive 0 Health Sensor",
-      "Type": "HealthSensor",
-      "Interfaces": [
-        "xyz.openbmc_project.Sensor.Value",
-        "xyz.openbmc_project.Sensor.Health"
-      ],
-      "Properties": {
-        "Unit": "xyz.openbmc_project.Sensor.Value.Unit.DegreesC",
-        "Scale": -3
-      }
+      "Name": "BMC Storage Module FRU",
+      "Type": "EEPROM",
+      "Address": "$address",
+      "Bus": "$bus"
     }
   ]
 }
 ```
-[Source: entity-manager/configurations/meta/bmc_storage_module.json, Chunk: How JSON Configuration Files Map Hardware Components to D-Bus Objects]
 
 ## Knowledge Gaps & Limitations（知識邊界）
-*   **Secure Boot Implementation Details:** The provided context discusses general security and trust domains between BMC and host, but lacks specific details on how OpenBMC itself implements or participates in a cryptographically verifiable secure boot chain for its own firmware.
-*   **Detailed Hardware-Specific Drivers:** While ASPEED chips and GPIOs are mentioned, there is limited depth on the integration of specific proprietary sensor chips, complex power management ICs, or other specialized hardware requiring detailed driver implementations within the D-Bus framework.
-*   **OpenBMC Boot Process Internals:** The internal boot sequence of the OpenBMC firmware, from initial ROM to full system readiness, is not explicitly detailed, beyond host boot progress monitoring.
-*   **Advanced Networking Configurations:** Beyond general network security considerations, detailed information on advanced networking features like bonding, VLANs, or specific firewall rule configurations is not extensively covered.
+- The provided context does not explicitly detail the methodologies or mechanisms for "secure boot" beyond general firmware verification steps.
+- Specific hardware pinouts for GPIOs across all supported BMC platforms are not exhaustively documented, relying primarily on Device Tree abstractions and logical `gpio-line-names`.
+- Comprehensive configuration parameters for all D-Bus interfaces or `systemd` services are not enumerated; examples are given but not full specifications.
+- The internal logic or state machine transitions of specific "phosphor" services, such as `phosphor-state-manager` or `CodeUpdater`, are not fully described, only their interface and high-level function.
+- The exhaustive mapping rules for every Redfish endpoint to its corresponding D-Bus interface are not fully documented, although the general translation mechanism by `bmcweb` is explained.
 
 ## Example Q&A（代表性問答）
-**Q1:** How does `bmcweb` serve the Redfish API and interact with OpenBMC's internal services?
-**A1:** `bmcweb` acts as OpenBMC's primary HTTP/HTTPS server, exposing the Redfish API at `/redfish/v1/`. It translates incoming Redfish HTTP/JSON requests into appropriate D-Bus method calls to internal OpenBMC "phosphor" services (e.g., `phosphor-state-manager` for power operations), processes their D-Bus responses, and formats them back into Redfish-compliant JSON for the client. It also handles authentication and authorization. [Source: bmcweb/docs/Redfish.md, Chunk: Role of bmcweb and Redfish API Exposure:]
-
-**Q2:** Explain how OpenBMC manages GPIOs on an ASPEED SoC, ensuring portability across different board designs.
-**A2:** OpenBMC uses the Linux Device Tree (`.dts` files) to declaratively define GPIO controllers and individual `gpio-line-names` on ASPEED SoCs. User-space applications like `phosphor-gpio-monitor` then interact with these GPIOs via the `libgpiod` library, requesting GPIOs by their symbolic `gpio-line-names` rather than hardcoded chip IDs or pin numbers. This approach, which deprecates the old `sysfs` interface, ensures portability as the application code references logical names, abstracted from physical pin specifics. [Source: openbmc-docs/designs/device-tree-gpio-naming.md, Chunk: At the OS and hardware level...]
-
-**Q3:** What are the key security considerations and best practices for updating OpenBMC firmware?
-**A3:** Firmware updates in OpenBMC, whether via Redfish, BLOB protocol, or TFTP, involve critical security measures. These include mandatory verification of firmware images prior to activation and restricting host access to staged images to ensure integrity. Access to update mechanisms requires authentication, and all critical communication is secured using TLS. Best practices emphasize reducing the attack surface by disabling unneeded services and features at compile-time and runtime. Additionally, a clear process for private vulnerability reporting and coordinated disclosure is in place. [Source: openbmc-docs/SECURITY.md, Chunk: What are the standard methodologies...]
+1.  **Q:** How does `bmcweb` handle a Redfish `ComputerSystem.Reset` action, and which D-Bus interface is primarily involved?
+    **A:** `bmcweb` translates a Redfish `ComputerSystem.Reset` POST request into a D-Bus method call or property change on the `xyz.openbmc_project.State.Host.*` interface, which is managed by the `phosphor-state-manager` service to initiate the host reset.
+2.  **Q:** Describe how OpenBMC dynamically identifies a "BMC Storage Module" hardware component and exposes its inventory data via D-Bus.
+    **A:** The Entity Manager identifies the "BMC Storage Module" by matching its `BOARD_PRODUCT_NAME` and `BOARD_MANUFACTURER` from the FRU data against patterns specified in a JSON configuration file (e.g., `bmc_storage_module.json`). Upon identification, it creates a D-Bus inventory object that implements interfaces like `xyz.openbmc_project.Inventory.Decorator.Asset` and populates properties such as `BuildDate`, `Manufacturer`, and `Model directly from the FRU data.
+3.  **Q:** What is the recommended method for configuring `phosphor-gpio-monitor` to react to a physical power button press?
+    **A:** The recommended method is to define a specific `gpio-line-name`, such as "power-button", in the platform's Linux Device Tree (`.dts`). `phosphor-gpio-monitor` is then configured with a JSON entry that specifies `"LineName": "POWER_BUTTON"`, along with the desired `EventMon` (e.g., "FALLING" for active-low buttons) and a `Target` systemd service to activate when the button event occurs.
 
 ## Source References（來源索引）
 - `bmcweb/docs/Redfish.md`
