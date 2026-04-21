@@ -13,66 +13,110 @@ jobs:
     if: github.actor != 'github-classroom[bot]'
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Check data_update.py
-      id: check-data-update
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Check data_update.py
-        setup-command: ''
-        command: 'test -f data_update.py'
-        timeout: 10
-        max-score: 10
+      - name: Check data_update.py
+        id: check-data-update
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check data_update.py
+          setup-command: ""
+          command: "test -f data_update.py"
+          timeout: 10
+          max-score: 10
 
-    - name: Check rag_query.py
-      id: check-rag-query
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Check rag_query.py
-        setup-command: ''
-        command: 'test -f rag_query.py'
-        timeout: 10
-        max-score: 10
+      - name: Check rag_query.py
+        id: check-rag-query
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check rag_query.py
+          setup-command: ""
+          command: "test -f rag_query.py"
+          timeout: 10
+          max-score: 10
 
-    - name: Check data/ directory has at least 5 files
-      id: check-data-dir
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Check data/ directory has at least 5 files
-        setup-command: ''
-        command: 'test -d data && [ $(find data -type f | wc -l) -ge 5 ]'
-        timeout: 10
-        max-score: 15
+      - name: Check data/ directory has at least 20 files
+        id: check-data-dir
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check data/ directory has at least 20 files
+          setup-command: ""
+          command: "test -d data && [ $(find data -type f | wc -l) -ge 20 ]"
+          timeout: 10
+          max-score: 15
 
-    - name: Check requirements.txt
-      id: check-requirements
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Check requirements.txt
-        setup-command: ''
-        command: 'test -f requirements.txt'
-        timeout: 10
-        max-score: 10
+      - name: Check requirements.txt
+        id: check-requirements
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check requirements.txt
+          setup-command: ""
+          command: "test -f requirements.txt"
+          timeout: 10
+          max-score: 10
 
-    - name: Check .env.example exists and has no real API keys
-      id: check-env-example
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Check .env.example exists and has no real API keys
-        setup-command: ''
-        command: 'test -f .env.example && ! grep -qE "[A-Za-z0-9]{40,}" .env.example'
-        timeout: 10
-        max-score: 15
+      - name: Check .env.example exists and has no real API keys
+        id: check-env-example
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check .env.example exists and has no real API keys
+          setup-command: ""
+          command: 'test -f .env.example && ! grep -qE "[A-Za-z0-9]{40,}" .env.example'
+          timeout: 10
+          max-score: 15
 
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        CHECK-DATA-UPDATE_RESULTS: "${{ steps.check-data-update.outputs.result }}"
-        CHECK-RAG-QUERY_RESULTS: "${{ steps.check-rag-query.outputs.result }}"
-        CHECK-DATA-DIR_RESULTS: "${{ steps.check-data-dir.outputs.result }}"
-        CHECK-REQUIREMENTS_RESULTS: "${{ steps.check-requirements.outputs.result }}"
-        CHECK-ENV-EXAMPLE_RESULTS: "${{ steps.check-env-example.outputs.result }}"
-      with:
-        runners: check-data-update,check-rag-query,check-data-dir,check-requirements,check-env-example
+      - name: Check skill_builder.py
+        id: check-skill-builder
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check skill_builder.py
+          setup-command: ""
+          command: "test -f skill_builder.py"
+          timeout: 10
+          max-score: 10
+
+      - name: Check skill.md exists and has more than 500 characters
+        id: check-skill-md
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check skill.md exists and has more than 500 characters
+          setup-command: ""
+          command: "test -f skill.md && [ $(wc -m < skill.md) -gt 500 ]"
+          timeout: 10
+          max-score: 10
+
+      - name: Check README.md exists and has more than 1000 characters
+        id: check-readme
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check README.md exists and has more than 1000 characters
+          setup-command: ""
+          command: "test -f README.md && [ $(wc -m < README.md) -gt 1000 ]"
+          timeout: 10
+          max-score: 10
+
+      - name: Check skill.md contains required sections
+        id: check-skill-md-sections
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Check skill.md contains required sections
+          setup-command: ""
+          command: 'grep -q "^## Overview" skill.md && grep -q "^## Core Concepts" skill.md && grep -q "^## Source References" skill.md'
+          timeout: 10
+          max-score: 15
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          CHECK-DATA-UPDATE_RESULTS: "${{ steps.check-data-update.outputs.result }}"
+          CHECK-RAG-QUERY_RESULTS: "${{ steps.check-rag-query.outputs.result }}"
+          CHECK-DATA-DIR_RESULTS: "${{ steps.check-data-dir.outputs.result }}"
+          CHECK-REQUIREMENTS_RESULTS: "${{ steps.check-requirements.outputs.result }}"
+          CHECK-ENV-EXAMPLE_RESULTS: "${{ steps.check-env-example.outputs.result }}"
+          CHECK-SKILL-BUILDER_RESULTS: "${{ steps.check-skill-builder.outputs.result }}"
+          CHECK-SKILL-MD_RESULTS: "${{ steps.check-skill-md.outputs.result }}"
+          CHECK-README_RESULTS: "${{ steps.check-readme.outputs.result }}"
+          CHECK-SKILL-MD-SECTIONS_RESULTS: "${{ steps.check-skill-md-sections.outputs.result }}"
+        with:
+          runners: check-data-update,check-rag-query,check-data-dir,check-requirements,check-env-example,check-skill-builder,check-skill-md,check-readme,check-skill-md-sections
