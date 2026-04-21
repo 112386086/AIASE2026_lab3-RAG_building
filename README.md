@@ -88,7 +88,7 @@ graph TD
     *   **Top-K：** 互動問答預設 `top-k=5`；在 `skill_builder.py` 進行全域知識萃取時放寬至 `top-k=15` 以提升覆蓋率。
 
 *   **Prompt Engineering (Strict Citation & Sliding Window)**
-    *   **System Prompt：** 賦予 LLM "Senior Firmware Engineer" 的人設，並制定嚴格的 **"I Don't Know" Policy** 以防範幻覺。
+    *   **System Prompt：** 獨立維護於專案根目錄的 AGENT.md 檔案中，由`rag_query.py`於執行時動態載入。賦予 LLM "Senior Firmware Engineer" 的人設，並制定嚴格的 **"I Don't Know" Policy** 以防範幻覺。
     *   **強制引用：** 在 Prompt 中明確規範 `For every piece of information, append: [Source: <source_file>, Chunk: <chunk_index>]`，確保回答具備 100% 的可溯源性。
     *   **記憶體管理：** 實作 **Sliding Window Memory**，僅保留最近 3 輪對話。為控制 Token 成本，歷史紀錄中**僅保存乾淨的 Query 與 Answer**，刻意丟棄過去檢索到的龐大 Context。
 
