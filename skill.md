@@ -23,7 +23,7 @@ OpenBMC is an open-source firmware stack for Baseboard Management Controllers (B
 ```mermaid
 graph TD
     A[External Clients] -->|HTTPS / Redfish, SSH, IPMI| B(bmcweb / External Interfaces)
-    B -->|Translates to D-Bus| C[D-Bus Bus (Inter-Process Communication)]
+    B -->|Translates to D-Bus| C["D-Bus Bus(Inter-Process Communication\)"]
     C -->|Invokes Methods, Sets Properties, Emits Signals| D1(State Management: phosphor-state-manager)
     C --> D2(Inventory Management: Entity Manager)
     C --> D3(Sensor Services)
@@ -34,11 +34,15 @@ graph TD
     D3 --> F3(Sensor Data)
     D4 --> F4(User Authentication/Authorization)
     D5 --> F5(Firmware Images)
-    F1 & F2 & F3 & F4 & F5 --> G(Linux Kernel / Hardware Abstraction)
-    G --> H(GPIO Controller: ASPEED)
+    F1 --> G["Linux Kernel / Hardware Abstraction"]
+    F2 --> G
+    F3 --> G
+    F4 --> G
+    F5 --> G
+    G --> H("GPIO Controller: ASPEED")
     G --> I(Other Hardware Components)
-    H -->|Configured by| J[Device Tree (.dts)]
-    J -->|Accessed by libgpiod| K(Userspace GPIO Monitors: phosphor-gpio-monitor)
+    H -->|Configured by| J["Device Tree \(.dts\)"]
+    J -->|Accessed by libgpiod| K("Userspace GPIO Monitors: phosphor-gpio-monitor")
 ```
 
 ## Key Trends（最新趨勢）
