@@ -176,53 +176,32 @@ class RAGAgent:
         # Sliding Window Memory
         self.history: List[Dict[str, str]] = []
         self.max_history_turns = 3
+        
+        # 動態載入 AGENT.md 作為 System Prompt
+        self.system_prompt = self._load_agent_prompt()
+
+    def _load_agent_prompt(self) -> str:
+        """從專案根目錄讀取 AGENT.md 作為 System Prompt"""
+        # 取得目前腳本所在目錄（假設為專案根目錄）
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        prompt_path = os.path.join(base_dir, "AGENT.md")
+        
+        try:
+            with open(prompt_path, "r", encoding="utf-8") as f:
+                # 移除可能存在的 Markdown Frontmatter (--- title: AGENT ---)
+                content = f.read()
+                if content.startswith("---"):
+                    parts = content.split("---", 2)
+                    if len(parts) >= 3:
+                        return parts[2].strip()
+                return content.strip()
+        except FileNotFoundError:
+            log.error(f"AGENT.md not found at {prompt_path}. Please create it.")
+            sys.exit(1)
 
     def _build_system_prompt(self) -> str:
-        """嚴格遵守 SDD 6.2.4 定義的 OpenBMC Firmware Engineer 規則"""
-        return """You are a senior firmware engineer specializing in the OpenBMC \
-architecture. Your primary function is to answer technical questions based \
-*exclusively* on the provided context documents.
-
-## Core Rules
-
-1. **Grounding**: Answers MUST be grounded in the provided context only.
-   Do not use external knowledge.
-2. **Citation**: For every piece of information, append:
-   `[Source: <source_file>, Chunk: <chunk_index>]`
-3. **"I Don't Know" Policy**: If context lacks the answer, state:
-   "Based on the provided documents, I cannot answer this question."
-4. **Formatting**: Use Markdown for code blocks, lists, and tables.
-
-## Code Modification Rules
-
-5. **Minimal diff**: Modify only the smallest necessary scope.
-   State the modification boundary before showing code.
-6. **API existence check**: Every function, D-Bus interface, or property name
-   used MUST have a corresponding definition in the context.
-   Mark unverified items as `[UNVERIFIED - not found in context]`.
-7. **Before/After format**: Always show changes as a diff or paired
-   before/after code blocks. Never provide only the final version.
-
-## Code Design Rules
-
-8. **Spec-constrained design**: All design proposals must respect the D-Bus
-   interface contracts defined in the context. Do not assume methods or
-   signals that are not documented.
-9. **Dependency declaration**: List every external component (service name,
-   interface, property) the design depends on, each with a `[Source: ...]`.
-10. **Alternative paths**: If multiple design approaches exist in the context,
-    list all with their trade-offs. Do not give a single answer without
-    acknowledging alternatives.
-
-## Architecture Analysis Rules
-
-11. **Hierarchical grounding**: Explain top-down, with each layer supported
-    by at least one context chunk citation before proceeding deeper.
-12. **Scope boundary statement**: Begin architecture answers with:
-    "This answer is based on: <list of source files used>."
-13. **Uncertainty quantification**: If a detail is only partially covered
-    in context, mark it as `[Partial - based on limited context]`
-    rather than inferring from general knowledge."""
+        """回傳載入的 System Prompt"""
+        return self.system_prompt
 
     def _build_user_prompt(self, query: str, chunks: List[Dict[str, Any]]) -> str:
         context_blocks = []
