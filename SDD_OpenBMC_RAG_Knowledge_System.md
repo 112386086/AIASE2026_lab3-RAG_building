@@ -153,13 +153,6 @@ graph TD
 3. **冪等性保證**
    - 若目標目錄已存在且非空，則 skip（`[ -d "data/raw/openbmc-docs" ] && echo "skip"`）。
    - 提供 `--force` 旗標可強制清空 `data/raw/` 並重新拉取。
-2. **Web Scraping（IBM Power10 文件）**
-   - 執行：`curl -L <URL> | pandoc -f html -t markdown -o data/raw/supplementary/ibm_power10_openbmc.md`
-   - Fallback：若 `curl` 失敗（HTTP != 200），印出 Warning 並繼續，不中斷腳本
-
-3. **冪等性保證**
-   - 若目標目錄已存在且非空，則 skip（`[ -d "data/raw/openbmc-docs" ] && echo "skip"`）
-   - 提供 `--force` 旗標可強制重新拉取
 
 ## 4. Data Preprocessing & Canonicalization
 原始資料格式（特別是 YAML）包含大量結構性雜訊，會嚴重干擾 Embedding 模型的語意空間映射。為此，我們在 `DocumentCleaner` 模組中實作了專屬的正規化策略。
