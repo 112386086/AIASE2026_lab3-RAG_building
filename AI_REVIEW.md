@@ -1,7 +1,7 @@
 # HW3 AI 評分回饋
 
 > 本份回饋由 **Anthropic Claude Opus 4.7** 與 **OpenAI GPT-5.5** 兩個獨立模型，分別針對 Phase 1 與 Phase 2 程式碼與文件進行評分；最終加權分數為兩模型平均後，進行全班性的 Normalize，以及老師加分。
-
+ 
 ---
 
 ## 本次公布的兩個分數
